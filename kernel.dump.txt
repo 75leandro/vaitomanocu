@@ -1,0 +1,149 @@
+   #[1]The Linux Kernel Archives Atom Feed [2]Latest Linux Kernel Releases
+
+                                                             [3]The Linux Kernel Archives
+
+     * [4]About
+     * [5]Contact us
+     * [6]FAQ
+     * [7]Releases
+     * [8]Signatures
+     * [9]Site news
+
+   Protocol             Location
+   [10]HTTP  [11]https://www.kernel.org/pub/
+   [12]GIT   [13]https://git.kernel.org/
+   [14]RSYNC rsync://rsync.kernel.org/pub/
+
+   Latest Release
+   [15]6.18 [16]Download
+
+   mainline:   6.18          2025-11-30 [[17]tarball] [[18]pgp] [[19]patch]                  [[20]view diff] [[21]browse]
+   stable:     6.17.10       2025-12-01 [[22]tarball] [[23]pgp] [[24]patch] [[25]inc. patch] [[26]view diff] [[27]browse] [[28]changelog]
+   longterm:   6.12.60       2025-12-01 [[29]tarball] [[30]pgp] [[31]patch] [[32]inc. patch] [[33]view diff] [[34]browse] [[35]changelog]
+   longterm:   6.6.118       2025-12-01 [[36]tarball] [[37]pgp] [[38]patch] [[39]inc. patch] [[40]view diff] [[41]browse] [[42]changelog]
+   longterm:   6.1.158       2025-10-29 [[43]tarball] [[44]pgp] [[45]patch] [[46]inc. patch] [[47]view diff] [[48]browse] [[49]changelog]
+   longterm:   5.15.196      2025-10-29 [[50]tarball] [[51]pgp] [[52]patch] [[53]inc. patch] [[54]view diff] [[55]browse] [[56]changelog]
+   longterm:   5.10.246      2025-10-29 [[57]tarball] [[58]pgp] [[59]patch] [[60]inc. patch] [[61]view diff] [[62]browse] [[63]changelog]
+   longterm:   5.4.302 [EOL] 2025-12-03 [[64]tarball] [[65]pgp] [[66]patch] [[67]inc. patch] [[68]view diff] [[69]browse] [[70]changelog]
+   linux-next: next-20251204 2025-12-04                                                                      [[71]browse]
+
+Other resources
+
+     * [72]Git Trees
+     * [73]Documentation
+     * [74]Kernel Mailing Lists
+     * [75]Patchwork
+     * [76]Wikis
+     * [77]Bugzilla
+     * [78]Mirrors
+     * [79]Linux.com
+     * [80]Linux Foundation
+
+Social
+
+     * [81]Site Atom feed
+     * [82]Releases Atom Feed
+     * [83]Kernel Planet
+
+
+    This site is operated by the Linux Kernel Organization, a [84]501(c)3 nonprofit corporation, with support from the following sponsors.
+
+
+    [85]Akamai   [86]Constellix   [87]Fastly   [88]servers.com
+    [89]Google   [90]Red Hat
+
+    [91]The Linux Foundation
+
+Referências
+
+   1. https://www.kernel.org/feeds/all.atom.xml
+   2. https://www.kernel.org/feeds/kdist.xml
+   3. https://www.kernel.org/
+   4. https://www.kernel.org/category/about.html
+   5. https://www.kernel.org/category/contact-us.html
+   6. https://www.kernel.org/category/faq.html
+   7. https://www.kernel.org/category/releases.html
+   8. https://www.kernel.org/category/signatures.html
+   9. https://www.kernel.org/category/site-news.html
+  10. https://www.ietf.org/rfc/rfc2616.txt
+  11. https://www.kernel.org/pub/
+  12. https://git-scm.com/
+  13. https://git.kernel.org/
+  14. https://rsync.samba.org/
+  15. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.tar.xz
+  16. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.tar.xz
+  17. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.tar.xz
+  18. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.tar.sign
+  19. https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-6.18.xz
+  20. https://git.kernel.org/torvalds/ds/v6.18/v6.17
+  21. https://git.kernel.org/torvalds/h/v6.18
+  22. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.10.tar.xz
+  23. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.10.tar.sign
+  24. https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-6.17.10.xz
+  25. https://cdn.kernel.org/pub/linux/kernel/v6.x/incr/patch-6.17.9-10.xz
+  26. https://git.kernel.org/stable/ds/v6.17.10/v6.17.9
+  27. https://git.kernel.org/stable/h/v6.17.10
+  28. https://cdn.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.17.10
+  29. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.60.tar.xz
+  30. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.60.tar.sign
+  31. https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-6.12.60.xz
+  32. https://cdn.kernel.org/pub/linux/kernel/v6.x/incr/patch-6.12.59-60.xz
+  33. https://git.kernel.org/stable/ds/v6.12.60/v6.12.59
+  34. https://git.kernel.org/stable/h/v6.12.60
+  35. https://cdn.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.12.60
+  36. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.118.tar.xz
+  37. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.118.tar.sign
+  38. https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-6.6.118.xz
+  39. https://cdn.kernel.org/pub/linux/kernel/v6.x/incr/patch-6.6.117-118.xz
+  40. https://git.kernel.org/stable/ds/v6.6.118/v6.6.117
+  41. https://git.kernel.org/stable/h/v6.6.118
+  42. https://cdn.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.6.118
+  43. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.158.tar.xz
+  44. https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.158.tar.sign
+  45. https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-6.1.158.xz
+  46. https://cdn.kernel.org/pub/linux/kernel/v6.x/incr/patch-6.1.157-158.xz
+  47. https://git.kernel.org/stable/ds/v6.1.158/v6.1.157
+  48. https://git.kernel.org/stable/h/v6.1.158
+  49. https://cdn.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.158
+  50. https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.196.tar.xz
+  51. https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.196.tar.sign
+  52. https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.15.196.xz
+  53. https://cdn.kernel.org/pub/linux/kernel/v5.x/incr/patch-5.15.195-196.xz
+  54. https://git.kernel.org/stable/ds/v5.15.196/v5.15.195
+  55. https://git.kernel.org/stable/h/v5.15.196
+  56. https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.15.196
+  57. https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.10.246.tar.xz
+  58. https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.10.246.tar.sign
+  59. https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.10.246.xz
+  60. https://cdn.kernel.org/pub/linux/kernel/v5.x/incr/patch-5.10.245-246.xz
+  61. https://git.kernel.org/stable/ds/v5.10.246/v5.10.245
+  62. https://git.kernel.org/stable/h/v5.10.246
+  63. https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.246
+  64. https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.4.302.tar.xz
+  65. https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.4.302.tar.sign
+  66. https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-5.4.302.xz
+  67. https://cdn.kernel.org/pub/linux/kernel/v5.x/incr/patch-5.4.301-302.xz
+  68. https://git.kernel.org/stable/ds/v5.4.302/v5.4.301
+  69. https://git.kernel.org/stable/h/v5.4.302
+  70. https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.4.302
+  71. https://git.kernel.org/next/linux-next/h/next-20251204
+  72. https://git.kernel.org/
+  73. https://docs.kernel.org/
+  74. https://lore.kernel.org/
+  75. https://patchwork.kernel.org/
+  76. https://www.wiki.kernel.org/
+  77. https://bugzilla.kernel.org/
+  78. https://mirrors.kernel.org/
+  79. https://www.linux.com/
+  80. https://www.linuxfoundation.org/
+  81. https://www.kernel.org/feeds/all.atom.xml
+  82. https://www.kernel.org/feeds/kdist.xml
+  83. https://planet.kernel.org/
+  84. https://www.kernel.org/nonprofit.html
+  85. https://www.akamai.com/
+  86. https://www.constellix.com/
+  87. https://www.fastly.com/
+  88. https://servers.com/
+  89. https://www.google.com/
+  90. https://www.redhat.com/
+  91. https://www.linuxfoundation.org/
