@@ -1,0 +1,1476 @@
+<!DOCTYPE html><html><head>
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+
+      .check__hidden {
+        display: none;
+      }
+
+      .check__button {
+        border: none;
+        border-radius: 6px !important;
+        background-color: #6abf4b;
+        color: #fff;
+        min-width: 100px;
+        margin: 0.625rem 0;
+        padding: 0.7rem;
+      }
+
+      .check__widget .check__solution .DevConfigGray {
+        background-color: rgb(214,216,220);
+        font-weight: bold;
+      }
+
+      .check-inner .check__widget .check__solution .DevConfigs {
+        margin: 0px;
+        line-height: 115%;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .check__solution  {
+        line-height: 1.5;
+      }
+      .mcq__inner .mcq__widget .mcq__widget-inner {
+        margin-block: 1rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item {
+        display: flex;
+        gap: 0.2rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item .mcq__item-label .mcq__item-text .screenReader-position-text{
+        display: none;
+      }
+      .opentabletextbox-inner .opentabletextBox__widget .openTableTextBox__answerText.answergray {
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox{
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox img{
+        margin-block: 1rem;
+        margin-left: initial;
+      }
+      .component__content .component__body-inner .pageTracer-h4-title-hide {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        font-size: 0px;
+        color: rgb(var(--neutral-2));
+        font-weight: normal;
+      }
+      .table-inner .table__widget table tr.TableHeading th, .table-inner .table__widget table tr.TableHeading td, .table-inner .table__widget table tr td.TableHeading, .opentabletextbox-table thead tr.TableHeading th, .opentabletextbox-table tbody tr.TableHeading td, .opentabletextbox-table tbody tr td.TableHeading {
+        background-color: #d6d8dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .CMD, .component__content .component__body-inner .CMDOutput, .component__content .component__body-inner .CMDOutput__table{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        margin-inline-start: 30px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      [dir="rtl"] .component__content .component__body-inner .CMDOutput__table span {
+        direction: ltr;
+        display: inline-block;
+      }
+      .openTextBox__inner .openTextBox__widget .CMD, .openTextBox__inner .openTextBox__widget .CMDOutput{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .openTextBox__inner .openTextBox__widget .DnTbold, .openTextBox__inner .openTextBox__widget .BodyTextL25Bold, .component__content .component__body-inner .BodyTextL25Bold, .component__content .component__body-inner .DnTbold, .table-inner .table__widget table tr .DnTbold {
+        font-weight: bold;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article 6e84130a-a1cf-44f6-a6ba-719eeb222954 remove-padding-top remove-padding-bottom is-complete ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$5161758636$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="article__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="article__header ">
+              <div class="article__header-inner ">
+                  
+                    <!--?lit$5161758636$--> <div class=" article__title ">
+                      <!--?lit$5161758636$--><heading-view aria-hidden="true" id="6e84130a-a1cf-44f6-a6ba-719eeb222954-heading-view" headingtitle="Laboratório - Use um Scanner de Porta para detectar Portas Abertas" modelid="6e84130a-a1cf-44f6-a6ba-719eeb222954" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="js-heading is-complete">
+        <div class="js-heading-inner" role="heading" id="article-heading" aria-level="2">
+        <span class="aria-label"> <!--?lit$5161758636$-->Concluída &nbsp;<!--?lit$5161758636$-->Laboratório - Use um Scanner de Porta para detectar Portas Abertas</span>
+        </div>
+      </div>
+    </heading-view>
+                        <div tabindex="0" role="heading" class="article__title-inner " aria-level="2">
+                        <span class="accessibility-completion-indicator"><!--?lit$5161758636$-->Concluída </span>
+                        <!--?lit$5161758636$-->Laboratório - Use um Scanner de Porta para detectar Portas Abertas</div>
+                      </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$5161758636$--><!---->
+                                    <block-view modelid="fff601ed-22a8-4706-8934-2ddc9aec7953" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="fff601ed-22a8-4706-8934-2ddc9aec7953" class="fff601ed-22a8-4706-8934-2ddc9aec7953 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="fff601ed-22a8-4706-8934-2ddc9aec7953" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="3279a991-fa15-4947-92ce-f16693c8101a" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="3279a991-fa15-4947-92ce-f16693c8101a" class="component text 3279a991-fa15-4947-92ce-f16693c8101a  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><h2>Objetivos</h2> <p class="BodyTextL25">Use o Nmap, um scanner de portas e uma ferramenta de mapeamento de rede, para detectar portas abertas.</p> <h2>Histórico/Cenário</h2> <p class="BodyTextL25">O Network Mapper, ou Nmap, é um utilitário de código aberto usado para descoberta de rede e auditoria de segurança. Uma tarefa comum é verificar máquinas locais para determinar possíveis vulnerabilidades, incluindo portas abertas e não gerenciadas. Todas as estações de trabalho exigem serviços e portas abertas para se comunicar e executar tarefas como imprimir, compartilhar um arquivo ou navegar na Web. Os administradores também usam o Nmap para monitorar hosts ou gerenciar agendamentos de atualizações de serviços. O Nmap determina quais hosts estão disponíveis em uma rede, quais serviços, sistemas operacionais e filtros de pacotes ou firewalls estão sendo executados. Neste laboratório, você usará o Nmap em seu ambiente de VM para detectar portas abertas. </p> <h1>Introdução às portas TCP/UDP</h1> <p class="BodyTextL25">Toda comunicação que acontece pela Internet é trocada usando portas. Cada host IP pode usar dois tipos de portas: TCP e UDP. Pode haver até 65.535 de cada um para qualquer endereço IP. </p> <p class="BodyTextL25">Os serviços que se conectam à Internet (como navegadores da Web, clientes de e-mail e serviços de transferência de arquivos) usam portas específicas para receber informações. Portanto, cada conexão lógica recebe um número específico. O número da porta também identifica em qual porta ela deve enviar ou receber tráfego durante a comunicação. A IANA atribuiu os números de porta oficial e dividiu essas portas em três subcategorias:</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Portas bem conhecidas (0-1023)</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Portas registradas (1024 - 49,151)</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Portas Dinâmicas/Privadas (49,152 - 65,535)</p> <p class="BodyTextL25">A seguir, são listadas portas comuns:</p> <p class="BodyTextL25">20 - File Transfer Protocol - Dados (FTP-DATA)</p> <p class="BodyTextL25">21 - File Transfer Protocol - Controle (FTP)</p> <p class="BodyTextL25">22 - Secure Shell (SSH)</p> <p class="BodyTextL25">23 - Telnet (TELNET)</p> <p class="BodyTextL25">25 - Simple Mail Transfer Protocol (SMTP)</p> <p class="BodyTextL25">53 - Domain Name System (DNS)</p> <p class="BodyTextL25">67 - Dynamic Host Configuration Protocol v4 (DHCPv4 - Cliente para o Servidor) </p> <p class="BodyTextL25">68 - Dynamic Host Configuration Protocol v4 (DHCPv4 - Servidor para o Cliente) </p> <p class="BodyTextL25">69 - Trivial File Transfer Protocol (TFTP)</p> <p class="BodyTextL25">80 - Hypertext Transfer Protocol (HTTP)</p> <h1>Segurança de Portas Lógicas</h1> <p class="BodyTextL25" style="page-break-after:avoid">Cada porta lógica está sujeita a uma ameaça e apresenta uma vulnerabilidade a um sistema, mas algumas das portas usadas com frequência recebem muita atenção dos invasores. Mais de 75% de todos os ataques cibernéticos envolvem apenas algumas portas comuns. Os invasores examinam sistemas para identificar portas abertas em um sistema de destino. Veja aqui uma lista das possíveis portas lógicas que são os alvos mais comuns dos criminosos digitais:</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="47e034ff-a9c4-4bbb-832b-c258cfe45b62" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="47e034ff-a9c4-4bbb-832b-c258cfe45b62" class="47e034ff-a9c4-4bbb-832b-c258cfe45b62 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="47e034ff-a9c4-4bbb-832b-c258cfe45b62" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><table-view modelid="acd833a4-8bb3-487b-8f0e-c2e1db68bb9e" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+        <div class="table-inner component__inner"> 
+            <div data-socialgoodpulse-id="acd833a4-8bb3-487b-8f0e-c2e1db68bb9e" class="component table acd833a4-8bb3-487b-8f0e-c2e1db68bb9e  is-full is-complete  ">
+                <div class="component__header-container">
+                    <div data-socialgoodpulse-id="acd833a4-8bb3-487b-8f0e-c2e1db68bb9e" class="table ">
+                        <base-view type="component" lowercase_component="table" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header table__header">
+              <div class="component__header-inner table__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                    </div>
+                </div>
+
+
+                <div class="component__widget table__widget" role="table">
+
+                <table class="" tabindex="0" style="min-width: 800px">
+                <!--?lit$5161758636$--><!---->
+                    <tbody><tr class="table-row nth-child-0 ">
+                    <!--?lit$5161758636$--><!---->
+                                <th scope="col" rowspan="1" colspan="1" class="table-data table-heading nth-child-0 ">
+                                   <!--?lit$5161758636$--><p class="MsoNormal"><span>20/21 FTP</span></p><p class="MsoNormal"><span>22 SSH</span></p><p class="MsoNormal"><span>23 telnet</span></p><p class="MsoNormal"><span>25 SMTP</span></p><p class="MsoNormal"><span>50/51 IPsec</span></p><p class="MsoNormal"><span>53 DNS</span></p>
+                                    <!--?lit$5161758636$-->
+                                </th>
+                                <!----><!---->
+                                <th scope="col" rowspan="1" colspan="1" class="table-data table-heading nth-child-1 ">
+                                   <!--?lit$5161758636$--><p class="MsoNormal"><span>67/68 BOOTP</span></p><p class="MsoNormal"><span>69 TFTP</span></p><p class="MsoNormal"><span>80 HTTP</span></p><p class="MsoNormal"><span>110 POP3</span></p><p class="MsoNormal"><span>111 Port Map</span></p><p class="MsoNormal"><span>119 NNTP</span></p>
+                                    <!--?lit$5161758636$-->
+                                </th>
+                                <!----><!---->
+                                <th scope="col" rowspan="1" colspan="1" class="table-data table-heading nth-child-2 ">
+                                   <!--?lit$5161758636$--><p class="MsoNormal"><span>123 NTP</span></p><p class="MsoNormal"><span>137-139 NetBIOS</span></p><p class="MsoNormal"><span>143 IMAP</span></p><p class="MsoNormal"><span>161 SNMP</span></p><p class="MsoNormal"><span>389 LDAP</span></p><p class="MsoNormal"><span>443 SSL</span></p>
+                                    <!--?lit$5161758636$-->
+                                </th>
+                                <!---->
+                   </tr>  
+                    <!---->
+                </tbody></table>
+                </div>
+            </div>
+        <div>
+        </div>
+        </div></div></table-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="f5b74da6-3be7-46e9-b8c6-1c9c30af434c" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="f5b74da6-3be7-46e9-b8c6-1c9c30af434c" class="f5b74da6-3be7-46e9-b8c6-1c9c30af434c block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="f5b74da6-3be7-46e9-b8c6-1c9c30af434c" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="dc89c79b-6d03-46e0-beb0-8d04c0322558" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="dc89c79b-6d03-46e0-beb0-8d04c0322558" class="component text dc89c79b-6d03-46e0-beb0-8d04c0322558  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><h2>Recursos necessários</h2> <p class="Bulletlevel1"><span style="font-size:7.0pt;line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>PC com o <b>CSE-LABVM</b> instalado no VirtualBox</p> <h2>Instruções</h2> <h2> Etapa 1: Abra uma janela de terminal no CSE-LABVM.</h2> <p class="SubStepAlpha">a.<span> </span>Inicie o <b>CSE-LABVM.</b></p> <p class="SubStepAlpha">b.<span> </span>Clique duas vezes no ícone <b>Terminal</b> para abrir um terminal.</p> <h2>Etapa 2: Executar o Nmap.</h2> <p class="BodyTextL25">No prompt de comando, digite o seguinte comando para executar uma verificação básica neste sistema:</p> <p class="CMD">cisco@labvm:~$ <b>nmap localhost</b></p> <p class="CMDOutput">Starting Nmap 7.80 ( https://nmap.org ) at 2021-03-19 14:14 UTC</p> <p class="CMDOutput">Nmap scan report for localhost (127.0.0.1)</p> <p class="CMDOutput">Host is up (0.000035s latency).</p> <p class="CMDOutput">Other addresses for localhost (not scanned): ::1</p> <p class="CMDOutput">Not shown: 997 closed ports</p> <p class="CMDOutput">PORT&nbsp;&nbsp;&nbsp; STATE SERVICE</p> <p class="CMDOutput">22/tcp&nbsp; open&nbsp; ssh</p> <p class="CMDOutput">23/tcp&nbsp; open&nbsp; telnet</p> <p class="CMDOutput">631/tcp open&nbsp; ipp</p> <p class="CMDOutput">Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds</p> <p class="BodyTextL25">Os resultados são uma varredura das primeiras 1024 portas TCP.</p> <h4 class="pageTracer-h4-title-hide">Perguntas:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="a4b9fba7-9e47-4414-a314-d56d4c21c082" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="a4b9fba7-9e47-4414-a314-d56d4c21c082" class="a4b9fba7-9e47-4414-a314-d56d4c21c082 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="a4b9fba7-9e47-4414-a314-d56d4c21c082" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="d877dad8-b5e7-4835-af5a-e9ca68c160ba" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="d877dad8-b5e7-4835-af5a-e9ca68c160ba" class="component opentextbox d877dad8-b5e7-4835-af5a-e9ca68c160ba  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="d877dad8-b5e7-4835-af5a-e9ca68c160ba" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL25">Quais portas TCP estão abertas?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Portas 22, 23 e 631</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="04a518ba-9b06-40b8-b83d-55a604189fbf" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="04a518ba-9b06-40b8-b83d-55a604189fbf" class="04a518ba-9b06-40b8-b83d-55a604189fbf block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="04a518ba-9b06-40b8-b83d-55a604189fbf" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="ac6c3147-4e4f-4904-a32e-621a7842a829" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="ac6c3147-4e4f-4904-a32e-621a7842a829" class="component opentextbox ac6c3147-4e4f-4904-a32e-621a7842a829  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="ac6c3147-4e4f-4904-a32e-621a7842a829" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL25">Forneça uma descrição do serviço associado a cada porta aberta. </p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">A porta 22 - SSH (Secure Shell) é um protocolo de administração remota usado para controlar e modificar um servidor remoto pela Internet. O SSH autentica o usuário remoto e usa criptografia para criptografar todas as comunicações de e para o servidor remoto. Porta 23 - Telnet fornece uma interface de linha de comando para comunicação com um servidor remoto e transmite usando texto não criptografado (não há criptografia) Porta 631 - CUPS permite que um computador atue como um servidor de impressão. Um sistema executando o CUPS pode aceitar trabalhos de impressão de clientes e enviá-los para a impressora apropriada. O CUPS usa IPP (Internet Printing Protocol). </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="4439bdec-b831-41c3-81e8-2f3c52874a0e" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="4439bdec-b831-41c3-81e8-2f3c52874a0e" class="4439bdec-b831-41c3-81e8-2f3c52874a0e block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="4439bdec-b831-41c3-81e8-2f3c52874a0e" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="e5daffab-89ef-44b6-ae56-7a772dc24713" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="e5daffab-89ef-44b6-ae56-7a772dc24713" class="component opentextbox e5daffab-89ef-44b6-ae56-7a772dc24713  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="e5daffab-89ef-44b6-ae56-7a772dc24713" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL25">Pesquise as vulnerabilidades associadas a cada uma dessas portas abertas. </p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">As respostas podem variar. Um usuário não autorizado só precisa do seu nome de usuário e senha para obter acesso a um servidor com uma porta SSH aberta. Você pode ver muitas tentativas de fazer login no servidor com logins padrão ou comuns para obter acesso. Outros alvos comuns são as portas 22 e 23 (SSH) e (Telnet). Essas portas são projetadas para fornecer acesso remoto autorizado a um host IP. A porta 23 é essencialmente insegura porque os dados são transferidos em texto sem formatação. A porta 22 é muito mais segura e é preferível ao se conectar a um host remoto. Essas portas podem ser utilizadas por criminosos digitais para realizar os seguintes tipos de atividades mal-intencionadas. - Obtenha acesso remoto autorizado a um host. - Plante backdoors e outros tipos de códigos mal-intencionados. - Visualize dados confidenciais e credenciais. - Realize um ataque man-in-the-middle (homem-no-meio). - Impacto na disponibilidade de outros serviços de host. A porta UDP 631 é um protocolo popular em redes TCP/IP. O termo CUPS (Common UNIX Printing System) é um serviço de impressão de rede modular para hosts Linux que permite que um computador atue como um servidor de impressão. O UPS consiste em um spooler e agendador de impressão, um sistema de filtro que converte os dados de impressão em um formato que a impressora entenderá e um sistema de back-end que envia esses dados para o dispositivo de impressão. Um usuário não autorizado pode executar comandos arbitrários com os privilégios do daemon do CUPS. Além disso, um DoS remoto pode fazer o servidor não responder. </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="012b3458-b61a-4d96-8edf-73cbed7305ec" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="012b3458-b61a-4d96-8edf-73cbed7305ec" class="012b3458-b61a-4d96-8edf-73cbed7305ec block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="012b3458-b61a-4d96-8edf-73cbed7305ec" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="8b2b5120-4146-4cc8-a6f1-2f6257f328dd" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="8b2b5120-4146-4cc8-a6f1-2f6257f328dd" class="component text 8b2b5120-4146-4cc8-a6f1-2f6257f328dd  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><h2>Etapa 3: Use privilégios administrativos com Nmap.</h2> <p class="SubStepAlpha">a.<span> </span>Digite o seguinte comando no terminal para verificar as portas UDP do computador (lembre-se, o Ubuntu diferencia maiúsculas de minúsculas) e digite a senha <b>password </b> quando solicitado:</p> <p class="CMD">cisco@labvm:~$ <b>sudo nmap -sU localhost</b></p> <p class="CMDOutput">[sudo]senha para cisco: </p> <p class="CMDOutput">Starting Nmap 7.80 ( https://nmap.org ) at 2021-03-19 14:18 UTC</p> <p class="CMDOutput">Nmap scan report for localhost (127.0.0.1)</p> <p class="CMDOutput">Host is up (0.0000020s latency).</p> <p class="CMDOutput">Other addresses for localhost (not scanned): ::1</p> <p class="CMDOutput">Not shown: 998 closed ports</p> <p class="CMDOutput">PORT STATE SERVICE </p> <p class="CMDOutput">631/udp&nbsp; open|filtered ipp</p> <p class="CMDOutput">5353/udp open|filtered zeroconf</p> <p class="CMDOutput">Nmap done: 1 IP address (1 host up) scanned in 1.32 seconds</p> <h4 class="pageTracer-h4-title-hide">Perguntas:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="e5595400-0927-490d-a431-0f0356f0026c" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="e5595400-0927-490d-a431-0f0356f0026c" class="e5595400-0927-490d-a431-0f0356f0026c block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="e5595400-0927-490d-a431-0f0356f0026c" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="5895f735-4792-4679-a908-3c8bad25af67" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="5895f735-4792-4679-a908-3c8bad25af67" class="component opentextbox 5895f735-4792-4679-a908-3c8bad25af67  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="5895f735-4792-4679-a908-3c8bad25af67" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">Quais portas UDP estão abertas?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Portas 68, 631 e 5353 </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="0f745473-7f02-4abe-b72e-9bf9944a6c9c" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="0f745473-7f02-4abe-b72e-9bf9944a6c9c" class="0f745473-7f02-4abe-b72e-9bf9944a6c9c block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="0f745473-7f02-4abe-b72e-9bf9944a6c9c" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="6ae43f69-9b11-4e09-ac41-bf81b4468083" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="6ae43f69-9b11-4e09-ac41-bf81b4468083" class="component opentextbox 6ae43f69-9b11-4e09-ac41-bf81b4468083  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="6ae43f69-9b11-4e09-ac41-bf81b4468083" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">Descreva a finalidade dos serviços UDP associados a cada porta.</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">As Portas 67 e 68 fornecem serviços de Dynamic Host Configuration Protocol (DHCP) cliente-servidor. O DHCP é um protocolo de gerenciamento de rede usado em redes de Internet Protocol (IP). Ele atribui dinamicamente um endereço IP e outros parâmetros de configuração de rede ao host da rede. Essas informações são necessárias para que os hosts IP se comuniquem com outros hosts nas redes IP.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="357223e9-353f-4dba-9f32-53abd0b6160c" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="357223e9-353f-4dba-9f32-53abd0b6160c" class="357223e9-353f-4dba-9f32-53abd0b6160c block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="357223e9-353f-4dba-9f32-53abd0b6160c" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="a42dbbdb-fa7b-4b50-8e55-758b618706bd" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="a42dbbdb-fa7b-4b50-8e55-758b618706bd" class="component opentextbox a42dbbdb-fa7b-4b50-8e55-758b618706bd  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="a42dbbdb-fa7b-4b50-8e55-758b618706bd" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">Pesquise as vulnerabilidades associadas a cada uma dessas portas abertas.</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">As respostas podem variar. Uma porta 68 aberta fornece serviços de Dynamic Host Configuration Protocol (DHCP). Essa porta permite que hackers interrompam o endereçamento de rede dinâmico e pode ser usada para falsificação de rede e execução remota de código. Uma porta 631 aberta permite que invasores digitais causem uma negação de serviço e possivelmente executem códigos arbitrários. Uma porta 5353 aberta é usada pelo sistema de Multicast Domain Name System (mDNS) que permite que hosts resolvam nomes de host para endereços IP em redes pequenas que não incluem um servidor de nome. No entanto, se a porta mDNS 5353 for exposta à Internet, os invasores podem consultar o serviço para coletar informações sobre o servidor, bem como iniciar um ataque de DoS falsificando um alvo e inundando a rede com solicitações de mDNS.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="1c938f9f-e596-48bc-823e-2cb59462b2e4" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="1c938f9f-e596-48bc-823e-2cb59462b2e4" class="1c938f9f-e596-48bc-823e-2cb59462b2e4 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="1c938f9f-e596-48bc-823e-2cb59462b2e4" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="3fbd2993-22bc-447c-a920-ee667ba070dc" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="3fbd2993-22bc-447c-a920-ee667ba070dc" class="component text 3fbd2993-22bc-447c-a920-ee667ba070dc  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><p class="SubStepAlpha">b.<span> </span>Digite o seguinte comando no terminal:</p> <p class="CMD" style="page-break-after:avoid">cisco@labvm:~$ <b>nmap –sV localhost</b></p> <p class="CMDOutput">Starting Nmap 7.80 ( https://nmap.org ) at 2021-03-19 14:19 UTC</p> <p class="CMDOutput">Nmap scan report for localhost (127.0.0.1)</p> <p class="CMDOutput">Host is up (0.000038s latency).</p> <p class="CMDOutput">Other addresses for localhost (not scanned): ::1</p> <p class="CMDOutput">Not shown: 997 closed ports</p> <p class="CMDOutput">PORT&nbsp;&nbsp;&nbsp; STATE SERVICE VERSION</p> <p class="CMDOutput">22/tcp&nbsp; open&nbsp; ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)</p> <p class="CMDOutput">23/tcp&nbsp; open&nbsp; telnet&nbsp; Linux telnetd</p> <p class="CMDOutput">631/tcp open&nbsp; ipp CUPS 2.3</p> <p class="CMDOutput">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</p> <p class="CMDOutput">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</p> <p class="CMDOutput">Nmap done: 1 IP address (1 host up) scanned in 6.34 seconds</p> <p class="BodyTextL50">Usar a opção <b>–sV</b> com o comando <b>nmap</b> executa uma detecção de versão que você pode usar para pesquisar vulnerabilidades.</p> <h2>Etapa 4: Capturar chaves SSH.</h2> <p class="SubStepAlpha">a.<span> </span>Digite o seguinte comando no terminal para iniciar uma verificação de script:</p> <p class="CMD"> cisco@labvm:~$ <b>nmap –A localhost</b></p> <p class="CMDOutput">Starting Nmap 7.80 ( https://nmap.org ) at 2021-03-19 14:21 UTC</p> <p class="CMDOutput">Nmap scan report for localhost (127.0.0.1)</p> <p class="CMDOutput">Host is up (0.000037s latency).</p> <p class="CMDOutput">Other addresses for localhost (not scanned): ::1</p> <p class="CMDOutput">Not shown: 997 closed ports</p> <p class="CMDOutput">PORT&nbsp;&nbsp;&nbsp; STATE SERVICE VERSION</p> <p class="CMDOutput">22/tcp&nbsp; open&nbsp; ssh OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)</p> <p class="CMDOutput">| ssh-hostkey: </p> <p class="CMDOutput">|&nbsp;&nbsp; 3072 56:68:77:00:41:7f:50:17:5b:73:82:36:47:c4:bc:2d (RSA)</p> <p class="CMDOutput">|&nbsp;&nbsp; 256 0e:52:78:ba:08:2a:df:e5:be:1b:07:a7:98:3a:c8:50 (ECDSA)</p> <p class="CMDOutput">|_&nbsp; 256 f7:9e:03:10:96:94:cc:f4:4f:2a:f2:7c:6a:37:c1:6f (ED25519)</p> <p class="CMDOutput">23/tcp&nbsp; open&nbsp; telnet&nbsp; Linux telnetd</p> <p class="CMDOutput">631/tcp open&nbsp; ipp CUPS 2.3</p> <p class="CMDOutput">| http-robots.txt: 1 disallowed entry </p> <p class="CMDOutput">|_/</p> <p class="CMDOutput">|_http-server-header: CUPS/2.3 IPP/2.1</p> <p class="CMDOutput">|_http-title: Home - CUPS 2.3.1</p> <p class="CMDOutput">Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</p> <p class="CMDOutput">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</p> <p class="CMDOutput">Nmap done: 1 IP address (1 host up) scanned in 13.37 seconds</p> <p class="BodyTextL25">Você capturou as chaves SSH para o sistema host. O comando executa um conjunto de scripts incorporados no Nmap para testar vulnerabilidades específicas.</p> <h4 class="pageTracer-h4-title-hide">Perguntas:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="a63f59ff-3207-4a64-90f2-e48a3d982454" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="a63f59ff-3207-4a64-90f2-e48a3d982454" class="a63f59ff-3207-4a64-90f2-e48a3d982454 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="a63f59ff-3207-4a64-90f2-e48a3d982454" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="ea066db8-27fb-4449-8bc4-aedadcef6501" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="ea066db8-27fb-4449-8bc4-aedadcef6501" class="component opentextbox ea066db8-27fb-4449-8bc4-aedadcef6501  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="ea066db8-27fb-4449-8bc4-aedadcef6501" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL25">Quais são os valores das chaves de host SSH?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p>| ssh-hostkey:</p><p>| 3072 56:68:77:00:41:7f:50:17:5b:73:82:36:47:c4:bc:2d (RSA)</p><p>| 256 0e:52:78:ba:08:2a:df:e5:be:1b:07:a7:98:3a:c8:50 (ECDSA)</p><p>|_ 256 f7:9e:03:10:96:94:cc:f4:4f:2a:f2:7c:6a:37:c1:6f (ED25519)</p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="79997fab-0b4b-4541-b8df-9fed043c5ea9" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="79997fab-0b4b-4541-b8df-9fed043c5ea9" class="79997fab-0b4b-4541-b8df-9fed043c5ea9 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="79997fab-0b4b-4541-b8df-9fed043c5ea9" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="7a6e2c1b-8792-40c6-be2b-b8570b30c7bf" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="7a6e2c1b-8792-40c6-be2b-b8570b30c7bf" class="component opentextbox 7a6e2c1b-8792-40c6-be2b-b8570b30c7bf  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="7a6e2c1b-8792-40c6-be2b-b8570b30c7bf" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL25">Como um invasor usaria essas informações?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Essas informações podem ser usadas para obter acesso remoto não autorizado ao host de destino.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="e569f9f4-94d3-403d-8f40-968cc0a8a6b0" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="e569f9f4-94d3-403d-8f40-968cc0a8a6b0" class="e569f9f4-94d3-403d-8f40-968cc0a8a6b0 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="e569f9f4-94d3-403d-8f40-968cc0a8a6b0" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="9198544d-91b4-4049-8d02-8ed291fdc9d3" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="9198544d-91b4-4049-8d02-8ed291fdc9d3" class="component opentextbox 9198544d-91b4-4049-8d02-8ed291fdc9d3  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="9198544d-91b4-4049-8d02-8ed291fdc9d3" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL25">Como você pode impedir que o invasor digital roube as principais informações?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Envie as chaves por telefone, texto ou e-mail. Isso é chamado de troca de chaves fora da banda.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="30a3cbc4-ec6c-42ca-840e-a7dc4a95e94a" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 6.66667%;"><!---->
+                
+                <div data-socialgoodpulse-id="30a3cbc4-ec6c-42ca-840e-a7dc4a95e94a" class="30a3cbc4-ec6c-42ca-840e-a7dc4a95e94a block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="30a3cbc4-ec6c-42ca-840e-a7dc4a95e94a" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="599828a2-ef6e-4e1e-802c-026adb3c9d1f" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="599828a2-ef6e-4e1e-802c-026adb3c9d1f" class="component text 599828a2-ef6e-4e1e-802c-026adb3c9d1f  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><p class="SubStepAlpha">b.<span> </span>Insira o comando <b>man nmap</b> para abrir as páginas de manual do utilitário Nmap.</p> <p class="CMD">cisco@labvm:~$ <b>man nmap</b></p> <p class="CMDOutput"> NMAP(1)&nbsp;&nbsp; Nmap Reference Guide&nbsp; NMAP(1)</p> <p class="CMDOutput">NOME</p> <p class="CMDOutput">&nbsp;&nbsp; nmap - Network exploration tool and security / port scanner</p> <p class="CMDOutput">SYNOPSIS</p> <p class="CMDOutput">&nbsp;&nbsp; nmap [Scan Type...] [Options] {target specification}</p> <p class="CMDOutput">&lt;output omitted&gt;</p> <p class="BodyTextL25">Você pode usar este recurso para localizar outras opções disponíveis para o utilitário Nmap. A qualquer momento, digite <b>q</b> ou <b>quit</b> para sair das páginas de manual. Você pode ler as páginas de manual disponíveis para qualquer serviço ou comando inserindo o comando <b>man</b> seguido pelo nome do utilitário ou comando.</p> <h2>Resumo</h2> <p class="BodyTextL25"><b>Portas altamente vulneráveis</b></p> <p class="BodyTextL25">Muitas portas devem estar abertas para que um host funcione em um ambiente de computação e comunicação normal. No entanto, essas portas comuns devem ser monitoradas regularmente para garantir que não sejam comprometidas e sejam usadas para atacar uma vítima, fornecer acesso remoto não autorizado ou sejam usadas para invadir um host para participar de um ataque distribuído a outras vítimas. </p> <p class="BodyTextL25">A porta 21 do TCP é uma das portas mais populares para invasores. Essa porta foi projetada para transmitir e receber arquivos de um host para outro. Os invasores usam essa porta para realizar os seguintes tipos de atividades mal-intencionadas: </p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Transferência, exclusão e modificação não autorizadas de arquivos</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Transferência não autorizada de códigos ou payloads mal-intencionados</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Autenticação anônima para hospedar sistemas de arquivos</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Injetar scripts mal-intencionados como ataques XSS</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Impacto na disponibilidade de outros serviços de host</p> <p class="BodyTextL25">Outro alvo comum é a porta 23 (Telnet). Essa porta fornece acesso remoto autorizado a um host IP. Essa porta apresenta uma vulnerabilidade porque os dados transferidos estão em texto sem formatação. Os invasores usam essa porta para realizar os seguintes tipos de atividades mal-intencionadas:</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Obter acesso remoto não autorizado a um host</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Plantar backdoors e outros tipos de código mal-intencionado</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Visualizar credenciais e dados confidenciais </p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Realizar um ataque man-in-the-middle (homem-no-meio).</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Impacto na disponibilidade de outros serviços de host</p> <p class="BodyTextL25">Outra porta favorita dos invasores é a porta 53. Essa porta é usada para DNS ou consulta de nomes de domínio ao navegar na Internet ou transferir informações. Essa porta é a rota de saída mais comum para o invasor após um ataque. Como essa porta raramente é monitorada, os invasores usam essa porta para sair após limpar seus arquivos, logs e outras informações para encobrir seus rastros.</p> <p class="BodyTextL25">A porta mais comum usada pelos invasores é a porta TCP 80. Essa porta transfere páginas da Web entre um servidor Web e o navegador host. Os invasores usam essa porta para realizar os seguintes tipos de atividades mal-intencionadas:</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Transferência, exclusão e modificação não autorizadas de dados</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Transferência não autorizada de códigos ou payloads mal-intencionados</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Injeção de scripts mal-intencionados (como um ataque XSS)</p> <p class="SubStepNum"><span style="font-family:Symbol">·</span><span>&nbsp;&nbsp;</span>Impactar na disponibilidade de outros serviços de host</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$5161758636$-->
+                    </div>
+                </div>
+            </div>
+        <sgpluse-opentextboxcontroller-view modelid="" is-touch="false" fullscreen="true" device="medium" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+            <div class="openTextBoxController__button-container">
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__showButton show-answer show"><!--?lit$5161758636$-->Mostrar todas as respostas</button>    
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar todas as respostas</button>    
+                <button class="btn-text resetbtn openTextBoxController__resetButton"><!--?lit$5161758636$-->Limpar minhas respostas</button>         
+            </div>
+            <!--?lit$5161758636$--><hr>
+            <!--?lit$5161758636$-->
+                <div class="post-text" tabindex="0">
+                    <!--?lit$5161758636$--><span> <span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public </span> </span>
+                </div>
+                   
+        </sgpluse-opentextboxcontroller-view><script></script></body>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      var event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        .querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      .querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+        let checkButtonLabel = "check_button_label_placeHolder";
+        let hideButtonLabel = "hide_button_label_placeHolder";
+        document.querySelectorAll(".check__button").forEach(function (ele) {
+        let answerBox = document.querySelector(".check__solution")
+        if (!answerBox.classList.contains("check__hidden")) {
+          answerBox.classList.add("check__hidden");
+          ele.innerText = checkButtonLabel;
+        }
+          ele.addEventListener("click", function (e) {
+            if (answerBox.classList.contains("check__hidden")) {
+              answerBox.classList.remove("check__hidden")
+              ele.innerText = hideButtonLabel;
+            } else {
+              answerBox.classList.add("check__hidden")
+              ele.innerText = checkButtonLabel;
+            }
+          })
+        })
+    });
+  </script>
+  </html>

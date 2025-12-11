@@ -1,0 +1,2024 @@
+<!DOCTYPE html><html><head>
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+
+      .check__hidden {
+        display: none;
+      }
+
+      .check__button {
+        border: none;
+        border-radius: 6px !important;
+        background-color: #6abf4b;
+        color: #fff;
+        min-width: 100px;
+        margin: 0.625rem 0;
+        padding: 0.7rem;
+      }
+
+      .check__widget .check__solution .DevConfigGray {
+        background-color: rgb(214,216,220);
+        font-weight: bold;
+      }
+
+      .check-inner .check__widget .check__solution .DevConfigs {
+        margin: 0px;
+        line-height: 115%;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .check__solution  {
+        line-height: 1.5;
+      }
+      .mcq__inner .mcq__widget .mcq__widget-inner {
+        margin-block: 1rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item {
+        display: flex;
+        gap: 0.2rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item .mcq__item-label .mcq__item-text .screenReader-position-text{
+        display: none;
+      }
+      .opentabletextbox-inner .opentabletextBox__widget .openTableTextBox__answerText.answergray {
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox{
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox img{
+        margin-block: 1rem;
+        margin-left: initial;
+      }
+      .component__content .component__body-inner .pageTracer-h4-title-hide {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        font-size: 0px;
+        color: rgb(var(--neutral-2));
+        font-weight: normal;
+      }
+      .table-inner .table__widget table tr.TableHeading th, .table-inner .table__widget table tr.TableHeading td, .table-inner .table__widget table tr td.TableHeading, .opentabletextbox-table thead tr.TableHeading th, .opentabletextbox-table tbody tr.TableHeading td, .opentabletextbox-table tbody tr td.TableHeading {
+        background-color: #d6d8dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .CMD, .component__content .component__body-inner .CMDOutput, .component__content .component__body-inner .CMDOutput__table{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        margin-inline-start: 30px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      [dir="rtl"] .component__content .component__body-inner .CMDOutput__table span {
+        direction: ltr;
+        display: inline-block;
+      }
+      .openTextBox__inner .openTextBox__widget .CMD, .openTextBox__inner .openTextBox__widget .CMDOutput{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .openTextBox__inner .openTextBox__widget .DnTbold, .openTextBox__inner .openTextBox__widget .BodyTextL25Bold, .component__content .component__body-inner .BodyTextL25Bold, .component__content .component__body-inner .DnTbold, .table-inner .table__widget table tr .DnTbold {
+        font-weight: bold;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article 7d162de8-7e42-406e-9811-543d080c1406 remove-padding-top remove-padding-bottom is-complete ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$362749983$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="article__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="article__header ">
+              <div class="article__header-inner ">
+                  
+                    <!--?lit$362749983$--> <div class=" article__title ">
+                      <!--?lit$362749983$--><heading-view aria-hidden="true" id="7d162de8-7e42-406e-9811-543d080c1406-heading-view" headingtitle="Laboratório - Configurar recursos de segurança no Windows e Linux" modelid="7d162de8-7e42-406e-9811-543d080c1406" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="js-heading is-complete">
+        <div class="js-heading-inner" role="heading" id="article-heading" aria-level="2">
+        <span class="aria-label"> <!--?lit$362749983$-->Concluída &nbsp;<!--?lit$362749983$-->Laboratório - Configurar recursos de segurança no Windows e Linux</span>
+        </div>
+      </div>
+    </heading-view>
+                        <div tabindex="0" role="heading" class="article__title-inner " aria-level="2">
+                        <span class="accessibility-completion-indicator"><!--?lit$362749983$-->Concluída </span>
+                        <!--?lit$362749983$-->Laboratório - Configurar recursos de segurança no Windows e Linux</div>
+                      </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$362749983$--><!---->
+                                    <block-view modelid="d36c62bb-311b-49b8-a5ed-7bc61c553940" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="d36c62bb-311b-49b8-a5ed-7bc61c553940" class="d36c62bb-311b-49b8-a5ed-7bc61c553940 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="d36c62bb-311b-49b8-a5ed-7bc61c553940" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><text-view modelid="4cb36b6d-d95d-4474-8ecb-be50a176cb5a" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="4cb36b6d-d95d-4474-8ecb-be50a176cb5a" class="component text 4cb36b6d-d95d-4474-8ecb-be50a176cb5a  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$362749983$--><h1>Objetivos</h1> <p class="BodyTextL25Bold">Parte 1: Atualizar o Windows e o Linux </p> <p class="BodyTextL25Bold">Part 2: Política de Segurança Local do Windows</p> <p class="BodyTextL25Bold">Parte 3: Configurar regras de firewall</p> <p class="BodyTextL25Bold">Parte 4: Instalar e executar aplicativos</p> <h1>Recursos necessários</h1> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>1 PC com Windows 10.</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span> Esta máquina virtual CSE-LABVM</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Acesso à Internet</p> <h1>Histórico/Cenário</h1> <p class="BodyTextL25">Neste laboratório, você atualizará os sistemas Windows e Linux. Você vai configurar a política de segurança local e as regras de firewall no Windows. No Linux, você instalará dois aplicativos: chkrootkit e lynis.</p> <h1>Instruções</h1> <h2> Parte 1: Atualização do Windows e Linux</h2> <p class="BodyTextL25">As novas vulnerabilidades e métodos de ataque são descobertos o tempo todo. É uma boa ideia manter seu PC atualizado para mitigar a exploração das vulnerabilidades conhecidas.</p> <h3>Etapa 1: Verificar a conectividade entre o CSE-LABVM e o computador host do Windows.</h3> <p class="BodyTextL25">Nesta etapa, você verificará a conectividade com a Internet para baixar as atualizações. Além disso, você verificará a conectividade entre <b>CSE-LABVM</b> e Windows PC para poder executar tarefas posteriormente neste laboratório.</p> <p class="SubStepAlpha">a.<span> </span>Antes de iniciar o <b>CSE-LABVM</b>, selecione-o e escolha <b>Configurações</b> &gt; <b>Rede</b>. Para o <b>Adaptador 1</b>, altere a opção <b>Conectado a:</b> para <b>Adaptador em Ponte</b>. Em seguida, você pode escolher o adaptador. Muitos computadores têm dois adaptadores: um para redes sem fio e outro para redes com fio. Escolha o que o computador está usando para se conectar à Internet.</p> <p class="SubStepAlpha">b.<span> </span>Inicie o CSE-LABVM e aguarde até que ele seja inicializado.</p> <p class="SubStepAlpha">c.<span> </span>No CSE-LABVM, abra um terminal e digite <b>ip address</b> para determinar o Endereço IP. </p> <p class="SubStepAlpha">d.<span> </span>No computador host do Windows, abra um prompt de comando e digite <b>ipconfig</b> para determinar o Endereço IP.</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4> <p class="BodyTextL50">Registre o endereço IP para CSE-LABVM e Windows PC.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="b73d45e1-ccee-4290-b7d2-b5786ec64270" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="b73d45e1-ccee-4290-b7d2-b5786ec64270" class="b73d45e1-ccee-4290-b7d2-b5786ec64270 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="b73d45e1-ccee-4290-b7d2-b5786ec64270" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="175c73dd-ccb3-4b9b-846b-817e2e5326f2" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="175c73dd-ccb3-4b9b-846b-817e2e5326f2" class="component opentextbox 175c73dd-ccb3-4b9b-846b-817e2e5326f2  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="175c73dd-ccb3-4b9b-846b-817e2e5326f2" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">CSE-LABVM:</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Seu endereço IP varia, mas o endereço IP deve estar na mesma rede que o PC com Windows.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="42c057b5-2296-4ac9-91a0-5794076fe06d" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="42c057b5-2296-4ac9-91a0-5794076fe06d" class="42c057b5-2296-4ac9-91a0-5794076fe06d block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="42c057b5-2296-4ac9-91a0-5794076fe06d" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="9a46a3e5-e61c-42cf-8a4e-b93f44dd662d" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="9a46a3e5-e61c-42cf-8a4e-b93f44dd662d" class="component opentextbox 9a46a3e5-e61c-42cf-8a4e-b93f44dd662d  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="9a46a3e5-e61c-42cf-8a4e-b93f44dd662d" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">PC com Windows</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Seus endereços IP variam, mas os endereços IP para CSE-LABVM e Windows devem estar na mesma rede. Por exemplo, um endereço IP 192.168.68.131/24 na VM e um endereço IP 192.168.68.119/24 no host do Windows significa que eles estão na mesma rede 192.168.68.0/24. </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="e7adb58b-f885-47a6-b857-98e80ba336a8" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="e7adb58b-f885-47a6-b857-98e80ba336a8" class="e7adb58b-f885-47a6-b857-98e80ba336a8 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="e7adb58b-f885-47a6-b857-98e80ba336a8" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><text-view modelid="adcd8edb-f589-4581-96ed-7be1fcc0623c" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="adcd8edb-f589-4581-96ed-7be1fcc0623c" class="component text adcd8edb-f589-4581-96ed-7be1fcc0623c  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$362749983$--><p class="SubStepAlpha">e.<span> </span>Nos respectivos prompts de comando, faça ping em um site de sua escolha para verificar se o host do Windows e o <b>CSE-LABVM</b> podem acessar a Internet. </p> <p class="SubStepAlpha">f.<span>&nbsp; </span>Verifique se o host do Windows pode executar ping no <b>CSE-LABVM</b>. </p> <p class="SubStepAlpha">g.<span> </span>No <b>CSE-LABVM</b>, tente fazer ping no host do Windows. O <b>CSE-LABVM</b> pode não ser capaz de executar ping no host do Windows devido às configurações de firewall padrão no Windows. Você modificará a regra de firewall posteriormente neste laboratório para permitir pings pelo Firewall do Windows. Pressione <b>CTRL-C </b> para interromper os pings, se necessário. </p> <h3>Etapa 2: Verificação de Atualizações no Windows</h3> <p class="SubStepAlpha">a.<span> </span>No <b>Menu Iniciar do Windows</b>, pesquise por <b>checar por atualizações</b>.</p> <p class="SubStepAlpha">b.<span> </span>Na janela do <b>Windows Update</b>, é possível revisar as atualizações opcionais e o histórico de atualizações. Explore todas as opções disponíveis relacionadas ao Windows Update e responda às seguintes perguntas. </p> <h4 class="pageTracer-h4-title-hide">Perguntas:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="52856a03-f51b-42a3-aab8-a0319e90a109" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="52856a03-f51b-42a3-aab8-a0319e90a109" class="52856a03-f51b-42a3-aab8-a0319e90a109 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="52856a03-f51b-42a3-aab8-a0319e90a109" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="b19d69ae-cdb1-4bc5-bbd9-6c45c39cdd71" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="b19d69ae-cdb1-4bc5-bbd9-6c45c39cdd71" class="component opentextbox b19d69ae-cdb1-4bc5-bbd9-6c45c39cdd71  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="b19d69ae-cdb1-4bc5-bbd9-6c45c39cdd71" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">Quando foi a última vez que o sistema procurou por atualizações?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">A Resposta pode variar. Provavelmente é nos últimos 7 dias. </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="aab03acc-b751-40c9-b37e-6572255695df" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="aab03acc-b751-40c9-b37e-6572255695df" class="aab03acc-b751-40c9-b37e-6572255695df block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="aab03acc-b751-40c9-b37e-6572255695df" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="a72234a2-a5dd-4bbe-abe6-c09ddc0822eb" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="a72234a2-a5dd-4bbe-abe6-c09ddc0822eb" class="component opentextbox a72234a2-a5dd-4bbe-abe6-c09ddc0822eb  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="a72234a2-a5dd-4bbe-abe6-c09ddc0822eb" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">Quais são as horas ativas atuais? O que o Windows fará fora do horário de trabalho?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">A resposta varia. Provavelmente é entre 8h e 17h. O Windows pode reiniciar o sistema automaticamente além do horário ativo.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="8c0a7fe0-87d2-4c40-96a6-466346e39327" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="8c0a7fe0-87d2-4c40-96a6-466346e39327" class="8c0a7fe0-87d2-4c40-96a6-466346e39327 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="8c0a7fe0-87d2-4c40-96a6-466346e39327" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><text-view modelid="bd207ad9-902f-400c-9136-d96721b5c090" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="bd207ad9-902f-400c-9136-d96721b5c090" class="component text bd207ad9-902f-400c-9136-d96721b5c090  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$362749983$--><h3>Etapa 3: Update e Upgrade do Linux</h3> <p class="SubStepAlpha">a.<span> </span>No <b>CSE-LABVM</b>, digite o comando <b>apt-get</b> para ver a lista de comandos disponíveis. O <b>comando apt-get update</b> sempre deve ser feito antes de uma atualização. </p> <p class="SubStepAlpha">b.<span> </span>Insira o comando <b>sudo apt-get update</b> para ressincronizar os arquivos de índice do pacote de suas fontes. Digite a senha <b>password</b> quando solicitado.</p> <p class="CMD">cisco@labvm:~$ <b>sudo apt-get update</b></p> <p class="CMD">[sudo]senha para cisco:</p> <p class="SubStepAlpha">c.<span> </span>No terminal, digite o comando <b>sudo apt-get upgrade</b> para recuperar e atualizar os pacotes atualmente instalados com novas versões disponíveis. Este comando não removerá os pacotes atualmente instalados. Se a versão mais recente não puder ser atualizada, nenhuma alteração será feita nos pacotes.</p> <p class="BodyTextL50">Digite a senha <b>password</b> quando solicitado. Responda <b>y</b> quando for perguntado se você deseja continuar. Este processo pode levar de 10 a 20 minutos.</p> <p class="CMD">cisco@labvm:~$ <b>sudo apt-get upgrade</b></p> <p class="CMD">[sudo]senha para cisco:</p> <p class="CMD">Lendo listas de pacotes ... Concluído</p> <p class="CMD">Criando uma árvore de dependência&nbsp;&nbsp; </p> <p class="CMD">Lendo informações de estado ... Concluído</p> <p class="CMD">Calculando a atualização ... Concluído</p> <p class="CMD">&lt;output omitted&gt;</p> <p class="CMD">É necessário obter 479 MB de arquivos.</p> <p class="CMD">Após essa operação, 53,7 MB de espaço em disco adicional serão usados.</p> <p class="CMD">Deseja continuar? [Y/n] <b>Y</b></p> <h2>Parte 2: Política de segurança local do Windows (opcional)</h2> <p class="BodyTextL25">A política de segurança local do Windows de um sistema é um conjunto de informações sobre a segurança do seu computador. Nesta parte, você definirá a política de senha local, as configurações de bloqueio de conta e a política de auditoria. </p> <p class="BodyTextL25"><b>Observação</b>: a política de segurança local vem apenas com as edições do Windows Pro ou Enterprise. Se você tiver a edição Home, poderá pesquisar na Internet por tutoriais sobre "Como habilitar a política de segurança local (secpol.msc)." Por exemplo, o site majorgeeks.com tem um excelente tutorial. Se você não tem permissão ou prefere não alterar a Política de segurança local no host do Windows, leia esta parte e siga para a próxima parte.</p> <h3>Etapa 1: Configurar a política de senha local no Windows</h3> <p class="BodyTextL25">Você determinou que a política de segurança para senha é a seguinte:</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Um usuário deve usar uma senha exclusiva por, no mínimo, duas alterações de senha.</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>As senhas precisam ter pelo menos oito caracteres.</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>As senhas devem ser alteradas a cada 90 dias.</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Só pode alterar a senha uma vez por dia.</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Uma senha deve consistir em três destes quatro elementos:</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Pelo menos um caractere alfabético em letras minúsculas.</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Pelo menos um caractere alfabético em letras maiúsculas.</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Pelo menos um caractere numérico. </p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Pelo menos um caractere de símbolo. </p> <p class="SubStepAlpha">a.<span> </span>Navegue até a <b>Política de Segurança Local</b> pesquisando e abrindo o <b>Painel de Controle</b>. </p> <p class="SubStepAlpha">b.<span> </span>Clique em <b>Ferramentas Administrativas</b> &gt; Pesquise por <b>Política de Segurança Local</b></p> <p class="SubStepAlpha">c.<span> </span>Abra a <b>Política de Segurança Local</b>. </p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="2920967f-0fb4-4f47-a19e-1e1c6950eaa5" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="2920967f-0fb4-4f47-a19e-1e1c6950eaa5" class="2920967f-0fb4-4f47-a19e-1e1c6950eaa5 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="2920967f-0fb4-4f47-a19e-1e1c6950eaa5" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="54b2d2cc-8274-4e33-ac5d-ce7c1c2c081b" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="54b2d2cc-8274-4e33-ac5d-ce7c1c2c081b" class="component opentextbox 54b2d2cc-8274-4e33-ac5d-ce7c1c2c081b  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="54b2d2cc-8274-4e33-ac5d-ce7c1c2c081b" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">Liste algumas configurações de política de segurança:</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Políticas de conta, Políticas locais, Windows Defender Firewall com segurança avançada, Políticas do Network List Manager, Políticas de chave pública , Políticas de chave pública, Políticas de restrição de software e Políticas de controle de aplicativos. </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="5eff4414-0858-431d-a6aa-7ef1c63e4ebf" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="5eff4414-0858-431d-a6aa-7ef1c63e4ebf" class="5eff4414-0858-431d-a6aa-7ef1c63e4ebf block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="5eff4414-0858-431d-a6aa-7ef1c63e4ebf" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><text-view modelid="f559519e-022d-41d7-851d-5357521f5a55" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="f559519e-022d-41d7-851d-5357521f5a55" class="component text f559519e-022d-41d7-851d-5357521f5a55  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$362749983$--><p class="SubStepAlpha">d.<span> </span>Expanda <b>Políticas de Conta</b> e clique em <b>Política de Senha</b>. Seis políticas serão exibidas no painel direito com as configurações de segurança padrão associadas. </p> <p class="SubStepAlpha">e.<span> </span>A primeira política, <b>Aplicar histórico de senhas</b>, é usada para definir o número de senhas exclusivas que o usuário deve inserir antes de poder reutilizar uma senha. Clique duas vezes em <b>Aplicar histórico de senhas</b> para abrir a janela <b>Propriedades de Aplicar histórico de senhas</b>. Defina o valor como <b>2</b>. </p> <p class="SubStepAlpha">f.<span>&nbsp; </span>Preencha os valores que você deve definir na <b>Política de Segurança Local</b> para as configurações de segurança restantes da <b>Política de Senha</b>.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="998682e8-419c-47b9-b356-aed147a9fec2" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="998682e8-419c-47b9-b356-aed147a9fec2" class="998682e8-419c-47b9-b356-aed147a9fec2 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="998682e8-419c-47b9-b356-aed147a9fec2" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentabletextbox-view modelid="ff9824cb-1d16-4e78-be54-daa9f25aa5b6" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+      <div class="component">
+        <div class="opentabletextbox-inner component__inner">
+          <div data-socialgoodpulse-id="ff9824cb-1d16-4e78-be54-daa9f25aa5b6" class="component opentabletextbox ff9824cb-1d16-4e78-be54-daa9f25aa5b6  is-full is-complete  ">
+            <div class="component__header-container">
+              <div data-socialgoodpulse-id="ff9824cb-1d16-4e78-be54-daa9f25aa5b6" class="opentabletextbox ">
+                <base-view type="component" lowercase_component="openTableTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTableTextBox__header">
+              <div class="component__header-inner openTableTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+              </div>
+            </div>
+            <div class="component__widget opentabletextBox__widget question-container ">
+              <div class="openTableTextBox__preText">
+                <!--?lit$362749983$-->
+              </div>
+              <div class="opentabletextbox-container openTableTextBox__table-container">
+                <table class="opentabletextbox-table" tabindex="0">
+                  <!--?lit$362749983$-->
+                        <thead class="openTableTextBox__table-header">
+                          <tr>
+                            <!--?lit$362749983$--><!----><th tabindex="0" scope="col"><!--?lit$362749983$-->Política</th><!----><!----><th tabindex="0" scope="col"><!--?lit$362749983$-->Configuração de Segurança</th><!---->
+                          </tr>
+                        </thead>
+                  <tbody>
+                    <!--?lit$362749983$--><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$362749983$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$--><div><!--?lit$362749983$-->Aplicar histórico de senhas</div>
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!----><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$362749983$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$--><div><!--?lit$362749983$-->Tempo de vida máximo da senha</div>
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!----><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$362749983$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$--><div><!--?lit$362749983$-->Tempo de vida mínimo da senha</div>
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!----><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$362749983$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$--><div><!--?lit$362749983$-->Comprimento mínimo da senha</div>
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!----><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$362749983$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$--><div><!--?lit$362749983$-->A senha deve atender a requisitos de complexidade</div>
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!----><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$362749983$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$--><div><!--?lit$362749983$-->Armazenar senhas usando criptografia reversível</div>
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$362749983$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!---->
+                  </tbody>
+                </table>
+              </div>
+              <div class="openTableTextBox__answerText answergray openTableTextBox__table-container is-full hide">
+                <table class="opentabletextbox-table openTableTextBox__table-inner" tabindex="0">
+                  <!--?lit$362749983$-->
+                        <thead class="openTableTextBox__table-header">
+                          <tr tabindex="0">
+                            <!--?lit$362749983$--><!----><th scope="col"><!--?lit$362749983$-->Política</th><!----><!----><th scope="col"><!--?lit$362749983$-->Configuração de Segurança</th><!---->
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <!--?lit$362749983$--><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$362749983$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->Aplicar histórico de senhas</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->2</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!----><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$362749983$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->Tempo de vida máximo da senha</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->90</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!----><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$362749983$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->Tempo de vida mínimo da senha</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->1</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!----><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$362749983$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->Comprimento mínimo da senha</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->8</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!----><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$362749983$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->A senha deve atender a requisitos de complexidade</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->Habilitado</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!----><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$362749983$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->Armazenar senhas usando criptografia reversível</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$362749983$-->Desativado</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!---->
+                      </tbody>
+                </table>
+              </div>
+              <div class="btn__container">
+                <button class="btn-text openTableTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>
+                <button class="btn-text openTableTextBox__showButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>
+              </div>
+              <div class="openTableTextBox__postText">
+                <!--?lit$362749983$-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </opentabletextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="025014d1-4a26-4481-ac3d-7e5a2b4b8a97" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="025014d1-4a26-4481-ac3d-7e5a2b4b8a97" class="025014d1-4a26-4481-ac3d-7e5a2b4b8a97 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="025014d1-4a26-4481-ac3d-7e5a2b4b8a97" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><text-view modelid="81b3eab4-4752-4d57-9308-cd567f6783b8" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="81b3eab4-4752-4d57-9308-cd567f6783b8" class="component text 81b3eab4-4752-4d57-9308-cd567f6783b8  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$362749983$--><p class="BodyTextL50"><b>Observação</b>: a configuração de segurança <b>Armazenar senhas usando criptografia reversível</b> sempre deve ser desativada. Armazenar senhas que usam criptografia reversível é basicamente o mesmo que armazenar versões de texto simples das senhas. Por esse motivo, esta política nunca deve ser ativada, a menos que os requisitos de aplicativos superem a necessidade de proteger as informações de senha.</p> <p class="SubStepAlpha">g.<span> </span>Clique duas vezes em cada uma das políticas e defina os valores de acordo com as entradas da tabela acima.</p> <h3>Etapa 2: Testar as configurações de segurança da diretiva de senhas. </h3> <p class="BodyTextL25">Tente mudar a senha para testar as configurações de segurança da diretiva de senhas. Experimente uma nova senha que não atenda aos requisitos de tamanho ou complexidade.</p> <p class="SubStepAlpha">a.<span> </span> No menu Iniciar, pesquise <b>Alterar sua senha</b>.</p> <p class="SubStepAlpha">b.<span> </span>Clique em <b>Senha</b>. Clique em <b>Alterar</b></p> <p class="SubStepAlpha">c.<span> </span>Digite sua senha atual. Clique em <b>Avançar</b> para continuar.</p> <p class="SubStepAlpha">d.<span> </span>Digite sua nova senha duas vezes e forneça uma dica de senha. Verifique se a nova senha não atende aos requisitos de comprimento ou complexidade configurados na etapa anterior. Clique em <b>Avançar</b> para continuar.</p> <p class="SubStepAlpha"><b>e.<span> </span></b>Clique em <b>Concluir.</b> Você deve receber uma mensagem informando que sua nova senha não atende aos requisitos da política de senha. clique em <b>Fechar</b>para continuar.</p> <h3>Etapa 3: Configurar as opções de segurança da Política de Bloqueio de Conta.</h3> <p class="SubStepAlpha">a.<span> </span>Volte para a janela Política de segurança local.</p> <p class="SubStepAlpha">b.<span> </span>Expanda as <b>Políticas de Conta</b> e clique em <b>Política de Bloqueio de Conta</b>. Três políticas são exibidas no painel direito com suas configurações de segurança padrão associadas. </p> <p class="SubStepAlpha">c.<span> </span>Altere as configurações padrão para o seguinte:</p> <p class="Bulletlevel2"><span style="font-family:&quot;Courier New&quot;">o<span>&nbsp;&nbsp;</span></span>Um usuário deve esperar 10 minutos para o contador de bloqueio ser reiniciado.</p> <p class="Bulletlevel2"><span style="font-family:&quot;Courier New&quot;">o<span>&nbsp;&nbsp;</span></span>O acesso dos usuários ao computador é bloqueado após 5 tentativas de inserir a senha correta.</p> <h4 class="pageTracer-h4-title-hide">Perguntas:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="f1d1ee18-a179-4730-aa38-989a54785078" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="f1d1ee18-a179-4730-aa38-989a54785078" class="f1d1ee18-a179-4730-aa38-989a54785078 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="f1d1ee18-a179-4730-aa38-989a54785078" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="f5359dcc-5e87-4f06-9834-e9008c426f1f" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="f5359dcc-5e87-4f06-9834-e9008c426f1f" class="component opentextbox f5359dcc-5e87-4f06-9834-e9008c426f1f  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="f5359dcc-5e87-4f06-9834-e9008c426f1f" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">Quanto tempo o usuário tem que aguardar antes de tentar fazer login novamente?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">10 minutos.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="4c0324e9-36dd-473a-b00f-3325da595130" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="4c0324e9-36dd-473a-b00f-3325da595130" class="4c0324e9-36dd-473a-b00f-3325da595130 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="4c0324e9-36dd-473a-b00f-3325da595130" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="0045dcf8-a170-452e-b0d5-85969830e71c" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="0045dcf8-a170-452e-b0d5-85969830e71c" class="component opentextbox 0045dcf8-a170-452e-b0d5-85969830e71c  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="0045dcf8-a170-452e-b0d5-85969830e71c" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">Quantas vezes um usuário pode tentar fazer login antes que a conta seja bloqueada?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none"> Cinco tentativas</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="48baf6f1-fda8-411b-84f4-e9ca10c84a8a" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="48baf6f1-fda8-411b-84f4-e9ca10c84a8a" class="48baf6f1-fda8-411b-84f4-e9ca10c84a8a block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="48baf6f1-fda8-411b-84f4-e9ca10c84a8a" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><text-view modelid="25f5fe71-64ab-4734-a379-23a8f6d1eb42" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="25f5fe71-64ab-4734-a379-23a8f6d1eb42" class="component text 25f5fe71-64ab-4734-a379-23a8f6d1eb42  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$362749983$--><h3>Etapa 4: Configurar as opções de segurança da Política de Auditoria. </h3> <p class="SubStepAlpha">a.<span> </span>Expanda o menu <b>Políticas Locais</b> e clique em <b>Política de Auditoria</b>.</p> <p class="SubStepAlpha">b.<span> </span>Clique duas vezes para abrir as propriedades da <b>Auditoria de eventos de logon de conta</b>.</p> <p class="SubStepAlpha">c.<span> </span>Na guia <b>Configuração de Segurança Local</b>, observe as caixas de seleção para <b>Sucesso</b> e <b>Falha</b>. </p> <p class="SubStepAlpha">d.<span> </span>Clique na guia <b>Explicar</b> para saber mais sobre esta configuração de segurança. Clique em <b>OK</b> para fechar a janela <b>Propriedades</b>.</p> <p class="SubStepAlpha">e.<span> </span>Continue a analisar cada configuração de segurança. Clique na guia <b>Explicar</b> de cada uma delas e leia o que ela faz.</p> <h2>Parte 3: Configurar regras de firewall</h2> <p class="BodyTextL25">O tráfego viaja dentro e fora dos dispositivos usando portas. O firewall controla o fluxo do tráfego. Pense no firewall como um agente de segurança que controla o tráfego de entrada e de saída com base nas regras de firewall.</p> <p class="BodyTextL25">Nesta parte, você configurará o Windows Defender Firewall em um Windows. </p> <h3>Etapa 1: Investigar o Windows Defender Firewall</h3> <p class="SubStepAlpha">a.<span> </span>No menu Iniciar, pesquise e abra o <b>Windows Defender Firewall</b>. O estado normal para o Firewall do Windows é Ativado. </p> <p class="BodyTextL50"><b>Observação</b>: se você estiver usando um PC com Windows administrado por uma empresa, poderá aparecer a mensagem, <b>Para sua segurança, algumas configurações são gerenciadas pelo administrador do sistema.</b></p> <h4 class="pageTracer-h4-title-hide">Pergunta: </h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="d112776b-4447-4e4b-851c-64fac610639c" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="d112776b-4447-4e4b-851c-64fac610639c" class="d112776b-4447-4e4b-851c-64fac610639c block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="d112776b-4447-4e4b-851c-64fac610639c" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="0a4597a5-6c66-4e56-840f-f127372e566c" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="0a4597a5-6c66-4e56-840f-f127372e566c" class="component opentextbox 0a4597a5-6c66-4e56-840f-f127372e566c  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="0a4597a5-6c66-4e56-840f-f127372e566c" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">Quais são os benefícios do Firewall do Windows? </p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">O Firewall do Windows pode ajudar a impedir que hackers ou softwares mal-intencionados tenham acesso ao seu computador pela Internet ou pela sua rede.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="019d1ea0-26d0-4956-96a4-a17f3ba1b48c" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="019d1ea0-26d0-4956-96a4-a17f3ba1b48c" class="019d1ea0-26d0-4956-96a4-a17f3ba1b48c block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="019d1ea0-26d0-4956-96a4-a17f3ba1b48c" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><text-view modelid="e04c2b56-c821-49a2-a1b4-58e3867ca323" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="e04c2b56-c821-49a2-a1b4-58e3867ca323" class="component text e04c2b56-c821-49a2-a1b4-58e3867ca323  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$362749983$--><p class="SubStepAlpha">b.<span> </span>No painel esquerdo da janela, clique<b> em Permitir um aplicativo ou recurso pelo Windows Defender Firewall</b>. Os <b>Programas e Serviços</b> que o Firewall do Windows não estiver bloqueando, serão listados com uma marca de seleção. </p> <p class="BodyTextL50"><b>Nota</b>: você pode adicionar aplicativos à lista. Esse recurso poderá ser necessário caso você tenha um aplicativo que exija comunicações externas, mas por algum motivo, o Firewall do Windows não consegue executar a configuração automaticamente. </p> <p class="BodyTextL50">A criação de muitas exceções no arquivo Programas e Serviços pode gerar consequências negativas. </p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="719d70cc-2748-4275-8b7f-890452b6fb0d" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="719d70cc-2748-4275-8b7f-890452b6fb0d" class="719d70cc-2748-4275-8b7f-890452b6fb0d block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="719d70cc-2748-4275-8b7f-890452b6fb0d" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="e33ed24b-6691-41aa-8678-b61660f40970" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="e33ed24b-6691-41aa-8678-b61660f40970" class="component opentextbox e33ed24b-6691-41aa-8678-b61660f40970  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="e33ed24b-6691-41aa-8678-b61660f40970" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">Descreva uma consequência negativa de ter muitas exceções. </p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">As respostas variam. As exceções para um programa se comunicar através do Firewall do Windows são como abrir um buraco no firewall. Os invasores usam um software que faz uma varredura na Internet buscando computadores com muitas exceções e portas abertas. </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="3b8d06f8-909b-4fca-ac7d-3459488fae46" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="3b8d06f8-909b-4fca-ac7d-3459488fae46" class="3b8d06f8-909b-4fca-ac7d-3459488fae46 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="3b8d06f8-909b-4fca-ac7d-3459488fae46" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><text-view modelid="7ca753ac-14d6-4ba3-b942-045e550a25a6" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="7ca753ac-14d6-4ba3-b942-045e550a25a6" class="component text 7ca753ac-14d6-4ba3-b942-045e550a25a6  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$362749983$--><p class="SubStepAlpha">c.<span> </span>Clique em <b>Cancelar</b> para sair da janela Permitir aplicativos. </p> <h3>Etapa 2: Configurar os recursos de Segurança Avançada no Firewall do Windows</h3> <p class="BodyTextL25"><b>Observação</b>: essa etapa pode não ser permitida pela política de segurança da sua empresa.</p> <p class="BodyTextL25">Nesta etapa, você criará uma regra de entrada que permitirá pacotes de solicitação de eco pelo firewall.</p> <p class="SubStepAlpha">a.<span> </span>No painel esquerdo da janela Firewall do Windows, clique em <b>Configurações avançadas</b>.</p> <p class="SubStepAlpha">b.<span> </span>No <b>Firewall do Windows Defender com Segurança Avançada no Computador Local</b>, você pode configurar Regras de Entrada, Regras de Saída ou Regras de Segurança de Conexão. Você também pode clicar em <b>Monitoramento</b> para exibir o status das regras configuradas. </p> <p class="SubStepAlpha">c.<span> </span>Clique em <b>Regras de Entrada</b> e, no painel <b>Ações</b>, clique em <b>Nova Regra</b>. </p> <p class="SubStepAlpha">d.<span> </span>No <b>Assistente de Nova Regra de Entrada</b>, selecione <b>Personalizar</b> e clique em <b>Avançar</b> duas vezes. Você deve estar na etapa <b>Protocolo e Portas</b>. </p> <p class="SubStepAlpha">e.<span> </span>Para <b>Tipo de Protocolo</b>, selecione <b>ICMPv4</b> e clique em <b>Personalizar</b>.</p> <p class="SubStepAlpha">f.<span>&nbsp; </span>Na janela <b>Personalizar configurações de ICMP</b> , selecione <b>Tipos específicos de ICMP</b>, selecione <b>Echo Request</b>e clique <b>em OK</b>. </p> <p class="SubStepAlpha">g.<span> </span>Clique em <b>Próximo</b> três vezes. Você deve estar na etapa <b>Perfil</b>. </p> <p class="SubStepAlpha">h.<span> </span>Desmarque <b>Pública</b> para que o PC com Windows não responda a uma solicitação de eco em um local de rede pública, como um cibercafé. Clique em <b>Avançar</b> para continuar. </p> <p class="SubStepAlpha">i.<span>&nbsp; </span>Forneça um nome para a nova regra de entrada que ofereça uma boa descrição da regra e clique em <b>Concluir</b>. Agora você deve ver sua regra no topo da lista de <b>Regras de Entrada</b> na janela de diálogo do <b>Firewall do Windows Defender com Segurança Avançada</b>. </p> <p class="SubStepAlpha">j.<span>&nbsp; </span>Agora, a regra foi criada e ativada. Verifique se o <b>CSE-LABVM</b> pode executar ping no host do Windows e receber respostas.</p> <h2>Parte 4: Instalar e Executar aplicativos</h2> <p class="BodyTextL25">Nesta parte, você instalará duas novas aplicações no <b>CSE-LABVM</b>: <b>chkrootkit</b> e <b>lynis</b>. O aplicativo <b>chkrootkit</b> será baixado de um repositório de software. No entanto, adicionaremos um novo repositório para que possamos instalar o <b>lynis</b>, fornecido pelo CISOfy. </p> <h3>Etapa 1: Instalar e Executar o chkrootkit</h3> <p class="BodyTextL25">A ferramenta <b>chkrootkit</b> é usada para verificar sinais de rootkit em um sistema local. O Rootkit é um tipo de malware que pode permanecer oculto no computador e pode ser usado para causar danos significativos ao dispositivo por hackers.</p> <p class="SubStepAlpha">a.<span> </span>Em um terminal, digite o comando <b>sudo apt install chkrootkit</b> Digite a senha <b>password</b> quando solicitado.</p> <p class="CMD">cisco@labvm:~$ <b>sudo apt install chkrootkit</b></p> <p class="CMD">[sudo]senha para cisco:</p> <p class="SubStepAlpha">b.<span> </span>Insira o comando <b>sudo chkrootkit</b> para executar uma verificação do rootkit.</p> <p class="CMD">cisco@labvm:~$ <b>sudo chkrootkit</b></p> <p class="SubStepAlpha">c.<span> </span>A saída pode ser filtrada para procurar por sequências de caracteres interessadas, como o worm. O comando <b>chkrootkit</b> pode ser executado junto com o comando <b>grep</b> com a opção <b>–i</b> para ignorar a distinção entre maiúsculas e minúsculas (case distinction) nas cadeias de caracteres de interesse. </p> <p class="CMD">cisco@labvm:~$ <b>sudo chkrootkit | grep -i worm</b></p> <p class="CMDOutput">Searching for LPD Worm files and dirs...&nbsp;&nbsp;&nbsp; nothing found</p> <p class="CMDOutput">Searching for Ramen Worm files and dirs...&nbsp; nothing found</p> <p class="CMDOutput">Searching for Adore Worm... nothing found</p> <p class="CMDOutput">Searching for ShitC Worm... nothing found</p> <p class="CMDOutput">Searching for Omega Worm...&nbsp;&nbsp;&nbsp; &nbsp;nothing found</p> <p class="CMDOutput">Searching for Sadmind/IIS Worm...&nbsp;&nbsp; nothing found</p> <p class="CMDOutput">Searching for TC2 Worm default files and dirs...&nbsp;&nbsp;&nbsp; nothing found</p> <p class="CMDOutput">! cisco&nbsp;&nbsp; 32822 pts/0&nbsp; grep --color=auto -i worm</p> <h3>Etapa 2: Instalar o Lynis</h3> <p class="BodyTextL25">O <b>lynis</b> é uma ferramenta de segurança para sistemas que executam sistemas operacionais baseados em Unix, como Linux e macOS. O <b>lynis</b> será usado posteriormente em outra atividade para proteger um sistema Linux. A aplicação <b>L</b><b>ynis</b>é mantida pelo <a href="https://cisofy.com/lynis/" style="text-decoration:none" target="_blank"><span class="BodyTextL50Char"><span style="color:#00bceb;text-decoration:none">CISOfy</span></span></a>. Nesta etapa, adicionaremos o repositório de software e instalaremos o Lynis.</p> <p class="SubStepAlpha">a.<span> </span>Copie e cole o seguinte comando em um terminal para importar a chave do servidor de chaves CISOfy. Essa chave é necessária para verificar a integridade do download ao baixar o <b>lynis</b>:</p> <p class="CMD">cisco@labvm:~$ <b>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 013baa07180c50a7101097ef9de922f1c2fde6c4</b></p> <p class="CMDOutput">Executing: /tmp/apt-key-gpghome.8C6X477onz/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 013baa07180c50a7101097ef9de922f1c2fde6c4</p> <p class="CMDOutput">gpg: key FEBB7D1812576482: public key "CISOfy software signing &lt;software@cisofy.com&gt;" imported</p> <p class="CMDOutput">gpg: Total number processed: 1</p> <p class="CMDOutput">gpg:&nbsp;&nbsp; imported: 1</p> <p class="SubStepAlpha">b.<span> </span>Copie e cole o seguinte comando em um terminal para adicionar o repositório <b>lynis</b> mantido pelo CISOfy.</p> <p class="CMD">cisco@labvm:~$ <b>echo "deb https://packages.cisofy.com/community/lynis/deb/ stable main" | sudo tee /etc/apt/sources.list.d/cisofy-lynis.list</b></p> <p class="CMDOutput">deb https://packages.cisofy.com/community/lynis/deb/ stable main</p> <p class="SubStepAlpha"><span>c.<span> </span></span>Faça uma atualização depois de adicionar um novo repositório. No prompt, digite <b>sudo apt-get update</b>.</p> <p class="SubStepAlpha"><span>d.<span>&nbsp;&nbsp;</span></span>Use o comando <b>apt install</b> para instalar o Lynis.</p> <p class="CMD">cisco@labvm:~$ <b>sudo apt install lynis</b></p> <p class="CMDOutput">Reading package lists... Concluído</p> <p class="CMDOutput">Building dependency tree&nbsp;&nbsp; </p> <p class="CMDOutput">Reading state information... Concluído</p> <p class="CMDOutput">The following NEW packages will be installed:</p> <p class="CMDOutput">&nbsp; lynis</p> <p class="CMDOutput">0 upgraded, 1 newly installed, 0 to remove and 17 not upgraded.</p> <p class="CMDOutput">Need to get 0 B/262 kB of archives.</p> <p class="CMDOutput">After this operation, 1,681 kB of additional disk space will be used.</p> <p class="CMDOutput">Selecting previously unselected package lynis.</p> <p class="CMDOutput">(Reading database ... 205787 files and directories currently installed.)</p> <p class="CMDOutput">Preparing to unpack .../lynis_3.0.6-100_all.deb ...</p> <p class="CMDOutput">Unpacking lynis (<span style="background:yellow; color: #000;">3.0.6-100</span>) ...</p> <p class="CMDOutput">Setting up lynis (3.0.6-100) ...</p> <p class="CMDOutput">Processing triggers for man-db (2.9.1-1) ...</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="c56f28d6-4236-4dd2-b664-752d37743428" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="c56f28d6-4236-4dd2-b664-752d37743428" class="c56f28d6-4236-4dd2-b664-752d37743428 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="c56f28d6-4236-4dd2-b664-752d37743428" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><opentextbox-view modelid="e438a68d-5787-45c7-8d0f-32832ece9efe" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="e438a68d-5787-45c7-8d0f-32832ece9efe" class="component opentextbox e438a68d-5787-45c7-8d0f-32832ece9efe  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="e438a68d-5787-45c7-8d0f-32832ece9efe" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$362749983$--> <div class="openTextBox__preText"><!--?lit$362749983$--><p class="BodyTextL50">Na saída, qual é a versão instalada do Lynis?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$362749983$--><!--?lit$362749983$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$362749983$-->
+                      <!--?lit$362749983$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">No momento que isso está sendo escrito é a versão 3.0.6.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$362749983$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$362749983$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="7d2d97d0-5de6-410a-b69e-3117328c8619" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="7d2d97d0-5de6-410a-b69e-3117328c8619" class="7d2d97d0-5de6-410a-b69e-3117328c8619 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="7d2d97d0-5de6-410a-b69e-3117328c8619" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$362749983$--><!----><text-view modelid="d8e46cfb-fc55-4b68-aa3a-4cfe6485a61e" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="d8e46cfb-fc55-4b68-aa3a-4cfe6485a61e" class="component text d8e46cfb-fc55-4b68-aa3a-4cfe6485a61e  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$362749983$--><p class="SubStepAlpha">e.<span> </span>Para verificar a versão instalada, digite o comando <b>lynis show version</b> no terminal.</p> <p class="CMD">cisco@labvm:~$ <b>lynis show version</b></p> <p class="CMD">3.0.6</p> <p class="SubStepAlpha">f.<span>&nbsp; </span>Se você quiser determinar a versão mais recente fornecida pelo CISOfy, digite o seguinte comando no terminal.</p> <p class="CMD">cisco@labvm:~$ <b>sudo apt-cache policy lynis</b></p> <p class="CMDOutput">lynis:</p> <p class="CMDOutput">&nbsp; <span style="background:yellow; color: #000;">Installed: 3.0.6-100</span></p> <p class="CMDOutput">&nbsp; <span style="background:yellow; color: #000;">Candidate: 3.0.6-100</span></p> <p class="CMDOutput">&nbsp; Version table:</p> <p class="CMDOutput">&nbsp;*** 3.0.6-100 500</p> <p class="CMDOutput">&nbsp;&nbsp;&nbsp; 500 https://packages.cisofy.com/community/lynis/deb stable/main amd64 Packages</p> <p class="CMDOutput">&nbsp;&nbsp;&nbsp; 500 https://packages.cisofy.com/community/lynis/deb stable/main i386 Packages</p> <p class="CMDOutput">&nbsp;&nbsp;&nbsp; 100 /var/lib/dpkg/status</p> <p class="CMDOutput"> 2.6.2-1 500</p> <p class="CMDOutput">&nbsp;&nbsp;&nbsp; 500 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages</p> <p class="CMDOutput">&nbsp;&nbsp;&nbsp; 500 http://archive.ubuntu.com/ubuntu focal/universe i386 Packages</p> <p class="SubStepAlpha">g.<span> </span>Você pode executar <b>sudo apt-get update</b> e <b>sudo apt-get upgrade</b> novamente para garantir que você tenha todas as atualizações mais recentes do CISOfy.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$362749983$-->
+                  <!--?lit$362749983$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$362749983$-->
+                    </div>
+                </div>
+            </div>
+        <sgpluse-opentextboxcontroller-view modelid="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+            <div class="openTextBoxController__button-container">
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__showButton show-answer show"><!--?lit$362749983$-->Mostrar todas as respostas</button>    
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__hideButton hide-answer hide"><!--?lit$362749983$-->Ocultar todas as respostas</button>    
+                <button class="btn-text resetbtn openTextBoxController__resetButton"><!--?lit$362749983$-->Limpar minhas respostas</button>         
+            </div>
+            <!--?lit$362749983$--><hr>
+            <!--?lit$362749983$-->
+                <div class="post-text" tabindex="0">
+                    <!--?lit$362749983$--><span> <span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public </span> </span>
+                </div>
+                   
+        </sgpluse-opentextboxcontroller-view><script></script></body>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      var event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        .querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      .querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+        let checkButtonLabel = "check_button_label_placeHolder";
+        let hideButtonLabel = "hide_button_label_placeHolder";
+        document.querySelectorAll(".check__button").forEach(function (ele) {
+        let answerBox = document.querySelector(".check__solution")
+        if (!answerBox.classList.contains("check__hidden")) {
+          answerBox.classList.add("check__hidden");
+          ele.innerText = checkButtonLabel;
+        }
+          ele.addEventListener("click", function (e) {
+            if (answerBox.classList.contains("check__hidden")) {
+              answerBox.classList.remove("check__hidden")
+              ele.innerText = hideButtonLabel;
+            } else {
+              answerBox.classList.add("check__hidden")
+              ele.innerText = checkButtonLabel;
+            }
+          })
+        })
+    });
+  </script>
+  </html>

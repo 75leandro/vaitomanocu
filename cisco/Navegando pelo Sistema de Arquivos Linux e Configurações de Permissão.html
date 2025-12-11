@@ -1,0 +1,2021 @@
+<!DOCTYPE html><html><head>
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+
+      .check__hidden {
+        display: none;
+      }
+
+      .check__button {
+        border: none;
+        border-radius: 6px !important;
+        background-color: #6abf4b;
+        color: #fff;
+        min-width: 100px;
+        margin: 0.625rem 0;
+        padding: 0.7rem;
+      }
+
+      .check__widget .check__solution .DevConfigGray {
+        background-color: rgb(214,216,220);
+        font-weight: bold;
+      }
+
+      .check-inner .check__widget .check__solution .DevConfigs {
+        margin: 0px;
+        line-height: 115%;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .check__solution  {
+        line-height: 1.5;
+      }
+      .mcq__inner .mcq__widget .mcq__widget-inner {
+        margin-block: 1rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item {
+        display: flex;
+        gap: 0.2rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item .mcq__item-label .mcq__item-text .screenReader-position-text{
+        display: none;
+      }
+      .opentabletextbox-inner .opentabletextBox__widget .openTableTextBox__answerText.answergray {
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox{
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox img{
+        margin-block: 1rem;
+        margin-left: initial;
+      }
+      .component__content .component__body-inner .pageTracer-h4-title-hide {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        font-size: 0px;
+        color: rgb(var(--neutral-2));
+        font-weight: normal;
+      }
+      .table-inner .table__widget table tr.TableHeading th, .table-inner .table__widget table tr.TableHeading td, .table-inner .table__widget table tr td.TableHeading, .opentabletextbox-table thead tr.TableHeading th, .opentabletextbox-table tbody tr.TableHeading td, .opentabletextbox-table tbody tr td.TableHeading {
+        background-color: #d6d8dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .CMD, .component__content .component__body-inner .CMDOutput, .component__content .component__body-inner .CMDOutput__table{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        margin-inline-start: 30px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      [dir="rtl"] .component__content .component__body-inner .CMDOutput__table span {
+        direction: ltr;
+        display: inline-block;
+      }
+      .openTextBox__inner .openTextBox__widget .CMD, .openTextBox__inner .openTextBox__widget .CMDOutput{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .openTextBox__inner .openTextBox__widget .DnTbold, .openTextBox__inner .openTextBox__widget .BodyTextL25Bold, .component__content .component__body-inner .BodyTextL25Bold, .component__content .component__body-inner .DnTbold, .table-inner .table__widget table tr .DnTbold {
+        font-weight: bold;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article 8720b4fb-685a-49cb-b20b-e10b3460f9c5 remove-padding-top remove-padding-bottom is-complete ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$5161758636$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="article__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="article__header ">
+              <div class="article__header-inner ">
+                  
+                    <!--?lit$5161758636$--> <div class=" article__title ">
+                      <!--?lit$5161758636$--><heading-view aria-hidden="true" id="8720b4fb-685a-49cb-b20b-e10b3460f9c5-heading-view" headingtitle="Laboratório - Navegando pelo Sistema de Arquivos Linux e Configurações de Permissão" modelid="8720b4fb-685a-49cb-b20b-e10b3460f9c5" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="js-heading is-complete">
+        <div class="js-heading-inner" role="heading" id="article-heading" aria-level="2">
+        <span class="aria-label"> <!--?lit$5161758636$-->Concluída &nbsp;<!--?lit$5161758636$-->Laboratório - Navegando pelo Sistema de Arquivos Linux e Configurações de Permissão</span>
+        </div>
+      </div>
+    </heading-view>
+                        <div tabindex="0" role="heading" class="article__title-inner " aria-level="2">
+                        <span class="accessibility-completion-indicator"><!--?lit$5161758636$-->Concluída </span>
+                        <!--?lit$5161758636$-->Laboratório - Navegando pelo Sistema de Arquivos Linux e Configurações de Permissão</div>
+                      </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$5161758636$--><!---->
+                                    <block-view modelid="91ecb512-4f0a-46b2-816c-ca8b128a8549" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="91ecb512-4f0a-46b2-816c-ca8b128a8549" class="91ecb512-4f0a-46b2-816c-ca8b128a8549 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="91ecb512-4f0a-46b2-816c-ca8b128a8549" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="e9a2f120-e668-4799-8085-e6fba64ee872" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="e9a2f120-e668-4799-8085-e6fba64ee872" class="component text e9a2f120-e668-4799-8085-e6fba64ee872  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><h2>Objetivos</h2> <p class="BodyTextL25">Neste laboratório, você usará familiarizar-se com sistemas de arquivos Linux.</p> <p class="BodyTextL25Bold">Parte 1: Explorando sistemas de arquivos no Linux</p> <p class="BodyTextL25Bold">Parte 2: Permissões de arquivo</p> <p class="BodyTextL25Bold">Parte 3: Links simbólicos e outros tipos de arquivos especiais</p> <h2>Recursos necessários</h2> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Security Workstation VM</p> <h2>Instruções</h2> <h2> Parte 1: Explorando sistemas de arquivos no Linux</h2> <p class="BodyTextL25">O sistema de arquivos Linux é um de seus recursos mais populares. Embora o Linux suporte muitos tipos diferentes de sistemas de arquivos, este laboratório se concentra na família <b>ext</b>, um dos sistemas de arquivos mais comuns encontrados no Linux.</p> <h3>Etapa 1: Acesse a linha de comando</h3> <p class="BodyTextL25">Inicie a VM Worstation CyberOps e abra uma janela de terminal.</p> <h3>Etapa 2:Exibe os sistemas de arquivos atualmente montados.</h3> <p class="BodyTextL25">Os sistemas de arquivos devem ser <i>montados</i> antes que possam ser acessados e usados. Na computação, <i>montar um sistema de arquivos</i> significa torná-lo acessível ao sistema operacional. A montagem de um sistema de arquivos é o processo de vincular a partição física no dispositivo de bloco (disco rígido, unidade SSD, pen drive, etc.) a um diretório, através do qual todo o sistema de arquivos pode ser acessado. Como o diretório acima mencionado se torna a raiz do sistema de arquivos recém-montado, ele também é conhecido como <i>ponto de montagem.</i></p> <p class="SubStepAlpha">a.<span> </span>Use o comando <b>lsblk</b> para exibir todos os dispositivos de bloco:</p> <p class="CMD">[analyst@secOps ~]$ <b>lsblk</b></p> <p class="CMDOutput">NAME&nbsp;&nbsp; MAJ:MIN RM&nbsp; SIZE RO TYPE MOUNTPOINT</p> <p class="CMDOutput">sda&nbsp; 8:0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp; 10G&nbsp; 0 disk </p> <p class="CMDOutput">└─sda1&nbsp;&nbsp; 8:1&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp; 10G&nbsp; 0 part /</p> <p class="CMDOutput">sdb&nbsp; 8:16&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 1G&nbsp; 0 disk </p> <p class="CMDOutput">└─sdb1&nbsp;&nbsp; 8:17&nbsp;&nbsp; 0 1023M&nbsp; 0 part </p> <p class="CMDOutput">sr0 11:0&nbsp;&nbsp;&nbsp; 1 1024M&nbsp; 0 rom&nbsp; </p> <p class="BodyTextL50">A saída acima mostra que a VM CyberOps Workstation tem três dispositivos de bloco instalados: sr0, sda e sdb. A saída em forma de árvore também mostra partições em sda e sdb. Convencionalmente, /dev/sdx é usado pelo Linux para representar discos rígidos, com o número à direita representando o número da partição dentro desse dispositivo. Computadores com vários discos rígidos provavelmente exibirão mais dispositivos /dev/SDX. Se o Linux estivesse sendo executado em um computador com quatro discos rígidos, por exemplo, ele os mostraria como /dev/sda, /dev/sdb, /dev/sdc e /dev/sdd, por padrão. A saída implica que sda e sdb são discos rígidos, cada um contendo uma única partição. A saída também mostra que sda é um disco de 10 GB enquanto sdb tem 1 GB.</p> <p class="BodyTextL50"><b>Nota</b>: O Linux geralmente exibe unidades flash USB como /dev/SDX também, dependendo do tipo de firmware.</p> <p class="SubStepAlpha">b.<span> </span>Use o comando <b>mount</b> para exibir informações mais detalhadas sobre os sistemas de arquivos atualmente montados na VM CyberOps Workstation.</p> <p class="CMD">[analyst@secOps ~]$ <b>mount</b></p> <p class="CMDOutput">proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)</p> <p class="CMDOutput">sys on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)</p> <p class="CMDOutput">dev on /dev type devtmpfs (rw,nosuid,relatime,size=1030408k,nr_inodes=218258,mode=755)</p> <p class="CMDOutput">run on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">/dev/sda1 on / type ext4 (rw,relatime)</span></p> <p class="CMDOutput">securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)</p> <p class="CMDOutput">tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)</p> <p class="CMDOutput">devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)</p> <p class="CMDOutput">tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)</p> <p class="CMDOutput">&lt;output omitted&gt;</p> <p class="BodyTextL50">Muitos dos sistemas de arquivos acima estão fora do escopo deste curso e irrelevantes para o laboratório. Vamos nos concentrar no <i>sistema de arquivos raiz</i>, o sistema de arquivos armazenado em <b>/dev/sda1</b>. O sistema de arquivos raiz é onde o próprio sistema operacional Linux é armazenado; todos os programas, ferramentas, arquivos de configuração são armazenados no sistema de arquivos raiz por padrão. </p> <p class="SubStepAlpha">c.<span> </span>Execute o comando <b>mount</b> novamente, mas desta vez, use o pipe | para enviar a saída de mount para <b>grep</b> para filtrar a saída e exibir apenas o sistema de arquivos raiz:</p> <p class="CMD">[analyst@secOps ~]$ <b>mount | grep sda1</b></p> <p class="CMD">/dev/sda1 on / type ext4 (rw,relatime)</p> <p class="BodyTextL50">Na saída filtrada acima, mount nos mostra que o sistema de arquivos raiz está localizado na primeira partição do dispositivo de bloco sda (/dev/sda1). Sabemos que este é o sistema de arquivos raiz devido ao ponto de montagem usado: “/” (o símbolo da barra). A saída também nos diz o tipo de formatação usado na partição, ext4 neste caso. As informações entre parênteses estão relacionadas com as opções de montagem de partição.</p> <p class="SubStepAlpha">d.<span> </span>Execute os dois comandos a seguir na <b>VM CyberOps Workstation</b>:</p> <p class="CMD">[analyst@secOps ~]$ <b>cd /</b></p> <p class="CMD">[analyst@secOps ~]$ <b>ls –l</b></p> <h4 class="pageTracer-h4-title-hide">Perguntas:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="1a9215e9-4c69-4476-b603-8b41e670c978" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="1a9215e9-4c69-4476-b603-8b41e670c978" class="1a9215e9-4c69-4476-b603-8b41e670c978 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="1a9215e9-4c69-4476-b603-8b41e670c978" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="714c7cc6-e44f-4fa5-a23e-0f6c2a5f2368" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="714c7cc6-e44f-4fa5-a23e-0f6c2a5f2368" class="component opentextbox 714c7cc6-e44f-4fa5-a23e-0f6c2a5f2368  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="714c7cc6-e44f-4fa5-a23e-0f6c2a5f2368" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">Qual é o significado da saída? Onde os arquivos listados são armazenados fisicamente?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style="border:none"><span style="border:none">O primeiro comando altera o diretório para o diretório raiz. O diretório raiz é o nível mais alto dos sistemas de arquivos. Como /dev/sda1 é montado no diretório raiz (“/”), listando os arquivos no diretório raiz, o usuário está listando arquivos armazenados fisicamente na raiz do sistema de arquivos /dev/sda1. </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="95a05859-f93e-4c78-9bfc-54955cdd9f2b" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="95a05859-f93e-4c78-9bfc-54955cdd9f2b" class="95a05859-f93e-4c78-9bfc-54955cdd9f2b block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="95a05859-f93e-4c78-9bfc-54955cdd9f2b" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="7cff704f-94df-497e-9bcb-a8c29ef6261d" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="7cff704f-94df-497e-9bcb-a8c29ef6261d" class="component opentextbox 7cff704f-94df-497e-9bcb-a8c29ef6261d  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="7cff704f-94df-497e-9bcb-a8c29ef6261d" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">Por que <b>/dev/sdb1</b> não é mostrado na saída acima?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Porque /dev/sdb1 não está montado no momento.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="cfa3b38f-f840-4156-bc89-f685db7388fe" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="cfa3b38f-f840-4156-bc89-f685db7388fe" class="cfa3b38f-f840-4156-bc89-f685db7388fe block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="cfa3b38f-f840-4156-bc89-f685db7388fe" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="0f0f37a7-9f34-4a38-aaf1-0317d7842b49" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="0f0f37a7-9f34-4a38-aaf1-0317d7842b49" class="component text 0f0f37a7-9f34-4a38-aaf1-0317d7842b49  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><h3>Montagem e desmontagem manual de sistemas de arquivos</h3> <p class="BodyTextL25">O comando <b>mount</b> também pode ser usado para montar e desmontar sistemas de arquivos. Como visto na Etapa 1, a VM Security Workstation tem dois discos rígidos instalados. O primeiro foi reconhecido pelo kernel como /dev/sda enquanto o segundo foi reconhecido como /dev/sdb. Antes que um dispositivo de bloco possa ser montado, ele deve ter um ponto de montagem.</p> <p class="SubStepAlpha">a.<span> </span>Use o comando <b>ls -l</b> para verificar se o diretório <b>second_drive</b> está no diretório home do analista. </p> <p class="CMD">[analyst@secOps /]$ <b>cd ~</b></p> <p class="CMD">[analyst@secOps ~]$ <b>ls –l</b></p> <p class="CMDOutput">total 28</p> <p class="CMDOutput">drwxr-xr-x 2 analyst analyst 4096 Sep 26&nbsp; 2014 Desktop</p> <p class="CMDOutput">drwx------ 3 analyst analyst 4096 Jul 14 11:28 Downloads</p> <p class="CMDOutput">drwxr-xr-x 9 analyst analyst 4096 Jul 25 16:27 lab.support.files</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">drwxr-xr-x 2 analyst analyst 4096 Mar&nbsp; 3 15:56 second_drive</span></p> <p class="CMDOutput">-rw-r--r-- 1 analyst analyst&nbsp; 142 Aug 16 15:11 some_text_file.txt</p> <p class="CMDOutput">-rw-r--r-- 1 analyst analyst&nbsp; 254 Aug 16 13:38 space.txt</p> <p class="BodyTextL50"><b>Observação</b>: Se o diretório <b>second_drive</b> não existir, use o comando <b>mkdir second_drive</b> para criá-lo.</p> <p class="CMD">[analyst@secOps ~]$ <b>mkdir second_drive</b></p> <p class="BodyTextL50"><b>Observação</b>: Dependendo do estado de sua VM, sua listagem provavelmente terá arquivos e diretórios diferentes.</p> <p class="SubStepAlpha">b.<span> </span>Use <b>ls -l</b> novamente para listar o conteúdo do diretório second_drive recém-criado.</p> <p class="CMD">[analyst@secOps ~]$ <b>ls -l second_drive/</b></p> <p class="CMDOutput">total 0</p> <p class="SubStepAlpha" style="text-indent:0in">Observe que o diretório está vazio.</p> <p class="SubStepAlpha">c.<span> </span>Use o comando <b>mount</b> para montar <b>/dev/sdb1</b> no diretório <b>second_drive</b> recém-criado. A sintaxe de mount é: <b>mount [options] &lt;device to be mounted&gt; &lt;mounting point&gt;</b>.</p> <p class="CMD">[analyst@secOps ~]$ <b>sudo mount /dev/sdb1 ~/second_drive/</b></p> <p class="CMD">[sudo] password for analyst:</p> <p class="SubStepAlpha" style="text-indent:0in">Nenhuma saída é fornecida, o que significa que o processo de montagem foi bem-sucedido.</p> <p class="SubStepAlpha">d.<span> </span>Agora que o <b>/dev/sdb1</b> foi montado em <b>/home/analyst/second_drive</b>, use <b>ls -l</b> para listar o conteúdo do diretório novamente.</p> <p class="CMD">[analyst@secOps ~]$ <b>ls -l second_drive/</b></p> <p class="CMD">total 20</p> <p class="CMD">drwx------ 2 root&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp; &nbsp;16384 Mar&nbsp; 3 10:59 lost+found </p> <p class="CMD">-rw-r--r-- 1 root&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp; 183 Mar&nbsp; 3 15:42 myFile.txt</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="a9d459b1-f317-4ddc-8546-35e7f8c81a14" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="a9d459b1-f317-4ddc-8546-35e7f8c81a14" class="a9d459b1-f317-4ddc-8546-35e7f8c81a14 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="a9d459b1-f317-4ddc-8546-35e7f8c81a14" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="fd272342-b8f6-466e-91b3-f809149e1c9a" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="fd272342-b8f6-466e-91b3-f809149e1c9a" class="component opentextbox fd272342-b8f6-466e-91b3-f809149e1c9a  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="fd272342-b8f6-466e-91b3-f809149e1c9a" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">Por que o diretório não está mais vazio? Onde os arquivos listados são armazenados fisicamente?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Após a montagem, /home/analyst/second_drive torna-se o ponto de entrada para o sistema de arquivos fisicamente armazenado em /dev/sdb1.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="a8df8a9e-feb2-4c12-9f3b-eaf6a4584b9d" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="a8df8a9e-feb2-4c12-9f3b-eaf6a4584b9d" class="a8df8a9e-feb2-4c12-9f3b-eaf6a4584b9d block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="a8df8a9e-feb2-4c12-9f3b-eaf6a4584b9d" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="d1f1af0d-86e1-44d8-83b9-235dd8c28004" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="d1f1af0d-86e1-44d8-83b9-235dd8c28004" class="component text d1f1af0d-86e1-44d8-83b9-235dd8c28004  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><p class="SubStepAlpha">e.<span> </span>Execute o comando <b>mount</b> sem opções novamente para exibir informações detalhadas sobre a partição <b>/dev/sdb1</b>. Como antes, use o comando <b>grep</b> para exibir somente os sistemas de arquivos <b>/dev/sdx</b> :</p> <p class="CMD">[analyst@secOps ~]$ <b>mount | grep /dev/sd</b></p> <p class="CMDOutput">/dev/sda1 on / type ext4 (rw,relatime) </p> <p class="CMDOutput">/dev/sdb1 on /home/analyst/second_drive type ext4 (rw,relatime)</p> <p class="SubStepAlpha">f.<span>&nbsp; </span>Desmontar sistemas de arquivos é tão simples quanto possível. Certifique-se de alterar o diretório para algo fora do ponto de montagem e usar o comando <b>umount</b> , como mostrado abaixo:</p> <p class="CMD">[analyst@secOps ~]$ <b>sudo umount /dev/sdb1</b></p> <p class="CMDOutput">[sudo] password for analyst: </p> <p class="CMDOutput">[analyst @secOps ~] $ </p> <p class="CMDOutput">[analyst@secOps ~]$ <b>ls -l second_drive/</b></p> <p class="CMDOutput">total 0</p> <h2>Parte 2: Permissões de arquivo</h2> <p class="BodyTextL25">Os sistemas de arquivos Linux têm recursos internos para controlar a capacidade dos usuários de visualizar, alterar, navegar e executar o conteúdo do sistema de arquivos. Essencialmente, cada arquivo em sistemas de arquivos carrega seu próprio conjunto de permissões, sempre carregando um conjunto de definições sobre o que usuários e grupos podem fazer com o arquivo.</p> <h3>Etapa 1: Visualize e altere as permissões de arquivo.</h3> <p class="SubStepAlpha">a.<span> </span>Navegue até /home/analyst/lab.support.files/scripts/.</p> <p class="CMD">[analyst@secOps ~]$ <b>cd lab.support.files/scripts/</b></p> <p class="SubStepAlpha">b.<span> </span>Use o comando <b>ls -l</b> para exibir permissões de arquivo.</p> <p class="BodyTextL50"><span style="font-family:&quot;Courier New&quot;">[analyst@secOps scripts]$ <b>ls -l</b></span></p> <p class="CMDOutput">total 60</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp; 190 Jun 13 09:45 configure_as_dhcp.sh</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp; 192 Jun 13 09:45 configure_as_static.sh</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst 3459 Jul 18 10:09 cyberops_extended_topo_no_fw.py</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst 4062 Jul 18 10:09 cyberops_extended_topo.py</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst 3669 Jul 18 10:10 cyberops_topo.py</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r-- 1 analyst analyst 2871 Apr 28 11:27 cyops.mn</span></p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp; 458 May&nbsp; 1 13:50 fw_rules</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp;&nbsp; 70 Apr 28 11:27 mal_server_start.sh</p> <p class="CMDOutput">drwxr-xr-x 2 analyst analyst 4096 Jun 13 09:55 net_configuration_files</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp;&nbsp; 65 Apr 28 11:27 reg_server_start.sh</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp; 189 Dec 15&nbsp; 2016 start_ELK.sh</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp;&nbsp; 85 Dec 22&nbsp; 2016 start_miniedit.sh</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp;&nbsp; 76 Jun 22 11:38 start_pox.sh</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp; 106 Jun 27 09:47 start_snort.sh</p> <p class="CMDOutput">-rwxr-xr-x 1 analyst analyst&nbsp;&nbsp; 61 May&nbsp; 4 11:45 start_tftpd.sh</p> <h4 class="pageTracer-h4-title-hide">Perguntas:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="a376e0f2-297c-40a8-a0ae-952660b01aa0" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="a376e0f2-297c-40a8-a0ae-952660b01aa0" class="a376e0f2-297c-40a8-a0ae-952660b01aa0 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="a376e0f2-297c-40a8-a0ae-952660b01aa0" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="92003028-6025-475e-96ff-a0a97ef1ec47" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="92003028-6025-475e-96ff-a0a97ef1ec47" class="component opentextbox 92003028-6025-475e-96ff-a0a97ef1ec47  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="92003028-6025-475e-96ff-a0a97ef1ec47" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">Considere o arquivo <b>cyops.mn</b> como um exemplo. Quem é o proprietário do arquivo? Que tal o grupo?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Proprietário: analista; Grupo: analista</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="377e62fe-7d19-4690-9fd6-9f459e749230" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="377e62fe-7d19-4690-9fd6-9f459e749230" class="377e62fe-7d19-4690-9fd6-9f459e749230 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="377e62fe-7d19-4690-9fd6-9f459e749230" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="956ae3ea-34fd-4aa5-9713-ca64d23fcb61" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="956ae3ea-34fd-4aa5-9713-ca64d23fcb61" class="component opentextbox 956ae3ea-34fd-4aa5-9713-ca64d23fcb61  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="956ae3ea-34fd-4aa5-9713-ca64d23fcb61" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">As permissões para <b>cyops.mn</b> são <b>—rw-r—r—</b>. O que isso quer dizer?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none"> O proprietário do arquivo (o usuário analyst) pode ler e gravar no arquivo, mas não executá-lo (-rw). Os membros do grupo de analistas que não sejam o proprietário só podem ler o arquivo (-r-), nenhuma execução ou gravação é permitida. Todos os outros usuários não têm permissão para gravar ou executar esse arquivo. </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="85e64331-f97f-404b-a1e7-aff8e6333a80" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="85e64331-f97f-404b-a1e7-aff8e6333a80" class="85e64331-f97f-404b-a1e7-aff8e6333a80 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="85e64331-f97f-404b-a1e7-aff8e6333a80" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="58529b9c-e6d5-4d10-b988-69aa5ebe39b8" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="58529b9c-e6d5-4d10-b988-69aa5ebe39b8" class="component text 58529b9c-e6d5-4d10-b988-69aa5ebe39b8  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><p class="SubStepAlpha">c.<span> </span>O comando <b>touch</b> é muito simples e útil. Permite a criação rápida de um arquivo de texto vazio. Use o comando abaixo para criar um arquivo vazio no diretório <b>/mnt</b> :</p> <p class="CMD">[analyst@secOps scripts]$ <b>touch /mnt/myNewFile.txt</b></p> <p class="CMD">touch: cannot touch '/mnt/myNewFile.txt': Permission denied</p> <h4 class="pageTracer-h4-title-hide">Perguntas:</h4> <p class="BodyTextL50">Por que o arquivo não foi criado? Liste as permissões, a propriedade e o conteúdo do diretório <b>/mnt</b> e explique o que aconteceu. Com a adição da opção&nbsp; <b>-d</b>, ele lista a permissão do diretório pai. Registre a resposta nas linhas abaixo.</p> <p class="CMD">[analyst@secOps ~]$ <b>ls -l<span style="background:yellow; color: #000;">d</span> /mnt</b></p></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="99158262-4e68-4488-9447-44f44553efac" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="99158262-4e68-4488-9447-44f44553efac" class="99158262-4e68-4488-9447-44f44553efac block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="99158262-4e68-4488-9447-44f44553efac" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="85b12d9c-795e-4ee9-9441-fa34f116bbef" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="85b12d9c-795e-4ee9-9441-fa34f116bbef" class="component opentextbox 85b12d9c-795e-4ee9-9441-fa34f116bbef  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="85b12d9c-795e-4ee9-9441-fa34f116bbef" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="CMD">drwxr-xr-x 2 root root 4096 Jan&nbsp; 5&nbsp; 2018 /mnt</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">As permissões do diretório /mnt pertencem ao usuário root, com permissões drwxr-xr-x. Dessa forma, somente o usuário raiz tem permissão para gravar na pasta /mnt.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="8109bb54-c5fb-4585-8bd3-0e4fb3802876" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="8109bb54-c5fb-4585-8bd3-0e4fb3802876" class="8109bb54-c5fb-4585-8bd3-0e4fb3802876 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="8109bb54-c5fb-4585-8bd3-0e4fb3802876" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="6143324f-db10-4986-bbb3-678f9cb1a947" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="6143324f-db10-4986-bbb3-678f9cb1a947" class="component opentextbox 6143324f-db10-4986-bbb3-678f9cb1a947  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="6143324f-db10-4986-bbb3-678f9cb1a947" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50" style="page-break-after:avoid">O que pode ser feito para que o comando de <b>touch</b> mostrado acima seja bem-sucedido?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none"> O comando pode ser executado como root (adicionando sudo antes dele) ou as permissões do diretório /mnt podem ser modificadas.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="d43f0b4e-9e70-4961-89d4-6b600741d0a1" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="d43f0b4e-9e70-4961-89d4-6b600741d0a1" class="d43f0b4e-9e70-4961-89d4-6b600741d0a1 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="d43f0b4e-9e70-4961-89d4-6b600741d0a1" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="42f5d9dd-91dd-4264-bc02-9b733e4b1b20" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="42f5d9dd-91dd-4264-bc02-9b733e4b1b20" class="component text 42f5d9dd-91dd-4264-bc02-9b733e4b1b20  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><p class="SubStepAlpha">d.<span> </span>O comando <b>chmod</b> é usado para alterar as permissões de um arquivo ou diretório. Como antes, monte a partição <b>/dev/sdb1</b> no diretório <b>/home/analyst/second_drive</b> criado anteriormente neste laboratório:</p> <p class="CMD">[analyst@secOps ~]$ <b>sudo mount /dev/sdb1 ~/second_drive/</b></p> <p class="SubStepAlpha">e.<span> </span>Mude para o diretório <b>second_drive</b> e liste o conteúdo dele:</p> <p class="CMD">[analyst@secOps ~]$ <b>cd ~/second_drive</b></p> <p class="CMD">[analyst@secOps second_drive]$ <b>ls -l</b></p> <p class="CMDOutput">total 20</p> <p class="CMDOutput">drwx------ 2 root&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp; &nbsp;16384 Mar&nbsp; 3 10:59 lost+found</p> <p class="CMDOutput">-rw-r--r-- 1 root&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp; 183 Mar&nbsp; 3 15:42 myFile.txt</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="16856540-a51b-4642-bdfd-49f48ff5e1fe" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="16856540-a51b-4642-bdfd-49f48ff5e1fe" class="16856540-a51b-4642-bdfd-49f48ff5e1fe block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="16856540-a51b-4642-bdfd-49f48ff5e1fe" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="490736b5-02ac-455b-b6d5-4f7a65680cc9" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="490736b5-02ac-455b-b6d5-4f7a65680cc9" class="component opentextbox 490736b5-02ac-455b-b6d5-4f7a65680cc9  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="490736b5-02ac-455b-b6d5-4f7a65680cc9" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL25" style="margin-top:0in;text-indent:.25in">Quais são as permissões do arquivo <b>myFile.txt</b> ?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">-rw-r--r--</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="f0120a4c-ff12-4cac-a725-f229493c572b" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="f0120a4c-ff12-4cac-a725-f229493c572b" class="f0120a4c-ff12-4cac-a725-f229493c572b block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="f0120a4c-ff12-4cac-a725-f229493c572b" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="a018fdb3-d175-4c9a-8c1a-0a61eda6f1bf" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="a018fdb3-d175-4c9a-8c1a-0a61eda6f1bf" class="component text a018fdb3-d175-4c9a-8c1a-0a61eda6f1bf  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><p class="SubStepAlpha">f.<span>&nbsp; </span>Use o comando <b>chmod</b> para alterar as permissões de <b>myFile.txt</b>.</p> <p class="CMD">[analyst@secOps second_drive]$ <b>sudo </b><b>chmod 665 myFile.txt</b></p> <p class="CMD">[analyst@secOps second_drive]$ <b>ls -l</b></p> <p class="CMDOutput">total 20</p> <p class="CMDOutput">drwx------ 2 root&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp; &nbsp;16384 Mar&nbsp; 3 10:59 lost+found</p> <p class="CMDOutput">-rw-rw-r-x 1 root&nbsp;&nbsp; &nbsp;root&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;183 Mar&nbsp; 3 15:42 myFile.txt</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="24edf9da-454b-4d13-9ad2-2ead35f3f4ae" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="24edf9da-454b-4d13-9ad2-2ead35f3f4ae" class="24edf9da-454b-4d13-9ad2-2ead35f3f4ae block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="24edf9da-454b-4d13-9ad2-2ead35f3f4ae" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="ae20d214-24b9-4ccd-b979-30e73787cb7c" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="ae20d214-24b9-4ccd-b979-30e73787cb7c" class="component opentextbox ae20d214-24b9-4ccd-b979-30e73787cb7c  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="ae20d214-24b9-4ccd-b979-30e73787cb7c" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL25" style="margin-top:0in;text-indent:.25in">As permissões mudaram? Quais são as permissões do <b>myFile.txt</b>?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">-rw-rw-r-x</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="2abc08ee-0613-420f-8283-ad87c8cee434" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="2abc08ee-0613-420f-8283-ad87c8cee434" class="2abc08ee-0613-420f-8283-ad87c8cee434 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="2abc08ee-0613-420f-8283-ad87c8cee434" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="0721004e-3e00-4315-9d2a-adec6b69ed20" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="0721004e-3e00-4315-9d2a-adec6b69ed20" class="component text 0721004e-3e00-4315-9d2a-adec6b69ed20  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><p class="BodyTextL50">O comando <b>chmod</b> tem permissões no formato octal. Deste modo, a repartição dos 665 é a seguinte:</p> <p class="BodyTextL50">6 em octal é 110 em binário. Assumindo que cada posição das permissões de um arquivo pode ser 1 ou 0, 110 significa rw- (read=1, write=1 e execute=0).</p> <p class="BodyTextL50">Portanto, o comando <b>chmod 665 myFile.txt</b> altera as permissões para:</p> <p class="BodyTextL50"><b>Proprietário</b>: rw- (6 em octal ou 110 em binário)</p> <p class="BodyTextL50"><b>Grupo</b>: rw- (6 em octal ou 110 em binário)</p> <p class="BodyTextL50"><b>Outros</b>: r-x (5 em octal ou 101 em binário)</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="89f67e5a-9ceb-468a-b603-7a087fd7583f" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="89f67e5a-9ceb-468a-b603-7a087fd7583f" class="89f67e5a-9ceb-468a-b603-7a087fd7583f block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="89f67e5a-9ceb-468a-b603-7a087fd7583f" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="035aadda-b73f-4377-9bb8-6ca5fcc767de" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="035aadda-b73f-4377-9bb8-6ca5fcc767de" class="component opentextbox 035aadda-b73f-4377-9bb8-6ca5fcc767de  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="035aadda-b73f-4377-9bb8-6ca5fcc767de" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">Qual comando alteraria as permissões do myFile.txt para rwxrwxrwx, concedendo a qualquer usuário no sistema acesso total ao arquivo?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">sudo chmod 777 myFile.txt</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="7c897c5b-5191-4411-b90a-d77329e5164a" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="7c897c5b-5191-4411-b90a-d77329e5164a" class="7c897c5b-5191-4411-b90a-d77329e5164a block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="7c897c5b-5191-4411-b90a-d77329e5164a" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="1388b99a-a333-4d39-a86d-cc44bf171bfd" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="1388b99a-a333-4d39-a86d-cc44bf171bfd" class="component text 1388b99a-a333-4d39-a86d-cc44bf171bfd  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><p class="SubStepAlpha">g.<span> </span>O comando <b>chown</b> é usado para alterar a propriedade de um arquivo ou diretório. Execute o comando abaixo para tornar root o proprietário do <b>myFile.txt</b>:</p> <p class="CMD">[analyst@secOps second_drive]$ <b>sudo chown analyst myFile.txt</b></p> <p class="CMD">[sudo] password for analyst: </p> <p class="CMD">[analyst@secOps second_drive]$ <b>ls -l</b></p> <p class="CMDOutput">total 20</p> <p class="CMDOutput">drwx------ 2 root&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp; &nbsp;16384 Mar&nbsp; 3 10:59 lost+found</p> <p class="CMDOutput">-rw-rw-r-x 1 <span style="background:yellow; color: #000;">analyst</span> root &nbsp;&nbsp;183 Mar&nbsp; 3 15:42 myFile.txt</p> <p class="CMDOutput">[analyst@secOps second_drive]$</p> <p class="BodyTextL50"><b>Observação</b>: Para alterar o proprietário e o grupo para <b>analyst</b> ao mesmo tempo, use o formato <b>sudo chown analyst:analyst myFile.txt</b>.</p> <p class="SubStepAlpha">h.<span> </span>Agora que o analista é o proprietário do arquivo, tente anexar a palavra 'test' ao final de <b>myFile.txt</b>.</p> <p class="CMD">[analyst@secOps second_drive]$ <b>echo test &gt;&gt; myFile.txt</b></p> <p class="CMD">[sudo] password for analyst:</p> <p class="CMD">[analyst@secOps second_drive]$ <b>cat myFile.txt</b></p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="e1904eda-c1a9-46d1-a0dc-e91757d9d2d9" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="e1904eda-c1a9-46d1-a0dc-e91757d9d2d9" class="e1904eda-c1a9-46d1-a0dc-e91757d9d2d9 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="e1904eda-c1a9-46d1-a0dc-e91757d9d2d9" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="77aee19b-7da9-4d73-978d-e5b121bcd3be" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="77aee19b-7da9-4d73-978d-e5b121bcd3be" class="component opentextbox 77aee19b-7da9-4d73-978d-e5b121bcd3be  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="77aee19b-7da9-4d73-978d-e5b121bcd3be" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50">A operação foi bem sucedida? Explique.</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Sim. analyst é o proprietário do arquivo e as permissões ainda estão definidas como 665 como antes. As permissões como estão permitem que o proprietário e os usuários no grupo raiz façam alterações no arquivo. </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="a50498a8-c69c-49e7-8998-cc5f9e412e17" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="a50498a8-c69c-49e7-8998-cc5f9e412e17" class="a50498a8-c69c-49e7-8998-cc5f9e412e17 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="a50498a8-c69c-49e7-8998-cc5f9e412e17" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="dfe860cd-d539-47db-b029-de50c2f1ce98" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="dfe860cd-d539-47db-b029-de50c2f1ce98" class="component text dfe860cd-d539-47db-b029-de50c2f1ce98  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><h3>Etapa 2: Diretório e permissões</h3> <p class="BodyTextL25">Semelhante aos arquivos normais, os diretórios também carregam permissões. Ambos os arquivos e diretórios têm 9 bits para as permissões do proprietário/usuário, do grupo e outros. Há também mais três bits para permissões especiais: setuid, setgid e sticky que está além do escopo deste laboratório. </p> <p class="SubStepAlpha">a.<span> </span>Volte para o diretório /home/analyst/lab.support.files e execute o comando <b>ls -l</b> para listar todos os arquivos com detalhes:</p> <p class="BodyTextL50" style="page-break-after:avoid"><span style="font-family: &quot;Courier New&quot;">[analyst@secOps second_drive]$ <b>cd ~/lab.support.files/</b></span></p> <p class="BodyTextL50" style="page-break-after:avoid"><span style="font-family: &quot;Courier New&quot;">[analyst@secOps lab.support.files]$ <b>ls -l</b></span></p> <p class="CMDOutput">total 580</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst&nbsp;&nbsp;&nbsp; 649 Jun 28 18:34 apache_in_epoch.log</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst&nbsp;&nbsp;&nbsp; 126 Jun 28 11:13 applicationX_in_epoch.log</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">drwxr-xr-x</span> 4 analyst analyst&nbsp;&nbsp; 4096 Aug&nbsp; 7 15:29 attack_scripts</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst&nbsp;&nbsp;&nbsp; 102 Jul 20 09:37 confidential.txt</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst&nbsp;&nbsp; 2871 Dec 15&nbsp; 2016 cyops.mn</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst 75 May 24 11:07 elk_services</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst&nbsp;&nbsp;&nbsp; 373 Feb 16 16:04 h2_dropbear.banner</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst&nbsp;&nbsp;&nbsp; 147 Mar 21 15:30 index.html</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst&nbsp;&nbsp;&nbsp; 255 May&nbsp; 2 13:11 letter_to_grandma.txt</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst&nbsp; 24464 Feb&nbsp; 7&nbsp; 2017 logstash-tutorial.log</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">drwxr-xr-x</span> 2 analyst analyst&nbsp;&nbsp; 4096 May 25 13:01 malware</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rwxr-xr-x</span> 1 analyst analyst&nbsp;&nbsp;&nbsp; 172 Jul 25 16:27 mininet_services</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">drwxr-xr-x</span> 2 analyst analyst&nbsp;&nbsp; 4096 Feb 14&nbsp; 2017 openssl_lab</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">drwxr-xr-x</span> 2 analyst analyst&nbsp;&nbsp; 4096 Aug&nbsp; 7 15:25 pcaps</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">drwxr-xr-x</span> 7 analyst analyst&nbsp;&nbsp; 4096 Sep 20&nbsp; 2016 pox</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst 473363 Feb 16 15:32 sample.img</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst 65 Feb 16 15:45 sample.img_SHA256.sig</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">drwxr-xr-x</span> 3 analyst analyst&nbsp;&nbsp; 4096 Jul 18 10:10 scripts</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r--</span> 1 analyst analyst&nbsp; 25553 Feb 13&nbsp; 2017 SQL_Lab.pcap</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="87674c3c-84f1-42c2-b745-9bae2561ece8" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="87674c3c-84f1-42c2-b745-9bae2561ece8" class="87674c3c-84f1-42c2-b745-9bae2561ece8 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="87674c3c-84f1-42c2-b745-9bae2561ece8" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="fb1bcd96-7f92-495e-8a90-6d7d311a8c57" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="fb1bcd96-7f92-495e-8a90-6d7d311a8c57" class="component opentextbox fb1bcd96-7f92-495e-8a90-6d7d311a8c57  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="fb1bcd96-7f92-495e-8a90-6d7d311a8c57" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="BodyTextL50" style="margin-top:0in;page-break-after:avoid">Compare as permissões do diretório de <b>malware</b> com o arquivo <b>mininet_services</b>. Qual é a diferença entre a parte inicial da linha de malware e a linha mininet_services?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Há uma letra d no início antes das permissões para o diretório de malware.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="04f792b6-4e57-4ac2-8d31-ef998d64df8b" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="04f792b6-4e57-4ac2-8d31-ef998d64df8b" class="04f792b6-4e57-4ac2-8d31-ef998d64df8b block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="04f792b6-4e57-4ac2-8d31-ef998d64df8b" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="1801a5cf-0745-49dd-9422-f9e92ef0552d" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="1801a5cf-0745-49dd-9422-f9e92ef0552d" class="component text 1801a5cf-0745-49dd-9422-f9e92ef0552d  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><p class="BodyTextL50">A letra 'd' no início da linha indica que o tipo de arquivo é um diretório e não um arquivo. Outra diferença entre permissões de arquivo e diretório é o bit de execução. Se um arquivo tiver seu bit de execução ativado, isso significa que ele pode ser executado pelo sistema. Os diretórios são diferentes dos arquivos com o bit de execução definido (um arquivo com o bit de execução definido é um script ou programa executável).</p> <p class="BodyTextL50">Os comandos <b>chmod</b> e <b>chown</b> funcionam para diretórios da mesma forma que trabalham para arquivos.</p> <h2>Parte 3: Links simbólicos e outros tipos de arquivos especiais</h2> <p class="BodyTextL25">Você já viu alguns dos diferentes tipos de arquivos no Linux. O primeiro caractere em cada arquivo listado com o comando <b>ls —l</b> mostra o tipo de arquivo. Os três tipos diferentes de arquivos no Linux incluindo seus subtipos e caracteres são: </p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span><b>Arquivos regulares (-)</b>, incluindo: </p> <p class="Bulletlevel2"><span>o<span> &nbsp;</span></span>Arquivos legíveis — arquivos de texto&nbsp; </p> <p class="Bulletlevel2"><span>o<span>&nbsp; </span></span>Arquivos binários - programas</p> <p class="Bulletlevel2"><span>o<span>&nbsp; </span></span>Arquivos de imagem</p> <p class="Bulletlevel2"><span>o<span>&nbsp; </span></span>Arquivos compactados</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span><b>Arquivos de diretório (d)</b></p> <p class="Bulletlevel2"><span>o<span>&nbsp; </span></span>Pastas</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span><b>Arquivos especiais</b>, incluindo:</p> <p class="Bulletlevel2"><span>o<span> &nbsp;</span></span><b>Arquivos de bloco (b)</b> — Arquivos usados para acessar hardware físico como pontos de montagem para acessar discos rígidos.</p> <p class="Bulletlevel2"><span>o<span>&nbsp; </span></span><b>Arquivos de dispositivo de caracteres (c)</b> — Arquivos que fornecem um fluxo serial de entrada e saída. terminais tty são exemplos desse tipo de arquivo.</p> <p class="Bulletlevel2"><span>o<span>&nbsp; </span></span><b>Arquivos de pipe (p)</b> — Um arquivo usado para passar informações em que os primeiros bytes são os primeiros bytes de saída. Isso também é conhecido como FIFO (primeiro a entrar primeiro a sair).</p> <p class="Bulletlevel2"><span>o<span>&nbsp; </span></span><b>Arquivos de link simbólico (l)</b> — Arquivos usados para vincular a outros arquivos ou diretórios. Existem dois tipos: links simbólicos e links rígidos.</p> <p class="Bulletlevel2"><span>o<span>&nbsp; </span></span><b>Arquivos de soquete</b> — Eles são usados para passar informações de aplicativo para aplicativo, a fim de se comunicar através de uma rede.</p> <h3>Etapa 1: Examine os tipos de arquivo.</h3> <p class="SubStepAlpha">a.<span> </span>Use o comando <b>ls -l</b> para exibir os arquivos na pasta /home/analyst. Observe que os primeiros caracteres de cada linha são um “— “indicando um arquivo ou um “d” indicando um diretório.</p> <p class="CMD">[analyst@secOps ~]$ <b>ls –l</b></p> <p class="CMD">total 28</p> <p class="CMD"><span style="background:yellow; color: #000;">d</span>rwxr-xr-x 3 analyst analyst 4096 Aug 16 15:15 cyops_folder2 </p> <p class="CMD"><span style="background:yellow; color: #000;">d</span>rwxr-xr-x 2 analyst analyst 4096 Sep 26&nbsp; 2014 Desktop </p> <p class="CMD"><span style="background:yellow; color: #000;">d</span>rwx------ 3 analyst analyst 4096 Jul 14 11:28 Downloads</p> <p class="CMD"><span style="background:yellow; color: #000;">d</span>rwxr-xr-x 9 analyst analyst 4096 Jul 25 16:27 lab.support.files</p> <p class="CMD"><span style="background:yellow; color: #000;">d</span>rwxr-xr-x 3 analyst analyst 4096 Mar&nbsp; 3 18:23 second_drive</p> <p class="CMD"><span style="background:yellow; color: #000;">-</span>rw-r--r-- 1 analyst analyst&nbsp; 142 Aug 16 15:11 some_text_file.txt</p> <p class="CMD"><span style="background:yellow; color: #000;">-</span>rw-r--r-- 1 analyst analyst&nbsp; 254 Aug 16 13:38 space.txt</p> <p class="SubStepAlpha">b.<span> </span>Produza uma listagem do diretório <b>/dev</b>. Role até o meio da saída e observe como os arquivos de bloco começam com um “b”, os arquivos de dispositivo de caractere começam com um “c” e os arquivos de link simbólico começam com um “l”:</p> <p class="CMD">[analyst@secOps ~]$ <b>ls -l /dev/</b></p> <p class="CMDOutput">&lt;output omitted&gt;</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">c</span>rw-rw-rw-&nbsp; 1 root tty&nbsp;&nbsp; 5,&nbsp;&nbsp; 2 May 29 18:32 ptmx</p> <p class="CMDOutput">drwxr-xr-x&nbsp; 2 root root&nbsp;&nbsp; 0 May 23 06:40 pts</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">c</span>rw-rw-rw-&nbsp; 1 root root&nbsp; 1,&nbsp;&nbsp; 8 May 23 06:41 random</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">c</span>rw-rw-r--&nbsp; 1 root root 10,&nbsp; 56 May 23 06:41 rfkill</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">l</span>rwxrwxrwx&nbsp; 1 root root&nbsp;&nbsp; 4 May 23 06:41 rtc -&gt; rtc0</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">c</span>rw-rw----&nbsp; 1 root audio&nbsp;&nbsp; 253,&nbsp;&nbsp; 0 May 23 06:41 rtc0</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">b</span>rw-rw----&nbsp; 1 root disk&nbsp; 8,&nbsp;&nbsp; 0 May 23 06:41 sda</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">b</span>rw-rw----&nbsp; 1 root disk&nbsp; 8,&nbsp;&nbsp; 1 May 23 06:41 sda1</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">b</span>rw-rw----&nbsp; 1 root disk&nbsp; 8,&nbsp; 16 May 23 06:41 sdb</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">b</span>rw-rw----&nbsp; 1 root disk&nbsp; 8,&nbsp; 17 May 23 06:41 sdb1</p> <p class="CMDOutput">drwxrwxrwt&nbsp; 2 root root&nbsp; 40 May 28 13:47 shm</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">c</span>rw-------&nbsp; 1 root root 10, 231 May 23 06:41 snapshot</p> <p class="CMDOutput">drwxr-xr-x&nbsp; 2 root root&nbsp; 80 May 23 06:41 snd</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">b</span>rw-rw----+ 1 root optical&nbsp; 11,&nbsp;&nbsp; 0 May 23 06:41 sr0</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">l</span>rwxrwxrwx&nbsp; 1 root root&nbsp; 15 May 23 06:40 stderr -&gt; /proc/self/fd/2</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">l</span>rwxrwxrwx&nbsp; 1 root root&nbsp; 15 May 23 06:40 stdin -&gt; /proc/self/fd/0</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">l</span>rwxrwxrwx&nbsp; 1 root root&nbsp; 15 May 23 06:40 stdout -&gt; /proc/self/fd/1</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">c</span>rw-rw-rw-&nbsp; 1 root tty&nbsp;&nbsp; 5,&nbsp;&nbsp; 0 May 29 17:36 tty</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">c</span>rw--w----&nbsp; 1 root tty&nbsp;&nbsp; 4,&nbsp;&nbsp; 0 May 23 06:41 tty0</p> <p class="CMDOutput">&lt;output omitted&gt;</p> <p class="SubStepAlpha">c.<span> </span>Links simbólicos no Linux são como atalhos no Windows. Existem dois tipos de links no Linux: links simbólicos e links rígidos. A diferença entre links simbólicos e links rígidos é que um arquivo de link simbólico aponta para o nome de arquivo de outro arquivo e um arquivo de link rígido aponta para o conteúdo de outro arquivo. Crie dois arquivos usando echo: </p> <p class="CMD">[analyst@secOps ~]$ <b>echo "symbolic" &gt; file1.txt</b></p> <p class="CMD">[analyst@secOps ~]$ <b>cat file1.txt</b></p> <p class="CMDOutput">symbolic</p> <p class="CMD">[analyst@secOps ~]$ <b>echo "hard" &gt; file2.txt</b></p> <p class="CMD">[analyst@secOps ~]$ <b>cat file2.txt</b></p> <p class="CMDOutput">hard</p> <p class="SubStepAlpha">d.<span> </span>Use <b>ln —s</b> para criar um link simbólico para file1.txt e <b>ln</b> para criar um link rígido para file2.txt: </p> <p class="CMD">[analyst@secOps ~]$ <b>ln –s file1.txt file1symbolic</b></p> <p class="CMD">[analyst@secOps ~]$ <b>ln file2.txt file2hard</b></p> <p class="SubStepAlpha">e.<span> </span>Use o comando ls —l e examine a lista de diretórios:</p> <p class="CMD">[analyst@secOps ~]$ <b>ls –l</b></p> <p class="CMDOutput">total 40</p> <p class="CMDOutput">drwxr-xr-x 3 analyst analyst 4096 Aug 16 15:15 cyops_folder2</p> <p class="CMDOutput">drwxr-xr-x 2 analyst analyst 4096 Sep 26&nbsp; 2014 Desktop</p> <p class="CMDOutput">drwx------ 3 analyst analyst 4096 Jul 14 11:28 Downloads</p> <p class="CMDOutput"><span style="background:yellow; color: #000;">lrwxrwxrwx 1 analyst analyst&nbsp;&nbsp;&nbsp; 9 Aug 17 16:43 file1symbolic -&gt; file1.txt</span></p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r-- 1 analyst analyst&nbsp;&nbsp;&nbsp; 9 Aug 17 16:41 file1.txt</span></p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r-- 2 analyst analyst&nbsp;&nbsp;&nbsp; 5 Aug 17 16:42 file2hard</span></p> <p class="CMDOutput"><span style="background:yellow; color: #000;">-rw-r--r-- 2 analyst analyst&nbsp;&nbsp;&nbsp; 5 Aug 17 16:42 file2.txt</span></p> <p class="CMDOutput">drwxr-xr-x 9 analyst analyst 4096 Jul 25 16:27 lab.support.files</p> <p class="CMDOutput">drwxr-xr-x 3 analyst analyst 4096 Mar&nbsp; 3 18:23 second_drive</p> <p class="CMDOutput">-rw-r--r-- 1 analyst analyst&nbsp; 142 Aug 16 15:11 some_text_file.txt</p> <p class="CMDOutput">-rw-r--r-- 1 analyst analyst&nbsp; 254 Aug 16 13:38 space.txt</p> <p class="SubStepAlpha" style="text-indent:0in">Observe como o arquivo <b>file1symbolic</b> é um link simbólico com um <b>l</b> no início da linha e um ponteiro -&gt; para <b>file1.txt</b>. O <b>file2hard</b> parece ser um arquivo regular, porque na verdade é um arquivo regular que aponta para o mesmo inode na unidade de disco rígido como <b>file2.txt</b>. Em outras palavras, <b>file2hard</b> aponta para os mesmos atributos e localização do bloco de disco como <b>file2.txt</b>. O número 2 na quinta coluna da listagem para <b>file2hard</b> e <b>file2.txt</b> indica que existem 2 arquivos vinculados ao mesmo inode. Para um diretório listando a quinta coluna indica o número de diretórios dentro do diretório, incluindo pastas ocultas.</p> <p class="SubStepAlpha">f.<span>&nbsp; </span>Altere os nomes dos arquivos originais: file1.txt e file2.txt, e observe como isso afeta os arquivos vinculados.</p> <p class="CMD">[analyst@secOps ~]$ <b>mv file1.txt file1new.txt</b></p> <p class="CMD">[analyst@secOps ~]$ <b>mv file2.txt file2new.txt</b></p> <p class="CMD">[analyst@secOps ~]$ <b>cat file1symbolic</b></p> <p class="CMD">cat: file1symbolic: no such file or directory</p> <p class="CMD">[analyst@secOps ~]$ <b>cat file2hard</b></p> <p class="CMD">hard</p> <p class="SubStepAlpha" style="text-indent:0in">Observe como <b>file1symbolic</b> é agora um link simbólico quebrado porque o nome do arquivo que apontou para <b>file1.txt</b> foi alterado, mas o arquivo de link rígido <b>file2hard</b> ainda funciona corretamente porque aponta para o inode de <b>file2.txt</b> e não seu nome, que agora é <b>file2new.txt</b>.</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="0ea8bdae-31f7-441c-9dc2-ae00e26c486c" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="0ea8bdae-31f7-441c-9dc2-ae00e26c486c" class="0ea8bdae-31f7-441c-9dc2-ae00e26c486c block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="0ea8bdae-31f7-441c-9dc2-ae00e26c486c" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><opentextbox-view modelid="f9560b0d-14e9-4948-b97c-e48c2dbb982a" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="f9560b0d-14e9-4948-b97c-e48c2dbb982a" class="component opentextbox f9560b0d-14e9-4948-b97c-e48c2dbb982a  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="f9560b0d-14e9-4948-b97c-e48c2dbb982a" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$5161758636$--> <div class="openTextBox__preText"><!--?lit$5161758636$--><p class="SubStepAlpha">O que você acha que aconteceria com <b>file2hard</b> se você abrir um editor de texto e alterar o texto em <b>file2new.txt</b>?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$5161758636$--><!--?lit$5161758636$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$5161758636$-->
+                      <!--?lit$5161758636$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Alterar o conteúdo de um arquivo mudaria o conteúdo do outro porque ambos apontam para o mesmo inode na unidade de disco rígido. </span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$5161758636$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$5161758636$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="c6018c7d-7d49-4974-aa62-b6d353a99a6d" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 4.16667%;"><!---->
+                
+                <div data-socialgoodpulse-id="c6018c7d-7d49-4974-aa62-b6d353a99a6d" class="c6018c7d-7d49-4974-aa62-b6d353a99a6d block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="c6018c7d-7d49-4974-aa62-b6d353a99a6d" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$5161758636$--><!----><text-view modelid="8d137266-1c2b-46ac-9a66-719680ba22a7" class="is-full" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="8d137266-1c2b-46ac-9a66-719680ba22a7" class="component text 8d137266-1c2b-46ac-9a66-719680ba22a7  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$5161758636$--><h1>Reflexão</h1> <p class="BodyTextL25">Permissões de arquivo e propriedade são dois dos aspectos mais importantes do Linux. Eles também são uma causa comum de problemas. Um arquivo que tenha permissões incorretas ou propriedade definida não estará disponível para os programas que precisam acessá-lo. Neste cenário, o programa normalmente irá quebrar e erros serão encontrados.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$5161758636$-->
+                  <!--?lit$5161758636$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$5161758636$-->
+                    </div>
+                </div>
+            </div>
+        <sgpluse-opentextboxcontroller-view modelid="" is-touch="false" fullscreen="true" device="small" browser="Chrome" os="linux" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+            <div class="openTextBoxController__button-container">
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__showButton show-answer show"><!--?lit$5161758636$-->Mostrar todas as respostas</button>    
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__hideButton hide-answer hide"><!--?lit$5161758636$-->Ocultar todas as respostas</button>    
+                <button class="btn-text resetbtn openTextBoxController__resetButton"><!--?lit$5161758636$-->Limpar minhas respostas</button>         
+            </div>
+            <!--?lit$5161758636$--><hr>
+            <!--?lit$5161758636$-->
+                <div class="post-text" tabindex="0">
+                    <!--?lit$5161758636$--><span> <span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public </span> </span>
+                </div>
+                   
+        </sgpluse-opentextboxcontroller-view><script></script></body>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      var event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        .querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      .querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+        let checkButtonLabel = "check_button_label_placeHolder";
+        let hideButtonLabel = "hide_button_label_placeHolder";
+        document.querySelectorAll(".check__button").forEach(function (ele) {
+        let answerBox = document.querySelector(".check__solution")
+        if (!answerBox.classList.contains("check__hidden")) {
+          answerBox.classList.add("check__hidden");
+          ele.innerText = checkButtonLabel;
+        }
+          ele.addEventListener("click", function (e) {
+            if (answerBox.classList.contains("check__hidden")) {
+              answerBox.classList.remove("check__hidden")
+              ele.innerText = hideButtonLabel;
+            } else {
+              answerBox.classList.add("check__hidden")
+              ele.innerText = checkButtonLabel;
+            }
+          })
+        })
+    });
+  </script>
+  </html>
