@@ -1,0 +1,154 @@
+grep '/home' /etc/passwd | cut -d: -f1,5,6,7
+grep /home /etc/passwd
+leandro:Leandro,,,:/home/leandro:/bin/bash
+juliana:Juliana',,,:/home/juliana:/bin/bash
+grep /home /etc/passwd
+leandro:Leandro:/home/leandro:/bin/bash
+juliana:Juliana':/home/juliana:/bin/bash
+ grep '/home' /etc/passwd | cut -d: -f1,5,6,7 | tr -d ,
+ grep '/home' /etc/passwd | cut -d: -f1,5,6,7 | tr -d , | column -t -s:
+leandro  Leandro   /home/leandro  /bin/bash
+juliana  Juliana'  /home/juliana  /bin/bash
+ grep '/home' /etc/passwd | cut -d: -f1,5,6,7 | tr -d , | column -t -s: -N LOGIN,NOME,HOME,SHELL
+LOGIN                   NOME  HOME  SHELL
+grep /home /etc/passwd              
+LOGIN                   NOME  HOME  SHELL
+grep /home /etc/passwd              
+LOGIN    NOME      HOME           SHELL
+leandro  Leandro   /home/leandro  /bin/bash
+juliana  Juliana'  /home/juliana  /bin/bash
+/n------------------------------------------------------------------------------------------------------------------------------/n
+while read -r; do [[ REPLY ==*/home* ]] && echo REPLY; done < /etc/passwd 
+]633;E;read -r;f026ca6a-f51c-41b6-ae79-352e0dd6bdea]633;C]633;E;read -r;f026ca6a-f51c-41b6-ae79-352e0dd6bdea]633;Cleandro:x:1000:1000:Leandro,,,:/home/leandro:/bin/bash
+juliana:x:1001:1001:Juliana',,,:/home/juliana:/bin/bash
+while read -r; do [[  == */home* ]] && echo ; done < /etc/passwd 
+while read -r; do [[  == */home* ]] && echo ; done < /etc/passwd 
+while IFS=: read -r f1 f2 f3 f4 f5 f6 f7; do [[  == */home* ]] && echo :::; done < /etc/passwd 
+]633;E;IFS=: read -r f1 f2 f3 f4 f5 f6 f7;f026ca6a-f51c-41b6-ae79-352e0dd6bdea]633;Cleandro:Leandro,,,:/home/leandro:/bin/bash
+juliana:Juliana',,,:/home/juliana:/bin/bash
+]633;E;IFS=: read -r f1 f2 f3 f4 f5 f6 f7;f026ca6a-f51c-41b6-ae79-352e0dd6bdea]633;Cleandro:Leandro,,,:/home/leandro:/bin/bash
+juliana:Juliana',,,:/home/juliana:/bin/bash
+while IFS=: read -r f1 f2 f3 f4 f5 f6 f7; do [[ "$f6"  == */home* ]] && echo "$f1:${f5%%,*}:$f6:$f7; done < /etc/passwd
+]633;E;IFS=: read -r f1 f2 f3 f4 f5 f6 f7;f026ca6a-f51c-41b6-ae79-352e0dd6bdea]633;Cleandro:Leandro,,,:/home/leandro:/bin/bash
+juliana:Juliana',,,:/home/juliana:/bin/bash
+]633;E;IFS=: read -r f1 f2 f3 f4 f5 f6 f7;f026ca6a-f51c-41b6-ae79-352e0dd6bdea]633;Cleandro:Leandro,,,:/home/leandro:/bin/bash
+juliana:Juliana',,,:/home/juliana:/bin/bash
+
+while IFS=: read -r f1 f2 f3 f4 f5 f6 f7; do [[ "$f6"  == */home* ]] && echo "$f1:${f5//,}:$f6:$f7; done < /etc/passwd
+]633;E;IFS=: read -r f1 f2 f3 f4 f5 f6 f7;f026ca6a-f51c-41b6-ae79-352e0dd6bdea]633;Cleandro:Leandro:/home/leandro:/bin/bash
+juliana:Juliana':/home/juliana:/bin/bash
+
+
+while IFS=: read -r f1 f2 f3 f4 f5 f6 f7; do [[  == */home* ]] && echo :::; done < /etc/passwd | column -t -s -N LOGIN,NOME,HOME,SHELL
+LOGIN    NOME      HOME           SHELL
+leandro  Leandro   /home/leandro  /bin/bash
+juliana  Juliana'  /home/juliana  /bin/bash
+awk -F: '{print }' /etc/passwd
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+Mailing List Manager
+ircd
+
+nobody
+systemd Network Management
+systemd Time Synchronization
+DHCP Client Daemon,,,
+
+
+systemd Resolver
+User for polkitd
+usbmux daemon,,,
+TPM software stack,,,
+RealtimeKit,,,
+systemd Core Dumper
+Kernel Oops Tracking Daemon,,,
+
+user for cups-pk-helper service,,,
+Avahi autoip daemon,,,
+Flatpak system-wide installation helper,,,
+Avahi mDNS daemon,,,
+
+dnsmasq
+NetworkManager OpenVPN,,,
+Light Display Manager
+
+Speech Dispatcher,,,
+Firmware update daemon
+
+
+HPLIP system user,,,
+colord colour management daemon,,,
+Leandro,,,
+SSSD system user,,,
+
+
+virtual TPM software stack,,,
+Libvirt Qemu,,,
+Libvirt Dnsmasq,,,
+Juliana',,,
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+Mailing List Manager
+ircd
+
+nobody
+systemd Network Management
+systemd Time Synchronization
+DHCP Client Daemon,,,
+
+
+systemd Resolver
+User for polkitd
+usbmux daemon,,,
+TPM software stack,,,
+RealtimeKit,,,
+systemd Core Dumper
+Kernel Oops Tracking Daemon,,,
+
+user for cups-pk-helper service,,,
+Avahi autoip daemon,,,
+Flatpak system-wide installation helper,,,
+Avahi mDNS daemon,,,
+
+dnsmasq
+NetworkManager OpenVPN,,,
+Light Display Manager
+
+Speech Dispatcher,,,
+Firmware update daemon
+
+
+HPLIP system user,,,
+colord colour management daemon,,,
+Leandro,,,
+SSSD system user,,,
+
+
+virtual TPM software stack,,,
+Libvirt Qemu,,,
+Libvirt Dnsmasq,,,
+Juliana',,,
