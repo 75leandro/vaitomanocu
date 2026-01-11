@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :
+# Descrição  : Executando loop "for"
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 22/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+alunos=(Leandro Höher "Oliveira 75")
+
+IFS=$'\n'
+
+for aluno in ${alunos[*]}; do
+    echo $aluno
+done
+
+echo ${#alunos[*]}

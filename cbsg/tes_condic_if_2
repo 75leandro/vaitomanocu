@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :
+# Descrição  :
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 26/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+
+fruta=banana
+
+if [[ $fruta = banana ]]; then
+  echo "Status $? - Verdadeiro"
+ echo "O nome da fruta é $fruta. "
+else
+  echo "Status $? - Falso"
+   echo " O nome da fruta não é banana,e sim $fruta" 
+fi 
+exit 0

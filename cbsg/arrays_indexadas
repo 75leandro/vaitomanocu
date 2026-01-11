@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :Arrays indexadas
+# Descrição  :Buscao número indicado  dentro do cunjunto de palavras indexadas...
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 21/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+
+# Arrays indexadas...
+
+clear
+
+echo "\
+Exemplo de trabalho com arrays
+"
+fruta=("banana" "laranja" "abacate" "limão" "cereja" "abacaxi")
+cores=("amarela" "amarela" "verde" "verde" "vermelha" "amarela")
+
+read -p "Digite um número entre 0 e 5! Saindo!" numero
+
+[[ ! $numero =~ ^[0-5]$ ]]\
+    &&  echo -e "\nTem que ser um número  entre 0 e 5! Saindo...\n" \
+    &&  exit 1
+
+echo "
+Você escolheu ${fruta[$numero]}, que é uma fruta ${cores[$numero]}".
+
+exit 0
+ 

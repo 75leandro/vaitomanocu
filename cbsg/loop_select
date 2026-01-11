@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :Loop_select
+# Descrição  : Criaçãode menus
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 24/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+clear
+
+PS3=$'\nFaça sua escolha: '
+select fruta in banana laranja abacate; do
+       echo $fruta
+       break
+done
+
+exit 0

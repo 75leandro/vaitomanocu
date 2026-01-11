@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :
+# Descrição  :
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 21/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+clear
+
+echo "\
+Exemplo de trabalho com arrays associativas... "
+
+declare -A Aluno
+declare -A nota
+
+Aluno[joao]="João"
+Aluno[jose]="José"
+Aluno[maria]="Maria"
+Aluno[sofia]="Sofia"
+Aluno[fatima]="Fatima"
+Aluno[antonio]="Antônio"
+
+
+nota[joao]=10
+nota[jose]=9
+nota[maria]=10
+nota[sofia]=9
+nota[fatima]=8
+nota[antonio]=7
+
+echo "
+Os indentificadores (indice) dos alunos são:
+${!Aluno[*]}
+
+E os seu nomes são:
+${Aluno[*]}
+"
+exit 0

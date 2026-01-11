@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :
+# Descrição  :
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 22/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#-------------------------------------------------------
+
+
+read -p "Digite um nome:" nome
+
+read -p "Digite o nome de uma revista: " revista
+
+read -p "Digite o nome de uma peça de roupa: " roupa
+
+echo "\
+Você escolheu: $nome, $revista, $roupa.
+"
+read -p "Digite um  número de 1 a 3: " numero
+
+frase[1]="$nome saiu na capa da $revista só de $roupa!"
+frase[2]="$nome so consegue ler a $revista usando $roupa!"
+frase[3]="$nome aprendeu na revista $revista que usar $roupa é legal!"
+
+echo "
+${frase[$numero]}
+"
+
+exit 0
+

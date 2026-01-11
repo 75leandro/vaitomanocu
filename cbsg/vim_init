@@ -1,0 +1,17 @@
+# Comandos Internos do Vim...
+#
+#
+#
+# tab ball:
+> Ativa multiplas abas na sessão corrente
+# ctrl w w:
+> Navega entre as abas do terminal Shell/ Editor vim
+# source / so%:
+> Carrega as alterações do arquivo...
+# bn
+> Mantém o buffer da sessão, arquivos abertos
+
+
+
+
+

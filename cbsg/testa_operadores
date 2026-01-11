@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :Testando operadores /let / 
+# Descrição  : Operações Aritméticas  Básicas
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 23/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+
+clear
+
+echo "\
+Operadores Aritméticos Básicos:
+
+**            exponenciação
+*, /, %       multiplicação, divisão,resto de divisão
++, -          adiçã, multiplicação
+
+Digite qualquer  expressão com operadores  acima
+e tecle enter para efetuar o cálculo.
+
+exemplo: 2 + 2
+"
+
+read -p "Sua expressão: " expressao
+
+[[ ${#expressao} -lt 1 ]] && exit
+
+# Utilizando o comando 'let'...
+
+let calc="expressao"
+
+echo "
+
+- Utilizando o comanando 'let\"expressao\"':
+
+$expressao = $calc
+"
+
+# Utilizando o  comando composto (( EXPRESSÃO ))....
+
+((calc = $expressao))
+ 
+echo "
+
+- Utilizando o comando composto '(( $expressao ))':
+
+$expressao = $calc
+"
+
+# Utlizando a  expansão aritmética '\$(( $expressao ))':
+
+calc=$(( $expressao ))
+
+echo "
+
+- Utilizando a expansãoaritmética '\$(( $expressao ))':
+
+$expressao = $calc
+"
+
+# Alterando atributo  inteir 'declare -i var=EXPRESSÃO'...
+
+declare -i calc="expressao"
+
+echo "
+
+-  Alterando atributo de inteiro 'declare -i var=\"$expressao\"':
+
+$expressao = $calc 
+"
+
+declare +i calc
+
+exit
+
+
+
+

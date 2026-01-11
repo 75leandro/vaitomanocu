@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :Loop_for
+# Descrição  :Trabalhando com lista dentro de um loop
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 23/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+
+# Ex.1 Recebe argumentos consecutívos, echoando em lista...
+
+#read -p  Digite uma lista de argumentos..." argumento
+
+ #for argumento; do
+ #   echo $argumento
+ #done
+
+
+#..........................
+
+# Exe.2 Expressão aritméca como (in LISTA)
+
+for (( n = 1; n <= 10; n++)); do
+
+     echo $n
+done
+
+echo "-------------------------------------"
+
+# Exe. 3  Expansão de Chaves...
+
+for n in {1..10..2}; do
+     echo $n
+
+done
+
+echo "-------------------------------------"
+
+# Exe. 4  Usando aspas duplas
+
+alunos=(João Maria "Luis Carlos")
+
+for i in ${!alunos[@]}; do
+    echo  "aluno $i --> ${alunos[$i]}"
+done
+
+echo "----------------------------------"
+
+# Exe. 5 Gerando arquivos modificando as extensões
+
+for n in {1..5}; do
+    >> arquivo$n
+done
+
+ls -1 arq*
+
+echo "----------------------------------------------"
+
+for f in arquivo*; do
+    mv $f $f.txt
+done
+
+ls -1 arq*
+
+echo "-----------------------------"
+   
+# Exe. 6 COntrole de fluxo de dados break/continue
+
+for n in {1..10}; do
+    [[ $n -gt 5 ]] && break || echo $n
+done
+
+echo "--------------------------------------"
+
+for  n in {1..10}; do 
+     [[ $n -lt 6 ]] && continue || echo $n
+done
+
+

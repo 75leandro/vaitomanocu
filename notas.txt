@@ -1,0 +1,5 @@
+Joâo da silva,10,7,8,5 
+Maria das Couvev,9,10,8.5,10
+ANan Banana,8,9,7,4
+José Pedro,9,7,6,3
+

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :Loop_while
+# Descrição  :Enquanto condição for verdadeira, faça....
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 24/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+
+echo "while" 
+n=0 # Se n verdadeiro faça
+while [[ $n -lt 5 ]]; do
+      echo $n
+      ((n++))
+done
+
+echo "_______________________"
+echo "until" 
+n=0 # Se n falso faça
+until [[ $n -eq 5 ]]; do
+      echo $n
+      ((n++))
+done
+
+echo "_______________________"
+# Loop  infinito  com o comando break
+
+echo "break"
+n=0
+while true; do
+  [[ $n -lt 5 ]] && echo $n || break
+  ((n++))
+done
+
+
+echo "_______________________"
+echo "until"
+n=0
+until false; do
+  [[ $n -lt 5 ]] && echo $n || break
+  ((n++))
+done
+
+
+echo "_______________________"
+echo "while" 
+n=0 # Se n verdadeiro faça
+while : ; do
+ [[ $n -lt 5 ]] && echo $n || break
+      ((n++))
+done
+
+exit 0
+
+
+
+

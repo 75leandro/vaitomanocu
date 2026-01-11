@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :
+# Descrição  :
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 24/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+# if COMANDO TESTADO; then
+#   BLOCO DE COMANDOS SE VEDADEIRO (Status 0)
+# elif  OUTRO COMANDO TESTADO;	then
+#  BLOCO DE COMANDOS DE 0 elif RETORNOU STATUS 0
+# else
+# COMANDOS SE ERRO/FALSO
+
+# 
+
+
+padrao=test*
+
+if ls $padrao &> /dev/null; then
+  echo "$tatus $? - Verdadeiro"
+    echo O nome do arquivo encontrado é: $padrao
+else
+  echo "Status $? - Falso"
+   echo Não encontado o  arquivo $padrao  
+fi 
+exit 0
+
+
+
+
+
+
+

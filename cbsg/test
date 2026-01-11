@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#--------------------------------------------------------
+# Script     :
+# Descrição  :
+# Versão     : 0.1
+# Autor      : Leandro Höher <leandrohoher75@outlook.com
+# Data       : 19/12/2025 
+# Licença    : GNU/GLP v3.0
+#-------------------------------------------------------- 
+# Uso:
+#--------------------------------------------------------
+
+clear
+
+sep="-----------------------------------------------------"
+
+echo "$sep
+COMPARANDO PID DAS SESSÕES DO BASH NO SCRIPT E NO TERMINAL
+$sep
+PID da sessão do bash do script  : $$
+PID da Sessão do bash no terminal  : $PPID
+$sep
+$(ps -p $$,$PPID -o pid=,user=,tty=,args=)
+$sep
+"
+exit 0 
+
