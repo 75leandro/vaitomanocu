@@ -1,0 +1,99 @@
+# Comandos Internos do Vim...
+#
+#
+#
+# tab ball:
+> Ativa multiplas abas na sessão corrente
+# ctrl w w:
+> Navega entre as abas do terminal Shell/ Editor vim
+# source / so%:
+> Carrega as alterações do arquivo...
+# bn
+> Mantém o buffer da sessão, arquivos abertos
+
+# Movimentação do Cursor.....
+
+→ Inicío de linha: 0 <home>
+→ Fim de linha   : $ <end>
+→ Página anterior: <C-b>
+→ Próxima página : <C-f>
+→ Início do próximo buffer: gg
+→ Fim do buffer : G
+
+# Seleção de texto:...
+
+→ Seleção de Caracteres: <v><direções>
+→ seleção de linhas: <V><direções> (para cima ou para baixo)
+→ Seleção de blocos: <C-v><direções>
+
+# Recortar(delete) e copiar(yank)
+
+→ Seleções: 
+
+* selecionanado área : vi 'caracter ou simbolo':
+* Seleção e delete :  dt'caracter  ou simbulo' seleciona e deleta o trecho marcacdo...:w
+* Copiar : y
+* Recortar : d
+* Deleta parágrafo inteiro : d} ....
+* Colar após cursor : P
+* Colar antes do cursor: p
+
+* Recortar a linha corrente   : dd
+* Copiar a linha corrente : yy
+
+* Recortar várias linhas abaixo: <#linhas>dd ou d<#linhas>j
+e Copiar várias linhas abaixo : <#linhas>yy ou y<#linhas>j
+
+* Recortar várias linhas acima: d<#linhas>k
+* Copiar várias linhas acima: y<#linhas>k
+
+
+# Desfazer/refazer
+* Desfazer : u
+* Refazer : <C-u>
+
+# Abrir e fechar arquivos...
+
+* $ vi <arquivo> Abrir o arquivo pela linha de comandos
+* :e <arquivo>   Abrir ou criar arquivo
+* :bd!           Fechar arquivo corrente sem salvar
+* :bd            Fechar arquivo corrente
+* :bp            Retorna ao arquivo anterior 'buffer prewius'
+* :bn            Avança 'buffer next'...:
+* :ctrl 6       alterna entre os ul:tímos dois buffers abertos...
+# Sair e salvar...
+
+ * :w [nome]<cr>  Salvar
+ * :sav  <novo_nome><cr>  Salvar como...
+ * :x [nome]<cr> ou :wq[nome]<cr> Salvar  e sair
+ * :q!                   Sair sem salvar
+ * :q                    Sair
+
+
+# Trabalhando com multiplas janelas...
+
+ * vim -o : janela Horizontal
+ * vim -O : janela Vertical
+
+ * vim -o(n) : define número de janelasna sessão. vim -o3 / Três janelas
+
+ * vim -p : :abrir em :abas laterais
+ *        ( ctrl page up/ page down → movimentação  entre as abas ou 'gt'...
+
+
+*  :q → fecha janela 
+*  :qa → fecha todas as janelas da sessão 
+
+# Trabalhando com Buffers...
+
+* :bn → buffer next > próxima aba na sequência aberta
+* :b(n1) → abre o buffer  relacionado ao número:
+* :only → destaca apenas a janela corrente.
+* :30Lex → Abre árvore do diretório comjanela acoplada... ('Lex'. Left Explorer)
+
+# Busca e substituiçãode comandos...
+
+* : 
+
+
+

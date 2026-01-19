@@ -1,6 +1,6 @@
 " "---------------------------------------------------------
  if has('termguicolors')
-    set termguicolors
+    set 'termguicolors'
  else
     set t_Co=256
  endif
@@ -8,7 +8,7 @@
  filetype plugin indent on
  syntax on 
  set title
- "set encoding=utf-8
+ set encoding=utf-8
  set backspace=indent,eol,start
  set noerrorbells
  set confirm
@@ -94,67 +94,63 @@
 " "-------------------------------------------------------------
  set noshowmode
  set laststatus=2
-"
-" hi statusline cterm=NONE ctermfg=0 ctermbg=7 guibg=#000000
-" hi statuslinenc cterm=NONE ctermbg=240 guibg=616270 guifg=#000000
-" "
-" augroup ModeEvents
-"       autocmd!
-"       au InsertEnter * hi statusline cterm=NONE ctermfg=0 ctermbg=10
-"       guibg=#78C86F
-"       au InsertLeave * hi statusline cterm=NONE ctermfg=0 ctermbg=7
-"       guibg=#C1C2O0
-"       au ModeChanged *:[vV\x16]* hi statusline cterm=NONE ctermfg=0 ctermbg=13
-"       guibg=#C990DC
-"       au ModeChanged *:[vV\x16]*:* hi statusline cterm=NONE ctermfg=0
-"       ctermbg=7 guibg=#C1C2D0
-" augroup end
-"
-" function! LostStatusLine()
-"
-"       let g:left_sep='|'
-"       let g:right_sep='|'
-"
-"       let g:currentmode={
-"           \ 'n' : 'Normal',
-"           \ 'no' : 'Normal-Operator Pending',
-"           \ 'v'  : 'Visual',
-"           \ 'V'  : 'V-line',
-"           \ 's'  : 'Select',
-"           \ 'S'  : 'S-Line',
-"           \ '^S' : 'S-Block',
-"           \ 'i'  : 'Insert',
-"           \ 'R'  : 'Replace',
-"           \ 'Rv' : 'V-Replace',
-"           \ 'c'  : 'Commmand',
-"           \ 'cv' : 'Vim Ex',
-"           \ 'ce' : 'Ex',
-"           \ 'r'  : 'Prompt',
-"           \ 'rm' : 'More',
-"           \ 'r?' : 'Confirm',
-"           \ '!'  : 'Shell',
-"           \ 't'  : 'Terminal'
-"           \}
-"
-"       set statusline=\ %{toupper(g:currentmode[mode()])}
-"       "set statusline=\ %{toupper(mode())}
-"       set statusline=\ %{left_sep}
-"       set statusline=\ %n
-"       set statusline=\ %{left_sep}
-"       set statusline=\ %f%m\ %y
-"       set statusline=\ %{left_sep}
-"       set statusline=\ %{&ff}\ %{&fenc!=''?&fenc:&enc}
-"       set statusline=\ %{left_sep}
-"       set statusline=\ %=
-"       set statusline=\ %{right_sep}
-"       set statusline=\ %L/%L%v
-"       set statusline=\ %{right-sep}
-"       set statusline=\ %P\
-"
-" endfunction       
-"
-" call LoadStatusLine()
-"
+
+ hi statusline cterm=NONE ctermfg=0 ctermbg=7 guibg=#2A94E0 guifg=#000000
+ hi statuslinenc cterm=NONE ctermfg=0 ctermbg=240 guibg=#066090 guifg=#333333
+
+ augroup ModeEvents
+       autocmd!
+       au InsertEnter * hi statusline ctermfg=0 ctermbg=10 guibg=#00ae6b guifg=#000000
+       au InsertLeave * hi statusline ctermfg=0 ctermbg=7 guibg=#2A94E0 guifg=#000000
+       au ModeChanged *:[vV\x16]* hi statusline  ctermfg=0 ctermbg=13 guibg=#C990DC
+       au ModeChanged [vV\x16]*:* hi statusline  ctermfg=0 ctermbg=7 guibg=#2A94E0
+ augroup end
+
+ function! LoadStatusLine()
+
+       let g:left_sep='\'
+       let g:right_sep='/'
+
+       let g:currentmode={
+           \ 'n' : 'Normal',
+           \ 'no' : 'Normal-Operator Pending',
+           \ 'v'  : 'Visual',
+           \ 'V'  : 'V-line',
+           \ 's'  : 'Select',
+           \ 'S'  : 'S-Line',
+           \ '^S' : 'S-Block',
+           \ 'i'  : 'Insert',
+           \ 'R'  : 'Replace',
+           \ 'Rv' : 'V-Replace',
+           \ 'c'  : 'Commmand',
+           \ 'cv' : 'Vim Ex',
+           \ 'ce' : 'Ex',
+           \ 'r'  : 'Prompt',
+           \ 'rm' : 'More',
+           \ 'r?' : 'Confirm',
+           \ '!'  : 'Shell',
+           \ 't'  : 'Terminal'
+           \}
+
+       set statusline+=\ %{toupper(g:currentmode[mode()])}
+       "set statusline=\ %{toupper(mode())}
+       set statusline+=\ %{left_sep}
+       set statusline+=\ %n
+       set statusline+=\ %{left_sep}
+       set statusline+=\ %f%m\ %y
+       set statusline+=\ %{left_sep}
+       set statusline+=\ %{&ff}\ %{&fenc!=''?&fenc:&enc}
+       set statusline+=\ %{left_sep}
+       set statusline+=\ %=
+       set statusline+=\ %{right_sep}
+       set statusline+=\ %L/%L%v
+       set statusline+=\ %{right-sep}
+       set statusline+=\ %P\
+
+ endfunction       
+
+ call LoadStatusLine()
+
 " "----------------------------------------------------------
  hi Normal guibg=NONE ctermbg=NONE
 "
@@ -164,11 +160,9 @@
 "
  hi VertSplit ctermbg=NONE guibg=NONE ctermfg=7 guifg=#c1c2d0
 "
-" hi Tabline       guifg=#9192a0 guibg=#303140 gui=NONE
-" hi TabLineSel    guifg=#a1a2b0 guibg=#101120 gui=bold
-" hi TabLineFill   guifg=#9192a0 guibg=#303140 gui=none
+ hi Tabline       guifg=#9192a0 guibg=#303140 gui=NONE
+ hi TabLineSel    guifg=#a1a2b0 guibg=#101120 gui=bold
+ hi TabLineFill   guifg=#9192a0 guibg=#303140 gui=none
 "
  hi Visual guifg=NONE guibg=#303140
-"
-"
 "
