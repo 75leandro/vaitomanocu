@@ -1,0 +1,11 @@
+
+
+#include <stdio.h>
+
+int main() {
+
+   printf("vai toma no cu! 1ª parte");
+    printf("Vai toma no cu! 2ª parte");
+
+    return 0;
+}

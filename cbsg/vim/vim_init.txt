@@ -3,7 +3,7 @@
 #
 #
 # tab ball:
-> Ativa multiplas abas na sessão corrente
+> Ativa conjunto de >wwabas na sessão corrente
 # ctrl w w:
 > Navega entre as abas do terminal Shell/ Editor vim
 # source / so%:
@@ -63,37 +63,54 @@ e Copiar várias linhas abaixo : <#linhas>yy ou y<#linhas>j
 * :ctrl 6       alterna entre os ul:tímos dois buffers abertos...
 # Sair e salvar...
 
- * :w [nome]<cr>  Salvar
- * :sav  <novo_nome><cr>  Salvar como...
- * :x [nome]<cr> ou :wq[nome]<cr> Salvar  e sair
- * :q!                   Sair sem salvar
- * :q                    Sair
+* :w [nome]<cr>  Salvar
+* :sav  <novo_nome><cr>  Salvar como...
+* :x [nome]<cr> ou :wq[nome]<cr> Salvar  e sair
+* :q!                   Sair sem salvar
+* :q                    Sair
 
 
 # Trabalhando com multiplas janelas...
 
- * vim -o : janela Horizontal
- * vim -O : janela Vertical
+* vim -o : janela Horizontal
+* vim -O : janela Vertical
 
- * vim -o(n) : define número de janelasna sessão. vim -o3 / Três janelas
+* vim -o(n) : define número de janelasna sessão. vim -o3 / Três janelas
 
- * vim -p : :abrir em :abas laterais
- *        ( ctrl page up/ page down → movimentação  entre as abas ou 'gt'...
+              * vim -p : :abrir em :abas laterais
+              *        ( ctrl page up/ page down → movimentação  entre as abas ou 'gt'...
 
 
-*  :q → fecha janela 
-*  :qa → fecha todas as janelas da sessão 
+                      *  :q → fecha janela 
+                      *  :qa → fecha todas as janelas da sessão 
 
 # Trabalhando com Buffers...
 
-* :bn → buffer next > próxima aba na sequência aberta
-* :b(n1) → abre o buffer  relacionado ao número:
-* :only → destaca apenas a janela corrente.
-* :30Lex → Abre árvore do diretório comjanela acoplada... ('Lex'. Left Explorer)
-
+                      * :bn → buffer next > próxima aba na sequência aberta
+                      * :b(n1) → abre o buffer  relacionado ao número:
+                      * :only → destaca apenas a janela corrente.
+                      * :30Lex → Abre árvore do diretório comjanela acoplada... ('Lex'. Left Explorer)
 # Busca e substituiçãode comandos...
 
-* : 
+                      → ciw .. apaga a palavra marcada pelo cursor  
+
+
+# Transferindo dados entre arquivos...
+
+                      → r   /home/leandro/vaitomanocu/cbsg/vim/test ... append no arquivo...
+              → 0r   /home/leandro/vaitomanocu/cbsg/vim/test ... anexa ao inćio... 
+
+# Abrindo arquivos recentes...
+→ '0 ....abre o ultímo arquivo maniplado...
+→ '1 .... penultimo ...
+
+# Comparando arquivos com vimdiff
+
+→ vimdiff 'nome projeto' scp://usuario@estacao//caminho/projeto
+
+# Busca referenciada por 'caracter'
+→ f'char' ... aponta para o primero caracter semelhante  na linha corrente
+
 
 
 
