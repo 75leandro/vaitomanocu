@@ -111,6 +111,22 @@ e Copiar várias linhas abaixo : <#linhas>yy ou y<#linhas>j
 # Busca referenciada por 'caracter'
 → f'char' ... aponta para o primero caracter semelhante  na linha corrente
 
+# Criando cabeçario de testos...
+→ :.!figlet -f slant
+
+/bin/bash: linha 1: figlet: comando não encontrado
+
+# Mudando formato e texto...
+→ set ft=markdown
+
+# ex)  este arquivo tem...
+
+.,.+2! while read l o; do echo $(wc $ %o) $l; done | sed s'/% //' | column -t -s 
+
+121   linhas
+522   palavras
+3403  caracteres
+
 
 
 
