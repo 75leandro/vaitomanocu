@@ -187,7 +187,8 @@ leandro:x:1000:1000:Leandro,,,:/home/leandro:/bin/bash
 
 → 1°) - Cusrso basíco programação Shell
 → 2°) - Curso Shell Gnu
-→ 3°) - Curso intensivo de progamação em bash → 4°) - Curso shell Gnu Linux
+→ 3°) - Curso intensivo de progamação em bash
+→ 4°) - Curso shell Gnu Linux
 
 
 

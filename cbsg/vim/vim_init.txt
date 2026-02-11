@@ -127,6 +127,46 @@ e Copiar várias linhas abaixo : <#linhas>yy ou y<#linhas>j
 522   palavras
 3403  caracteres
 
+# Criação, permissão e escrita direta no arquivo....
+
+ echo '#!/bin/bash' > arq_tes; chmod +x arq_tes; vim arq_tes
+ #------------------------------------------------------------------
+# Automatizando Scripts...
+# Testando número de argumento para a nomeação de arquivos...
+
+# Opções:
+
+editor="vim"
+
+# Variáveis:
+
+dia_de_hoje=$( date +'%d/%m/%Y' )
+
+header="#!/bin/bash
+#----------------------------
+# Script   :
+# Descrição :
+# Versão    : 0.01
+# Autor     : Leandro 
+# Data      : $dia_de_hoje
+# Licença   : GNU/GPL v3.0
+#-----------------------------------
+# Uso :
+#--------------------------------
+"
+ [[ $# -ne 1 ]] && echo " apenas *1* nome para o arquivo! " && exit 1
+
+# Testar se o arquivo já existe...
+
+ [[ -f $1 ]] && echo "arquivo já existe! Saindo! " && exit 1
+ echo "$header" > $1
+ chmod +x $1
+ $editor $1
+
+ exit 0  
+
+
+
 
 
 
