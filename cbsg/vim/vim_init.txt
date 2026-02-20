@@ -165,7 +165,16 @@ header="#!/bin/bash
 
  exit 0  
 
+# Filtrando arquivos
 
+→ shopt globstar ... mostra o estado da flag
+  shopt globstar off
+
+→ shopt -s globstar  (-s → set) / shopt -u globstar (-u → unset)
+  shopt globstar on
+
+→ Filtro: ~/**/*.md
+  Busca no diretório atual  e subsequentes pelo arquivo...,
 
 
 
