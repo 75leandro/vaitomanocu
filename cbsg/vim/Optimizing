@@ -1,0 +1,139 @@
+
+" ============================================================
+"  CONFIGURAÇÕES GERAIS
+" ============================================================
+set nocompatible              " Desativa compatibilidade com Vi antigo
+set encoding=utf-8            " Codificação UTF-8
+set number                    " Exibe número de linhas
+set relativenumber            " Números relativos (navegação mais fácil)
+set tabstop=4                 " Tamanho do Tab = 4 espaços
+set shiftwidth=4              " Indentação automática = 4 espaços
+set expandtab                 " Converte Tab em espaços
+set smartindent               " Indentação inteligente
+set autoindent                " Mantém indentação da linha anterior
+set wrap                      " Quebra de linha visual
+set cursorline                " Destaca a linha atual
+set showmatch                 " Destaca parênteses/colchetes correspondentes
+set hlsearch                  " Destaca resultados de busca
+set incsearch                 " Busca incremental em tempo real
+set ignorecase                " Busca sem distinção de maiúsculas
+set smartcase                 " Diferencia maiúsculas se digitadas
+set clipboard=unnamedplus     " Integração com clipboard do sistema
+set mouse=a                   " Suporte ao mouse
+set laststatus=2              " Sempre exibe a barra de status
+set wildmenu                  " Menu visual para autocompletar comandos
+set wildmode=longest:full,full
+set backspace=indent,eol,start
+set hidden                    " Permite trocar buffer sem salvar
+set updatetime=300            " Tempo de resposta mais rápido
+set signcolumn=yes            " Coluna de sinais sempre visível
+
+" ============================================================
+"  AUTOCOMPLETE NATIVO DO VIM (Omnicomplete)
+" ============================================================
+set omnifunc=syntaxcomplete#Complete   " Ativa omnicomplete por sintaxe
+set completeopt=menuone,longest,preview
+" Atalhos para autocomplete nativo:
+" Ctrl+n / Ctrl+p  → autocomplete de palavras
+" Ctrl+x Ctrl+o    → omnicomplete (contexto semântico)
+" Ctrl+x Ctrl+f    → autocomplete de caminhos/arquivos
+" Ctrl+x Ctrl+l    → autocomplete de linhas inteiras
+
+" ============================================================
+"  PLUGINS (via Vim-Plug)
+" ============================================================
+call plug#begin('~/.vim/plugged')
+
+  " --- Autocomplete avançado ---
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}   " LSP + Autocomplete inteligente
+
+  " --- Sintaxe e linguagens ---
+  Plug 'sheerun/vim-polyglot'                        " Suporte a múltiplas linguagens
+
+  " --- Explorador de arquivos ---
+  Plug 'preservim/nerdtree'
+
+  " --- Busca fuzzy ---
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+
+  " --- Status bar elegante ---
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+
+  " --- Tema de cores ---
+  Plug 'morhetz/gruvbox'
+
+  " --- Comentários rápidos ---
+  Plug 'tpope/vim-commentary'
+
+  " --- Fechamento automático de parênteses ---
+  Plug 'jiangmiao/auto-pairs'
+
+  " --- Git integration ---
+  Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
+" ============================================================
+"  CONFIGURAÇÃO DO COC.NVIM (Autocomplete LSP)
+" ============================================================
+" Tab para navegar no menu de autocomplete
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Enter para confirmar seleção
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Ctrl+Espaço para forçar autocomplete
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Navegação entre erros/avisos
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Ir para definição / referências
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" ============================================================
+"  TEMA E VISUAL
+" ============================================================
+syntax on                     " Ativa syntax highlighting
+set background=dark
+colorscheme gruvbox           " Tema (instalado via plug)
+set termguicolors             " Cores verdadeiras no terminal
+
+" ============================================================
+"  ATALHOS PERSONALIZADOS
+" ============================================================
+let mapleader = " "           " Tecla líder = Espaço
+
+nnoremap <leader>n :NERDTreeToggle<CR>    " Abre/fecha explorador
+nnoremap <leader>f :Files<CR>             " Busca de arquivos (fzf)
+nnoremap <leader>w :w<CR>                 " Salvar rápido
+nnoremap <leader>q :q<CR>                 " Fechar rápido
+nnoremap <C-h> <C-w>h                     " Navegar entre splits
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+"
