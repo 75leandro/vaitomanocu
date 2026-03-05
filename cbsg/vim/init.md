@@ -1,4 +1,5 @@
 # Comandos Internos do Vim...
+
 #
 #
 #
@@ -178,4 +179,118 @@ header="#!/bin/bash
 
 
 
+# Leitura  de arquivo via loop while lendo entrada via read....
+
+→ while read; do echo $REPLY; done < texto.... Lê todas as linhas o arquivo...
+
+#  Redirecionamento personalizado....
+
+→ Abrindo e escrevendo no descritor arquivo: exec 3> escrita.txt
+→ echo teste >&3
+cat escrita.txt
+saida
+teste
+→ echo teste1 >&3
+cat escrita.txt
+saida
+teste
+teste1
+→→→ o arquivo permanece aberto podendo receber mais entradas de linha...
+→ echo teste2 >&3
+cat escrita.txt
+saida
+teste
+teste1
+teste2
+→→ Fechando o descritor  de arquivos
+→ exec 3>&-
+* Obs. 
+→ exec 3> escrita.txt
+cat escrita.txt
+"0" - Apaga os dados do  arquivo ....
+
+*** Acompanhando o redirecionamento
+ls -l /proc/$$/fd
+#-----------------------------------------
+# Criando Função de entrada direta em arquivo....
+
+escreve() {echo $1 ;} >> $2
+
+→ escreve 'blablabla' bla.txt
+
+Ou..... Expansão condicional: se nao houver o argumento do nome padrão;;; novo bla.txt2:
+
+escreve() {echo $1;} >> ${2:-bla.txt}
+
+
+## ENUNCIADO....
+
+
+##  PROCEDIMENTO....
+
+## IMPLEMENTAÇÂO....
+→ Gerar um número aleatório entre 1 e 100...
+
+na=$((RANDOM % 100 + 1))
+
+→ Solicitar a entrada de um número entre 1 ou 0,,,
+while :; do
+    
+     read palpite 
+
+→ Verificar se o número esta entre a faixa solicitada...
+
+((palpite >= 1 && palpite <= 100)) || { 
+    echo 'Fora da faixa pedida (0-100)!'
+    continue
+}
+
+→ Incrementar a quantidade de tentavas....
+
+((qtd++))
+
+→ COmparar o número  informado como número aleatório...
+
+[[ $palpite -eq $na ]] && {
+    echo "Acertou em $qtd tentativas(s)!"
+    exit
+}    
+
+[[ $palpite -lt $na ]] &&  comp=menor || comp=maior
+    echo "spalpite é o $comp do que o número secreto."
+   
+done
+------------------------------------------------------------------
+
+# Descrever todos o processos que poderiam levar a esta implementação
+do scriptdo exercício anterior....
+
+# Options:
+
+range_min=${1:-1}
+range_max=${2: -100}
+
+# Strings:
+
+range_out="Fora da faixa  de palpites ($range_min-$range_max)!"
+guess_prompt="Digite um número entre ($range_mi-$range_max): "
+
+guess_win='Você acertou em %s tentativa(s)!'
+msg_error='%s é %s do que número  secreto....'
+
+guess_error=(menor maior)
+
+# Functions:
+
+get_guess() { read -p "guess_prompt" guess; }
+
+
+
+
+
+
+
+
+
+## CONSOLIDAÇÂO...
 
