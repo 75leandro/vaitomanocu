@@ -284,13 +284,7 @@ guess_error=(menor maior)
 
 get_guess() { read -p "guess_prompt" guess; }
 
+# 3°
 
-
-
-
-
-
-
-
-## CONSOLIDAÇÂO...
+:
 

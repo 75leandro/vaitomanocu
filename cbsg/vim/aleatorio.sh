@@ -30,8 +30,8 @@ game() {
      # echo $sn:$rounds:$guess   # <--- apenas para teste!
      round_inc
      get_guess
-     check_range $guess || { echo $range_out; game;}
-     [[ $guess -eq $sn ]] && { printf "$guess_win\n\n" $round; exit; }
+     check_range $guess || { echo $range_out; game; }
+     [[ $guess -eq $sn ]] && { printf "$guess_win\n\n" $rounds; exit; }
      printf "$msg_error\n\n" $guess ${guess_error[guess > sn]}
      game
  }
