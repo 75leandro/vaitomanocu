@@ -284,7 +284,75 @@ guess_error=(menor maior)
 
 get_guess() { read -p "guess_prompt" guess; }
 
-# 3°
+# 3° Comando composto if/case....
 
-:
+if [[ $var == padrão1 ]]; then 
+
+    elif [[ $var == padrão2 ]]; then
+
+    elif [[ $var == padrão3 ]]; then
+
+    else
+        fi
+
+case ${1,,} in
+    a) echo o argumento e A ;& "obs.executa tambémos comandos da claúsula seguinte... 
+    b) echo o argumento é B ;;& "obs.se ok: avalia o seguinte...
+    c) echo o argumento é c ;; "obs.ponto virgula, ponto virgula: sehouver o  casamento  executa todo bloco e sai do case
+    *) echo sem definição para o que foi digitado....
+    esac
+
+
+#------------------------------------------------
+# Loop while e until ...
+
+while :;do echo x.txt;done ' se verdadeiro gera looping  infinito...'
+
+    untill false x.txt ' também gera looping infinito...'
+
+# while leitura de linha de arquivo...
+
+while read linha; do echo ${linha::10}; done  < /etc/passwd 'lê os 1°s caracteresdecada linha....
+
+
+# Gerando Menu de  opções: 
+
+while :; do clear; echo opt1; read; [[ $REPLY == t* ]] || break; done ... 
+
+
+# while test
+
+var=0; while [[ $var -le 10 ]]; do echo $var: ((++var)); done 'avalia e testaexpressão....
+
+
+
+
+# Menu Select....
+
+#!/bin/bash
+clear
+
+PS3 'Digite uma opção:'
+select opt in opt1 opt2 opt3 sair; do
+      clear
+      echo $opt
+      echo $REPLY
+      [[ $opt == 'sair' ]] && break
+      read -sN1 -t 10 -p 'Tecle algo para continuar...' continua
+      clear
+      echo
+done      
+
+#-------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
