@@ -258,9 +258,14 @@ Para                       Ação        De
 
     /etc/init.d/proftpd status.... comandos: stop, start ou restart....
 
-        
+→   Arquivo de configuação:
+
+   /etc/proftpd/proftpd.conf  
+
+# Alterar grupo e proprietário
 
 
+    
 
 
 
