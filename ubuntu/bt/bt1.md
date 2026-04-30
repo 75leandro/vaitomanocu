@@ -260,12 +260,184 @@ Para                       Ação        De
 
 →   Arquivo de configuação:
 
-   /etc/proftpd/proftpd.conf  
+  /etc/proftpd/proftpd.conf 
 
-# Alterar grupo e proprietário
+→ Entrada via Filezilla no Windows ... host 10.0.1.170 usuario leandro senha xxxxxx porta 22 ... estabelece conexão cliente servidor...
+
+# Samba Servidor Windows/Linux
+
+→ /etc/samba/smb.conf
+→ sudo smbd start ou restart....
+→ chgrp users /home/Publico .... Autoriza o acesso do grupo ao diretorio alvo...
+→ chmod 775 /home/publico .... permissão total para root/users
+→ useradd hoher -m -G users ....adicionando usuario com permissão dentro do grupo vigente....
+→ passwd hoher senha xxxxxx 
+→ smbpasswd -a hoher ... adicionando usuario ao banco de dados do samba....
+→
 
 
-    
+# Alterar  permissão de acesso a arquivos e diretórios...
+
+→ chmod
+
+Modo de permmissão octal...
+
+sintáxe:
+
+chmod[permissões] [arquivo ou diretório]
+
+execução = 1
+escritao = 2
+leitura = 4
+
+rwx
+111   1 = ligado / 0 = desligado 
+
+--x
+001 = 1
+
+-w- = 2
+010
+
+r-- = 4
+100
+→ somando o resultado dos números no formato 'octal'...
+
+rw-
+110 = 6
+
+rwx = 7
+
+permissões:
+pro   grup  outros
+rwx   rw-   rw-
+111   110   100
+7     6     6  
+
+rw-r-----
+rw-  r--   ---
+6    4     0
+
+Alterando as permissões do arquivo....
+
+leandro@abstract-programmer:~/bt$ > arqteste
+leandro@abstract-programmer:~/bt$ ls -l
+total 8
+-rw-rw-r-- 1 leandro leandro    0 abr  9 21:12 arqteste
+-rw-rw-r-- 1 leandro leandro  276 mar 24 21:06 comandos
+drwxrwxr-x 2 leandro leandro 4096 mar 23 23:11 vim
+leandro@abstract-programmer:~/bt$ sudo chmod 770 arqteste 
+[sudo] senha para leandro: 
+leandro@abstract-programmer:~/bt$ ls -l
+total 8
+-rwxrwx--- 1 leandro leandro    0 abr  9 21:12 arqteste
+-rw-rw-r-- 1 leandro leandro  276 mar 24 21:06 comandos
+drwxrwxr-x 2 leandro leandro 4096 mar 23 23:11 vim
+leandro@abstract-programmer:~/bt$ 
+Permissão parcial: 
+leandro@abstract-programmer:~/bt$ sudo chmod 644 arqteste 
+leandro@abstract-programmer:~/bt$ ls -l
+total 8
+-rw-r--r-- 1 leandro leandro    0 abr  9 21:12 arqteste
+
+Permissão total:
+leandro@abstract-programmer:~/bt$ sudo chmod 777 arqteste
+leandro@abstract-programmer:~/bt$ ls -l
+total 8
+-rwxrwxrwx 1 leandro leandro    0 abr  9 21:12 arqteste
+
+Negar permissão para todos:....
+leandro@abstract-programmer:~/bt$ sudo chmod 000 arqteste
+leandro@abstract-programmer:~/bt$ ls -l
+total 8
+---------- 1 leandro leandro    0 abr  9 21:12 arqteste
+
+Permitir apenas leitura e gravação...
+leandro@abstract-programmer:~/bt$ sudo chmod 664 arqteste
+leandro@abstract-programmer:~/bt$ ls -l
+total 8
+-rw-rw-r-- 1 leandro leandro    0 abr  9 21:12 arqteste
+
+
+# Alterando grupo e proprietário.....
+
+→ chgrp ( change group ) ... alterar grupo e proprietário de arquivo e diretório...
+
+sintáxe: 
+chgrp [novo_grupo] [nome_arquivo]
+
+chown ( change owner) ... altera proprietário do arquivo...
+
+sintáxe:
+
+chown [novo_proprietário] [nome_arquivo]
+
+leandro@abstract-programmer:~/bt$ ls -l
+total 4
+-rw-rw-r-- 1 leandro leandro    0 abr  9 21:12 arqteste
+drwxrwxr-x 2 leandro leandro 4096 abr  9 21:45 vim
+leandro@abstract-programmer:~/bt$ sudo chown hoher arqteste 
+
+leandro@abstract-programmer:~/bt$ ls -l
+total 4
+-rw-rw-r-- 1 hoher   leandro    0 abr  9 21:12 arqteste
+drwxrwxr-x 2 leandro leandro 4096 abr  9 21:45 vim
+leandro@abstract-programmer:~/bt$ 
+
+→ Criando grupo...
+
+addgroup 
+
+leandro@abstract-programmer:~/bt$ sudo addg
+addgnupghome  addgroup      
+leandro@abstract-programmer:~/bt$ sudo addgroup oliver_scripts
+info: Selecionando GID da faixa 1000 a 59999 ...
+info: Adicionando grupo 'oliver_scripts' (GID 1002) ...
+
+leandro@abstract-programmer:~/bt$ sudo chgrp oliver_scripts arqteste 
+leandro@abstract-programmer:~/bt$ ls -l
+total 4
+-rw-rw-r-- 1 hoher   oliver_scripts    0 abr  9 21:12 arqteste
+drwxrwxr-x 2 leandro leandro        4096 abr  9 21:45 vim
+leandro@abstract-programmer:~/bt$ 
+
+Renomeando proprietário e grupo...
+
+leandro@abstract-programmer:~/bt$ sudo chown leandro arqteste 
+leandro@abstract-programmer:~/bt$ sudo chgrp leandro arqteste 
+leandro@abstract-programmer:~/bt$ ls -l
+total 4
+-rw-rw-r-- 1 leandro leandro    0 abr  9 21:12 arqteste
+drwxrwxr-x 2 leandro leandro 4096 abr  9 21:45 vim
+leandro@abstract-programmer:~/bt$ 
+
+
+# Tranferência de arquivos via 'ssh' de : Servidor para Cliente....
+
+sudo scp -r leandro@192.168.122.1:/home/leandro/Downloads/ /Documentos/ .... Obs "/Documentos/" Gerou criou diretório na raiz do sistema, para transferência dos arquivos...
+
+Obs.2) O endereço inet 192.168.122.1 esta vinculada a placa de rede virtual ' virbr0 ' em ssh de hoher534 para leandro...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mpv "https://youtube.com/playlist?list=PLucm8g_ezqNp92MmkF9p_cj4yhT-fCTl7&si=ueF-DtxyoCtSCqaP:"
