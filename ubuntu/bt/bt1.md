@@ -825,7 +825,12 @@ leandro@leandro:~/vaitomanocu/ubuntu/bt$
 → su hoher ... permanece no diretório do administrador /home/leandro...
 
 → su - hoher ... entra no diretório /home/hoher
- echo sudo chage -l hoher
+
+# Alterando permissão de usuarios ... comando 'chage'...
+
+
+→ sudo chage -l hoher
+
 Última mudança de senha					: abr 08, 2026
 Senha expira					: nunca
 Senha inativa					: nunca
@@ -833,3 +838,11 @@ Conta expira						: nunca
 Número mínimo de dias entre troca de senhas		: 0
 Número máximo de dias entre troca de senhas		: 99999
 Número de dias de avisos antes da expiração da senha	: 7
+
+# comando uname.... demostra  nome da maquina e sua configuração...
+
+→ uname -m 
+
+→ uname -a
+
+
