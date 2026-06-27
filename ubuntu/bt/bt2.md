@@ -1,4 +1,5 @@
-## Bt Linux
+s
+
 
 → mysql:  mysql -u root -p; Senha@123
 
@@ -8,7 +9,7 @@
 → ifconfig  .... verificação configuração de rede
 
 → Alterando o endeeço IP... 'ip atual' 10.0.11.170....
-
+#############
 1) ifconfig wlp1s0 10.0.11.135 netmask 255.255.255.0 up...'sobe a placa de rede'. down 'desce a placa de rede'.... 
 Obs: altera o ip atual dentro da sessão corrente apenas
 
@@ -429,17 +430,133 @@ sudo scp -r leandro@192.168.122.1:/home/leandro/Downloads/ /Documentos/ .... Obs
 Obs.2) O endereço inet 192.168.122.1 esta vinculada a placa de rede virtual ' virbr0 ' em ssh de hoher534 para leandro...
 
 
+# Localização de arquivos...
+
+- Atualização de banco de dados updatedb
+→ locate bashrc
+
+# Localização de programas...
+→ whereis vim ... localiza o camwhichinho do programa assim como a pa
+gina manual do mesmo...
+
+Ou:
+→ which ... demostra apenas o caminho do programa... 
+
+# Copy in/ Copy out ... "cpio" → Criar arquivamentos...
+
+→ ls | cpio  -ov > arquivamento.cpio 
+Copia todos os arquivos do diretorio atual...
+
+- Extrair arquivos cpio
+cpio -idv < arquivamento.cpio
+
+- Copiar arvore de diretorio inteira atual /home para outro diretorio /
+find . -depth | cpio -pmdv /teste
+
+
+obs: d cria diretório quando for necessário
+     m retem hora de modificação de arquivos
+     v modo verboso
+     p modo de passagem 
+
+- Mostrar conteúdo do arquivo
+cpio -t < arquivamento.cpio
+
+- Criar arquivo cpio no fomato TAR
+ls | cpio -o -H tar> arquivo.tar
+     -o opção de saída
+
+
+# Umask ... Conversão de octal para binario
+0022   =  000010010
+→ octal  binario
+
+NOT (000010010) = 111101101
+Permissão padrão de arquivo = 666
+666 = 110110110
+
+AND lógico:
+111101101
+110110110
+---------
+110100100 = 644
+
+umask 022 determina a permissão 644 para arquivos...
+
+777 = 111111111  permissão para diretorios... mesma conversão para AND lógico
+
+# Cron ...   Agendamento de tarefas ..ho..
+  
+→ crontab -e
+Ex:
+minuto / hora / dia da semanDea na / mês / ano
+33     19       *               *      *  touch cronteste.txt
+//      //      //               //    // /usr/bin/scriptteste.sh
+-Tarefa acima designada foi agendada. executara o script apontado no caminho..
+→ crontab -l => Demostra a tarefa agendada...
+
+
+# Compactação de arquivos ' Gzip'
+
+→ gzip testegzip.txt => Compacta o arquivo ' arquivos recebem a terminação ou,
+na prática testesgzip.txt.gz...'
+
+
+→ gzip  -d testegzip.txt.gz => Descompacta o arquivo citado...prefixo gunzip
+ 
+# Tar - Empacotamento de arquivos
+
+→ tar -cf arquivo_master.tar arq* ... 
+→  tar -tf arquivo_master.tar .... Demostra o conteúdo do arquivo...
+→  tar -rf arquivo_master.tar arquivo_solto.txt ... Anexa o novo arquivo...
+→  tar -f arquivo_master.tar --delete arquivo_solto.txt ... remove o arquivo..
+→  tar cvf armario.tar pasta_arq_teste_tar/ cria pasta e copia recursivamente
+o conteúdo do diretorio apontado....
+→  tar -cvzf gavetario.tar.gz blq*... comprime
+→  tar -xzvf gavetario.tar.gz .... Descomprime os arquivos
+
+→   tar -cvjf gavetario.tar.bz2 blq* ... usando 'bzip2', para comprimir
+→   tar -xjvf gavetario.tar.bz2  ... extrai os arquivos
+
+# Gerenciador de pacotes dpkg
+
+→ apt-cache showpkg vim
+
+
+# Run Level
+
+- Reinicialização do sistema e finanaliação...
+
+→ telinit0... Encerra o sistemaçy.
+→ telinit6... Reinicia o sistemaç
+→ telinit q ... Aplica as mudanças realizadas em /etc/inittab
+→ runlevel ... Mostra o runlevel prévio e o atual...
+
+# 'scp' (Secury Copy Protocol...)  Tranferência de arquivos via 'ssh...
+
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+bt1.md                                        100%   15KB 303.4KB/s   00:00
 
 
 
+cmd |caminho do arquivo no hospedeiro          | usuario/ip/local
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+bt1.md                                        100%   15KB 303.4KB/s   00:00
+→ Sintaxe:
 
+1)Exemplo local para remoto: scp arquivo.txt usuario@ip:/caminho/
 
+2)Exemplo remoto para local: scp usuario@ip:/caminho/arquivo.txt .
 
+# Usando o método " Resync "...
+→ Envia apenas as alterações posteriores ao arquivo...
 
+rsync -avz /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
 
+# Redirecionamento via comando 'tee'
 
-
-
+---- Obs. sudo apt update  | tee  novoarq.txt 
+- executa o camando assim como redireciona a saida para o arquivo alvo, sobscrevendo o mesmo se já houver conteúdo..
 
 
 

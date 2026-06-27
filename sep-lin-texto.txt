@@ -1,3 +1,14 @@
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+juliana:Juliana',,,:/home/juliana:/bin/bash
 grep '/home' /etc/passwd | cut -d: -f1,5,6,7
 grep /home /etc/passwd
 leandro:Leandro,,,:/home/leandro:/bin/bash
@@ -152,3 +163,6 @@ virtual TPM software stack,,,
 Libvirt Qemu,,,
 Libvirt Dnsmasq,,,
 Juliana',,,
+
+:for i in range(1,5) | .put =’192.168.0.’.i | endfor
+

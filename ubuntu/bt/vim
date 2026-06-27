@@ -1,0 +1,18 @@
+ chmod 757 /home/hoher
+$ ls -l /home
+total 12
+drwxr-xrwx   4 hoher   hoher   4096 jun 24 22:21 hoher
+drwxr-x---+ 33 leandro leandro 4096 jun 24 22:23 leandro
+drwxrwxr-x   2 root    users   4096 abr  7 20:22 publico
+$ 
+
+ bt1.md
+chmod 757 /home/hoher
+$ ls -l /home
+total 12
+drwxr-xrwx   4 hoher   hoher   4096 jun 24 22:21 hoher
+drwxr-x---+ 33 leandro leandro 4096 jun 24 22:23 leandro
+drwxrwxr-x   2 root    users   4096 abr  7 20:22 publico
+$ 
+
+ bt1.md
