@@ -164,5 +164,8 @@ Libvirt Qemu,,,
 Libvirt Dnsmasq,,,
 Juliana',,,
 
+
+dom 28 jun 2026 20:38:09 -03
 :for i in range(1,5) | .put =’192.168.0.’.i | endfor
+
 

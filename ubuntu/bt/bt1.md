@@ -1,229 +1,3 @@
-
-
-
-
-→ ifconfig  .... verificação configuração de rede
-
-→ Alterando o endeeço IP... 'ip atual' 10.0.11.170....
-#############
-1) ifconfig wlp1s0 10.0.11.135 netmask 255.255.255.0 up...'sobe a placa de rede'. down 'desce a placa de rede'.... 
-Obs: altera o ip atual dentro da sessão corrente apenas
-
-2) dhclient wlp1s0
-    Obs: renova o número de ip via dhcp
-
-
-
-1- Interface de rede servidor
-→ IP Fixo
-→ Instalar opacote do  servidor DHCP:
-  isc-chdp-server
-
-2- Arquivo de configuração do  servidor DHCP:
-/etc/dhcp/dhcpd.conf
-
--- Especificar interfaces a serem usadas.
-
-/etc/default/isc-dhcp-server
-
-Iniciar /parar/ reiniciar servidor dhcp
-
- service is-dhcp-server  start|stop|restart|status
-
-→ localiza erro  para  vereficação no log ...
-
- grep dhcpd /var/log/syslog | less
-
-→ verificar as concessões ativas
-
- cat /var/lib/dhcp/dhcpd.leases
-
-
-
-# Targets Comuns... Modo de Inicialização
-
-→multi-user.target .... Modo multiusuário, inicia apenas no terminal em modo gráfico.
-
-→graphical.target .... Inicia no modo Grafico .
-phical
-→rescue.target ... Modo de recuperação com acesso root, sem rede nen serviços extras...
-
-→systemctl get-default .... Mostra o modo setado.
-
-→systemctl set-default multi-user.target ... Modo prompt
-
-→systemctl graphical.target .... Modo grafico.
-
-- Ou uso em modo temporário ... sudo systemctl isolate multi-user.target => Modo Prompt
--------------------------------- sudo systemctl isolate graphical.target => Modo Grafico...
-
-
-
-# Vim comandos..
-→ tab ball .... multiplas janelas simultâneamente...
-
-→ gt ... mover por entre as janelas...
-
-→ctrl w w ... cursor alterna entre janelas terminal/editor... ou mais....
-
-→ yn ... copia n linhas
-→ yw ... palavra inteira
-→ yy ... linha inteira
-→ dd ... recorta linha inteira
-→ dw ... recorta palavra atual
-→ ndd .. recorta n linhas apartir d cursor
-→ D ... da posição do cursor até o final da linha...
-→ cc ... recorta entra no modo inserção e cola ao entrar no modo comando...
-** Usando caracteres especias..
-→ :digraphs .... para ver tabela de caracteres especiais
-→ ctrl + k .... shift S + * =  Σ
-
-
-
-→ssh -X leandro@10.0.11.170 ... Acesso  remoto com interface gráfica...
-→ssh -l leandro 10.0.11.170 ... Acesso sem a interface grafica...
-
-
-
-# Firewall ufw
-
-→ sudo ufw status
-→ sudo ufw enable
-→ sudo ufw desable
-→ sudo ufw status enumbered
-→ less /etc/services
-
-* Permissão:
-
-leandro@abstract-programmer:~$ sudo ufw status numbered
-Estado: ativo
-leandro@abstract-programmer:~$ less /etc/services 
-leandro@abstract-programmer:~$ sudo ufw allow 22/tcp
-Regra adicionada
-Regra adicionada (v6)
-leandro@abstract-programmer:~$ sudo ufw status
-Estado: ativo
-
-Para                       Ação        De
-----                       ----        --
-22/tcp                     ALLOW       Anywhere                  
-22/tcp (v6)                ALLOW       Anywhere (v6)             
-
-leandro@abstract-programmer:~$ sudo ufw status numbered
-Estado: ativo
-
-     Para                       Ação        De
-     ----                       ----        --
-[ 1] 22/tcp                     ALLOW IN    Anywhere                  
-[ 2] 22/tcp (v6)                ALLOW IN    Anywhere (v6)             
-
-leandro@abstract-programmer:~$ sudo ufw delete 1
-Apagando:
- allow 22/tcp
-Proceder com operação (s|n)? s
-Regra apagada
-leandro@abstract-programmer:~$ sudo ufw status
-Estado: ativo
-
-Para                       Ação        De
-----                       ----        --
-22/tcp (v6)                ALLOW       Anywhere (v6)             
-
-leandro@abstract-programmer:~$ sudo ufw delete 1
-Apagando:
- allow 22/tcp
-Proceder com operação (s|n)? s
-Regra apagada (v6)
-leandro@abstract-programmer:~$ sudo ufw status
-Estado: ativo
-
-* Negar Permissão:
-
-leandro@abstract-programmer:~$ sudo ufw deny ssh
-Regra adicionada
-Regra adicionada (v6)
-leandro@abstract-programmer:~$ sudo ufw status numbered
-Estado: ativo
-
-     Para                       Ação        De
-     ----                       ----        --
-[ 1] 22/tcp                     DENY IN     Anywhere                  
-[ 2] 22/tcp (v6)                DENY IN     Anywhere (v6)             
-
-leandro@abstract-programmer:~$ sudo ufw delete 1
-Apagando:
- deny 22/tcp
-Proceder com operação (s|n)? s
-Regra apagada
-leandro@abstract-programmer:~$ sudo ufw delete 1
-Apagando:
- deny 22/tcp
-Proceder com operação (s|n)? 1
-Abortado
-leandro@abstract-programmer:~$ 
-leandro@abstract-programmer:~$ sudo ufw status numbered
-Estado: ativo
-
-     Para                       Ação        De
-     ----                       ----        --
-[ 1] 22/tcp (v6)                DENY IN     Anywhere (v6)             
-
-leandro@abstract-programmer:~$ sudo ufw delete 1
-Apagando:
- deny 22/tcp
-Proceder com operação (s|n)? s
-Regra apagada (v6)
-
-** Bloqueando porta internet...
-
-leandro@abstract-programmer:~$ sudo ufw deny out 80
-Regra adicionada
-Regra adicionada (v6)
-leandro@abstract-programmer:~$ sudo ufw status numbered
-Estado: ativo
-
-     Para                       Ação        De
-     ----                       ----        --
-[ 1] 80                         DENY OUT    Anywhere                   (out)
-[ 2] 80 (v6)                    DENY OUT    Anywhere (v6)              (out)
-
-leandro@abstract-programmer:~$ sudo ufw delete 1
-Apagando:
- deny out 80
-Proceder com operação (s|n)? s
-Regra apagada
-
-leandro@abstract-programmer:~$ sudo ufw status numbered
-iEstado: ativo
-
-     Para                       Ação        De
-     ----                       ----        --
-[ 1] 80 (v6)                    DENY OUT    Anywhere (v6)              (out)
-
-leandro@abstract-programmer:~$ 
-
-** Permissão para servvidor web...
-
-leandro@abstract-programmer:~$ sudo ufw allow from 10.0.11.170
-Regra adicionada
-leandro@abstract-programmer:~$ sudo ufw status
-Estado: ativo
-
-Para                       Ação        De
-----                       ----        --
-Anywhere                   ALLOW       10.0.11.170               
-
-leandro@abstract-programmer:~$ ping 10.0.11.170
-PING 10.0.11.170 (10.0.11.170) 56(84) bytes of data.
---- 10.0.11.170 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 4046ms
-rtt min/avg/max/mdev = 4.362/4.977/5.577/0.462 ms
-
-** Permissão para todas as máquinas da rede em submáscara/24...
-
-leandro@abstract-programmer:~$ sudo ufw allow from 10.0.11.170/24
-WARN: Regra alterada depois da normalização
-Regra adicionada
 leandro@abstract-programmer:~$ sudo ufw status
 Estado: ativo
 
@@ -448,6 +222,7 @@ hoher534@hoher534-X102BA:~$ sudo userdel -r oliver
 userdel: oliver fila de correspondência (/var/mail/oliver) não encontrada
 userdel: diretório pessoal oliver (/home/oliver) não encontrado
 
+sudo deluser --remove-home oliver .. remoção completa do sistema ..
 # Tranferência de arquivos via 'ssh' de : Servidor para Cliente....
 
 sudo scp -r leandro@192.168.122.1:/home/leandro/Downloads/ /Documentos/ .... Obs "/Documentos/" Gerou criou diretório na raiz do sistema, para transferência dos arquivos...
@@ -459,6 +234,12 @@ Obs.2) O endereço inet 192.168.122.1 esta vinculada a placa de rede virtual ' v
 
 - Atualização de banco de dados updatedb
 → locate bashrc
+38
+
+
+
+
+
 
 # Localização de programas...
 → whereis vim ... localiza o camwhichinho do programa assim como a pa
@@ -837,12 +618,217 @@ Senha inativa					: nunca
 Conta expira						: nunca
 Número mínimo de dias entre troca de senhas		: 0
 Número máximo de dias entre troca de senhas		: 99999
-Número de dias de avisos antes da expiração da senha	: 7
+Número de dias de avisos antes da expiração da senha	: 7ração...
 
-# comando uname.... demostra  nome da maquina e sua configuração...
+# comando visudo... habilita usuário para comandos especificos....
 
-→ uname -m 
+→ executar visudo no arquivo /etc/sudoers
+→ em * user privilege specification:
+ex:
+root  ALL=(ALL:ALL) ALL
+hoher ALL=(ALL) ALL
+outro ALL=(root) !/sbin/fdisk .... Não tera perimissão apenas para execução
+do comando especifico...
+    
+sudo addgroup blablabla
+[sudo] senha para leandro:       
+info: Selecionando GID da faixa 1000 a 59999 ...
+info: Adicionando grupo 'blablabla' (GID 1003) ...
 
-→ uname -a
+ which apt-get
+/usr/bin/apt-get
+
+→ adionando usuario ao grupo
+
+sudo adduser hoher blablabla
+info: Adicionando usuário 'hoher' ao grupo 'blablabla' ...
+→ usando o visudo no arquivo /etc/suders 
+marcar o seguinte comentario...
+'# Permitir que menbros do grupo blablabla usem o apt-gett
+%blablabla ALL=(root) /usr/bin/apt-get
+
+→ usando visudo abaixo do comentário # Cmnd alias especification...
+Cmnd_Alias FIREWALL = /sbin/iptables,
+
+→ adicionando regra de entrada para o alias no usuario.
+
+outro ALL=(root) !/sbin/fdisk, FIREWALLL 
+
+fuser -v .
+                     USUÁRIO     PID ACESSO COMANDO
+/home/leandro/Documentos:
+                     leandro    6043 ..c.. bash
+                     leandro   13826 ..c.. gnome-calculato
+                     leandro   13865 ..c.. gedit
+leandro@leandro:~/Documentos$ sudo fuser -ki . 
+[sudo] senha para leandro:       
+
+/home/leandro/Documentos:  6043c 13826c 13865c 13918c 13919c
+Matar o processo 6043? (y/N) n
+Matar o processo 13826? (y/N) y
+Matar o processo 13865? (y/N) y
+Matar o processo 13918? (y/N) 
+Matar o processo 13919? (y/N) y 
+sudo: unable to execute /usr/bin/fuser: Connection reset by peer
+[1]-  Morto                   gnome-calculator
+[2]+  Morto                   gedit testearquivos
+leandro@leandro:~/Documentos$ 
+
+ fuser -v .
+                     USUÁRIO     PID ACESSO COMANDO
+/home/leandro/Documentos:
+                     leandro    6043 ..c.. bash
+
+→ vereficando acesso remoto....
+
+sudo fuser -v -n tcp 22
+                     USUÁRIO     PID ACESSO COMANDO
+22/tcp:              root          1 F.... systemd
+                     root       1103 F.... sshd
+
+
+sudo fuser -ki  22/tcp .... encerra o sshd...
+
+# Comando xargs.....
+
+seq 6 | xargs -n2
+1 2
+3 4
+5 6
+
+find . -type f | xargs -n 1 grep bt1.md
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+bt1.md                                        100%   15KB 303.4KB/s   00:00
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+bt1.md                                        100%   15KB 303.4KB/s   00:00
+rsync -avz /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+ bt1.md
+ bt1.md
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+bt1.md                                        100%   15KB 303.4KB/s   00:00
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+bt1.md                                        100%   15KB 303.4KB/s   00:00
+rsync -avz /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+leandro@leandro:~/vaitomanocu/ubuntu/bt$ vim bt1.md 
+grep: ./chave: Arquivo ou diretório inexistente
+grep: de: Arquivo ou diretório inexistente
+
+
+# Awk filtro de texto....
+
+awk '/leandro/' sep-lin-texto.txt 
+leandro:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro:/home/leandro:/bin/bash
+leandro  Leandro   /home/leandro  /bin/bash
+leandro  Leandro   /home/leandro  /bin/bash
+leandro:x:1000:1000:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro:/home/leandro:/bin/bash
+leandro  Leandro   /home/leandro  /bin/bash
+
+→ filtro 'case_sensitive'.... para maiúsculas e minusculas...
+awk '/[lL]eandro/' sep-lin-texto.txt
+
+→ Ou usando  a variável de ambiente ' BEGIN{IGNORECASE=1}
+
+awk 'BEGIN{IGNORECASE=1} /leandro/' sep-lin-texto.txt 
+leandro:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro:/home/leandro:/bin/bash
+leandro  Leandro   /home/leandro  /bin/bash
+leandro  Leandro   /home/leandro  /bin/bash
+leandro:x:1000:1000:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro,,,:/home/leandro:/bin/bash
+leandro:Leandro,,,:/home/leandro:/bin/ba'sh
+
+awk '!/leandro/' sep-lin-texto.txt ....ignora a string 'leandro' em todo texto
+
+→ busca apenas a string n começo de cada linha...
+
+ awk '/^[lL]ib/' sep-lin-texto.txt 
+Libvirt Qemu,,,
+Libvirt Dnsmasq,,,
+Libvirt Qemu,,,
+Libvirt Dnsmasq,,,
+
+
+- demostra um evento especifico após o horário filtrado..
+
+awk '/20:38$/' sep-lin-texto.txt
+
+→ filtra saída com o número especififcos de digítos...
+
+ awk '/[0-9]{4}/' sep-lin-texto.txt 
+leandro:x:1000:1000:Leandro,,,:/home/leandro:/bin/bash
+juliana:x:1001:1001:Juliana',,,:/home/juliana:/bin/bash
+dom 28 jun 2026 20:38:09 -03
+
+→ filtra linhas que contenham os caracteres maiscúlos...
+
+ awk '/[A-D]/' sep-lin-texto.txt
+
+awk '/^[LJ]/' sep-lin-texto.txt 
+
+→ filtra por endereços de email...
+
+awk '/[@]/' sep-lin-texto.txt 
+
+→ Comando correto para o redirecionamento da saída
+
+awk '/[@]/' .bash_history >> /home/leandro/vaitomanocu/ubuntu/bt/bt1.md
+
+sudo scp -r leandro@10.0.11.129:/home/leandro/Downloads/ /Documentos/
+sudo scp -r leandro@192.168.122.1:/home/leandro/Downloads/ /Documentos/
+sudo scp -r leandro@192.168.122.1:/home/leandro/Downloads/ /Documentos/
+sudo scp -r leandro@192.168.122.1:/home/leandro Documentos/
+ssh X hoher@10.0.11.190
+ssh -X hoher@10.0.11.190
+ssh -X hoher@10.0.11.190
+ssh -X hoher534@10.0.11.190
+ssh -X hoher@10.0.11.190
+ssh -X hoher@10.0.11.129
+ssh -X hoher@10.0.11.129
+ssh -X hoher@10.0.11.129
+ssh -X hoher534@10.0.11.129
+ssh leandro75@192.16u.122.172
+ssh leandro75@192.16u.122.172/24
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh -l leandro75@192.168.122.172
+ssh-copy-id leandro75@192.168.122.134
+ssh leandro75@192.168.122.134
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134 /home/leandro75
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134 /
+sudo scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134 /
+rsync -avz /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+rsync -avz /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@1.168.122.134:~/
+ssh leandro75@192.168.122.134
+ssh leandro75@192.168.122.134
+ssh -T git@github.com
+ssh -T git@github.com
+leandro@leandro:~$ echo " sudo addgroup blablabla
+leandro@leandro:~$ 
+
+→ sintáxe que conta a acorrência de strings dentro do arquivo...
+
+ awk '/[@]/ {count ++} END {print count}' .bash_history
+
+ 
+
+### Comando de expansão de sintaxe direto o editor....
+
+→ :r! ctrl-r shift-l Enter...digitar de forma consecutiva teclas de atalho
+
 
 

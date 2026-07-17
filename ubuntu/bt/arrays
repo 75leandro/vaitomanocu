@@ -1,0 +1,231 @@
+
+
+# Criando lista dentro de um Array...
+
+teste_array( um dois tres quatro cinco)
+echo ${teste_array[4]}
+cinco
+
+echo ${teste_array[*]}
+um dois tres quatro cinco
+
+→ Trocando o valor dentro do indíce 2...
+
+teste_array[2]=50
+
+echo ${teste_array[2]}
+50
+
+echo ${teste_array[*]}
+um 50 tres quatro cinco
+
+→ Apagando indíce dentro do array...
+
+unset teste_array[4]
+echo ${teste_array[*]}
+um dois tres cinco
+
+→ Removendo todo o array... deleta o array....
+unset teste_array[*]
+
+→ Acrescente valores dentro de uma array....
+
+meuarray=(seis sete oito nove) 
+echo ${meuarray[*]}
+seis sete oito nove
+meuarray[5]=dez
+echo ${meuarray[*]}
+seis sete oito nove dez 
+
+
+var1=$[2 + 6]
+echo $var1 
+8
+var2=$[$var1 * 2] ; echo $var2
+16
+
+
+# Resumo vim_video
+#
+
+→ b1 ... direciona para  o buffer n 
+→ ctrl F6 ... navega por entre s buffers abertos.... 
+→ ctrl u ... paginação acima
+→ ctrl d ... paginação abaixo
+→ 10% ... posição proorcional do tamanho do arquivo....
+→ zz ... centraliza a tela...
+→ zb ... baixa a linha para visualição superior
+→ zt ... sobe a linha para visualização inferior...
+→ H ... topo da tela
+→ M ... meio da tela
+→ L ... fim da tela
+→ cit ... deleata tudo entre <tags> () [] {} ""...
+-- Gravando Macro ... 
+→ 'i' teste1 'n'qa inicio gravação Macro...
+y copiar a linha, ctrl p ... ctrl a para incrementar 1,q parar de gravar ...
+numero de vezes a copiar .... ctrl 10@a 
+
+    macro1
+    macro2
+    macro3
+    macro4
+    macro5
+    macro6
+    macro7
+    macro8
+    macro9
+    macro10
+    macro11
+    macro12
+    macro13
+   
+ 
++ Correção de texto..
+
+→ [s ... pesquisa otografica
+
+→ z= ... demonstra opções ... o número do indíce é referencia a substituição.
+
+
++ Redirecionamento de texto
+
+→ cat << EOF > arqteste1
+> #!/bin/bash
+> 
+> echo blabla!
+
+> EOF
+
++ Usando modo Visual para edição de texto...
+
+→ v, selação da área seta direcional, : s/#/+/g ... subtitui '#' por + ...
+                                  Ou :'<, >'!sed 's/isto/aquilo/g'
+                       :'<, >' significa do começo a fim do texto selecionado..
+
+
+
+→ /etc/shells  Cursor no inicio da linha 'gf' expande o arquivo e 
+os subsequentes....
+Ou 'ctrl w f' abre o arquivo em nova janela
+
+ /etc/shells 
+
+
+→ Ex...<p><a href="teste">Este é um parágrafo.</a></p> 
+
+→ dt> apaga do cursor interno até o caractere >...
+ou vt>
+→ vi> seleciona todo o interno dentro da tag <>... 
+
++ Mudando tipo de arquivo...
+
+→ :set file=html
+
++ Expressão regular para pesquisa...
+
+→ /pal[^ ]\+\>\c    ... busca o termo palavra, até encontrar espaço
+no-case-sensitive... ou /pal\w\+
+
+
+# Transição "Bash x Editor" ...
+
+→ .! grep'leandro' /etc/passwd .... Redirecionamento da saída para arquivo.
+leandro:x:1000:1000:Leandro,,,:/home/leandro:/bin/bash
+
+→ filtrando campos com o 'cut'. número do usuário campo 3....
+→ .!cut -d: -f3
+1000
+
+→ filtrando com 'grep -o'
+leandro:x:1000:1000:Leandro,,,:/home/leandro:/bin/bash
+→ .!grep -o 'Leandro.*,'
+Leandro,,,
+
+
+→ .!cat /etc/os-release
+NAME="Linux Mint"
+VERSION="22.3 (Zena)"
+ID=linuxmint
+ID_LIKE="ubuntu debian"
+PRETTY_NAME="Linux Mint 22.3"
+VERSION_ID="22.3"
+HOME_URL="https://www.linuxmint.com/"
+SUPPORT_URL="https://forums.linuxmint.com/"
+BUG_REPORT_URL="http://linuxmint-troubleshooting-guide.readthedocs.io/en/latest/"
+PRIVACY_POLICY_URL="https://www.linuxmint.com/"
+VERSION_CODENAME=zena
+UBUNTU_CODENAME=noble
+
+→ imprimindo a saída com 'cat' -- caminho...
+-- ~/.config/nvim/luasnip/c_snippets.lua
+local ls = require("luasnip")
+local s = ls.snippet
+local i = ls.insert_node
+local t = ls.text_node
+
+-- Estrutura Main
+ls.add("c", s({ trig = "main", name = "Função Main" }, {
+  t("int main(int argc, char *argv[]) {"),
+  t("  "), i(0),
+  t("  return 0;"),
+  t("}"),
+}))
+
+-- Include padrão
+ls.add("c", s({ trig = "inc", name = "Includes Comuns" }, {
+  t("#include <stdio.h>"),
+  t("#include <stdlib.h>"),
+  t("#include <string.h>"),
+}))
+
+-- Printf com placeholder
+ls.add("c", s({ trig = "pri", name = "Print Formatado" }, {
+  t("printf(\""), i(1, "%d"), t("\", "), i(2, "variavel"), t(");"),
+}))
+
+- direcionando informações do sistema
+
+echo Linux $(uname -rm)
+→ .!bash 
+Linux 6.8.0-134-generic x86_64
+
+   
+- direcionando informações do diretório...
+   .!sh 
+→ tree -L 2 ~/bt 
+/home/leandro/vaitomanocu/ubuntu/bt
+├── arrays
+├── bt1.md
+├── bt1.mda
+├── bt2.md
+├── redirecionamento
+├── regexpal.com
+├── teste_filtro_Estoque_POA_.xlsx
+└── vim
+
++ filtrando com indíce de linhas 'n!!'
+
+8!! =-> .,.+7!grep bt1
+
+/home/leandro/vaitomanocu/ubuntu/bt
+├── bt1.md
+├── bt1.mda
+
+
+
+8!! =-> .,.+7!grep -v bt1 ... ignora o termo dentro da lista de pesquisa..
+
+├── arrays
+├── bt2.md
+├── redirecionamento
+├── regexpal.com
+├── teste_filtro_Estoque_POA_.xlsx
+└── vim
+
++ filtrando com indíce de linhas 'n!!'
+
+
+
+
+
+find -name nvim   ... rastreia o sistema em busca d arquivo

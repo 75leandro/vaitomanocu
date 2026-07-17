@@ -1,0 +1,38 @@
+sudo scp -r leandro@10.0.11.129:/home/leandro/Downloads/ /Documentos/
+sudo scp -r leandro@192.168.122.1:/home/leandro/Downloads/ /Documentos/
+sudo scp -r leandro@192.168.122.1:/home/leandro/Downloads/ /Documentos/
+sudo scp -r leandro@192.168.122.1:/home/leandro Documentos/
+ssh X hoher@10.0.11.190
+ssh -X hoher@10.0.11.190
+ssh -X hoher@10.0.11.190
+ssh -X hoher534@10.0.11.190
+ssh -X hoher@10.0.11.190
+ssh -X hoher@10.0.11.129
+ssh -X hoher@10.0.11.129
+ssh -X hoher@10.0.11.129
+ssh -X hoher534@10.0.11.129
+ssh leandro75@192.16u.122.172
+ssh leandro75@192.16u.122.172/24
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh leandro75@192.168.122.172
+ssh -l leandro75@192.168.122.172
+ssh-copy-id leandro75@192.168.122.134
+ssh leandro75@192.168.122.134
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134 /home/leandro75
+scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134 /
+sudo scp /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134 /
+rsync -avz /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+rsync -avz /home/leandro/vaitomanocu/ubuntu/bt/bt1.md leandro75@192.168.122.134:~/
+ssh leandro75@192.168.122.134
+ssh leandro75@192.168.122.134
+ssh -T git@github.com
+ssh -T git@github.com
+leandro@leandro:~$ echo " sudo addgroup blablabla
+leandro@leandro:~$ 
